@@ -43,9 +43,8 @@
             this.pnlMenu.Controls.Add(this.pnlLogo);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(183, 679);
+            this.pnlMenu.Size = new System.Drawing.Size(137, 552);
             this.pnlMenu.TabIndex = 0;
             // 
             // MpBtn_Prepare
@@ -59,10 +58,9 @@
             this.MpBtn_Prepare.IconColor = System.Drawing.Color.SandyBrown;
             this.MpBtn_Prepare.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.MpBtn_Prepare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MpBtn_Prepare.Location = new System.Drawing.Point(0, 122);
-            this.MpBtn_Prepare.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MpBtn_Prepare.Location = new System.Drawing.Point(0, 99);
             this.MpBtn_Prepare.Name = "MpBtn_Prepare";
-            this.MpBtn_Prepare.Size = new System.Drawing.Size(183, 68);
+            this.MpBtn_Prepare.Size = new System.Drawing.Size(137, 55);
             this.MpBtn_Prepare.TabIndex = 1;
             this.MpBtn_Prepare.Text = "Prepare";
             this.MpBtn_Prepare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -73,19 +71,17 @@
             // 
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnlLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(183, 122);
+            this.pnlLogo.Size = new System.Drawing.Size(137, 99);
             this.pnlLogo.TabIndex = 0;
             // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Location = new System.Drawing.Point(183, 0);
-            this.pnlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTop.Location = new System.Drawing.Point(137, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1045, 92);
+            this.pnlTop.Size = new System.Drawing.Size(784, 75);
             this.pnlTop.TabIndex = 1;
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
             // 
@@ -93,23 +89,25 @@
             // 
             this.pnlChildHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.pnlChildHolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlChildHolder.Location = new System.Drawing.Point(183, 92);
+            this.pnlChildHolder.Location = new System.Drawing.Point(137, 75);
+            this.pnlChildHolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlChildHolder.Name = "pnlChildHolder";
-            this.pnlChildHolder.Size = new System.Drawing.Size(1045, 587);
+            this.pnlChildHolder.Size = new System.Drawing.Size(784, 477);
             this.pnlChildHolder.TabIndex = 2;
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1228, 679);
+            this.ClientSize = new System.Drawing.Size(921, 552);
             this.Controls.Add(this.pnlChildHolder);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlMenu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Form";
+            this.Resize += new System.EventHandler(this.FormMain_Resize);
             this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 

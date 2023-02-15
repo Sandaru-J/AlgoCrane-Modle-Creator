@@ -12,6 +12,7 @@ namespace MLDA_Application.Preparation
 {
     public partial class frmP_Main : Form
     {
+        private frmP_Import frmP_Import1;
         private Form currentPchildForm;
         public frmP_Main()
         {
@@ -20,7 +21,17 @@ namespace MLDA_Application.Preparation
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+       
         }
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+           frmP_Import frmP_Import = new frmP_Import();
+
+            frmP_Import.Width = this.Width;
+            frmP_Import.Height = this.Height;
+        }
+
 
         private void OpenPChildForm(Form childForm)
         {
@@ -42,6 +53,13 @@ namespace MLDA_Application.Preparation
         private void btnCatImport_Click(object sender, EventArgs e)
         {
             OpenPChildForm(new frmP_Import());
+        }
+        private void FormMainMenu_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Maximized)
+                FormBorderStyle = FormBorderStyle.None;
+            else
+                FormBorderStyle = FormBorderStyle.Sizable;
         }
     }
 }
