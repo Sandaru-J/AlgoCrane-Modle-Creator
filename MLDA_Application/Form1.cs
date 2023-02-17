@@ -16,7 +16,6 @@ namespace MLDA_Application
 {
     public partial class FormMain : Form
     {
-        private Size formSize;
         private Form currentChildForm;
         private int borderSize = 2;
         public FormMain()
@@ -41,16 +40,7 @@ namespace MLDA_Application
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        /*protected override void WndProc(ref Message m)
-        {
-            const int WM_PAINT = 0x0083;
-            if(m.Msg == WM_PAINT && m.WParam.ToInt32() == 1)
-            {
-                return;
-            }
-            base.WndProc(ref m);
-
-        }*/
+       
 
         //Overridden methods
         /*protected override void WndProc(ref Message m)
