@@ -19,12 +19,9 @@ namespace MLDA_Application.Preparation
         public frmP_Import()
         {
             InitializeComponent();
-            //guna2HScrollBar1.Value = 2;
             txtDsInfo.Padding= new Padding(15,5,5,5);
             panel4.Visible = false;
             panel3.Visible = false;
-
-            
         }
 
         private void btnImport_Click(object sender, EventArgs e)
@@ -148,7 +145,6 @@ namespace MLDA_Application.Preparation
             //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
             string csv_path = @filePath;
             Console.WriteLine("path in csvupLoad: " + csv_path);
-
 
             string check_string = "testing 1";
             ProcessStartInfo start = new ProcessStartInfo();

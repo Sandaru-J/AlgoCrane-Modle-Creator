@@ -42,8 +42,8 @@
             this.btnAnalyze = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.guna2HScrollBar1 = new Guna.UI2.WinForms.Guna2HScrollBar();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.guna2HScrollBar1 = new Guna.UI2.WinForms.Guna2HScrollBar();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.lblDsFileName = new System.Windows.Forms.Label();
@@ -170,6 +170,7 @@
             this.txtDsInfo.Location = new System.Drawing.Point(0, 53);
             this.txtDsInfo.Multiline = true;
             this.txtDsInfo.Name = "txtDsInfo";
+            this.txtDsInfo.ReadOnly = true;
             this.txtDsInfo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtDsInfo.Size = new System.Drawing.Size(220, 285);
             this.txtDsInfo.TabIndex = 0;
@@ -224,23 +225,6 @@
             this.panel6.Size = new System.Drawing.Size(755, 393);
             this.panel6.TabIndex = 0;
             // 
-            // guna2HScrollBar1
-            // 
-            this.guna2HScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2HScrollBar1.AutoRoundedCorners = true;
-            this.guna2HScrollBar1.BorderRadius = 4;
-            this.guna2HScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
-            this.guna2HScrollBar1.InUpdate = false;
-            this.guna2HScrollBar1.LargeChange = 10;
-            this.guna2HScrollBar1.Location = new System.Drawing.Point(51, 375);
-            this.guna2HScrollBar1.Name = "guna2HScrollBar1";
-            this.guna2HScrollBar1.ScrollbarSize = 11;
-            this.guna2HScrollBar1.Size = new System.Drawing.Size(457, 11);
-            this.guna2HScrollBar1.TabIndex = 2;
-            this.guna2HScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2HScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.guna2HScrollBar1_Scroll);
-            // 
             // guna2VScrollBar1
             // 
             this.guna2VScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -262,6 +246,23 @@
             this.guna2VScrollBar1.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
             this.guna2VScrollBar1.Value = 10;
             this.guna2VScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.guna2VScrollBar1_Scroll);
+            // 
+            // guna2HScrollBar1
+            // 
+            this.guna2HScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2HScrollBar1.AutoRoundedCorners = true;
+            this.guna2HScrollBar1.BorderRadius = 4;
+            this.guna2HScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
+            this.guna2HScrollBar1.InUpdate = false;
+            this.guna2HScrollBar1.LargeChange = 10;
+            this.guna2HScrollBar1.Location = new System.Drawing.Point(51, 375);
+            this.guna2HScrollBar1.Name = "guna2HScrollBar1";
+            this.guna2HScrollBar1.ScrollbarSize = 11;
+            this.guna2HScrollBar1.Size = new System.Drawing.Size(457, 11);
+            this.guna2HScrollBar1.TabIndex = 2;
+            this.guna2HScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2HScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.guna2HScrollBar1_Scroll);
             // 
             // guna2CustomGradientPanel1
             // 
