@@ -10,3 +10,7 @@ C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debu
 C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.pdb
 C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.csproj.CopyComplete
+C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.FormMain.resources
+C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Preparation.frmP_Import.resources
+C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Preparation.frmP_Main.resources
+C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\bin\Debug\Guna.UI2.dll
