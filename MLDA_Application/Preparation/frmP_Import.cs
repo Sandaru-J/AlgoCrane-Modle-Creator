@@ -16,9 +16,11 @@ namespace MLDA_Application.Preparation
     public partial class frmP_Import : Form
     {
         public string filePath;
+        private UC_PC_missing ucM;
         public frmP_Import()
         {
             InitializeComponent();
+            ucM = new UC_PC_missing();
             txtDsInfo.Padding= new Padding(15,5,5,5);
             panel4.Visible = false;
             panel3.Visible = false;
@@ -45,7 +47,7 @@ namespace MLDA_Application.Preparation
             }                                            
         }
 
-        private void guna2TextBox1_MouseClick(object sender, MouseEventArgs e)
+        public void guna2TextBox1_MouseClick(object sender, MouseEventArgs e)
         {
             try
             {
@@ -54,6 +56,7 @@ namespace MLDA_Application.Preparation
                     guna2TextBox1.Text = openFileDialog1.FileName;
                     Console.WriteLine("imported: " + guna2TextBox1.Text);
                     filePath = openFileDialog1.FileName;
+                    ucM.SetFilePath(filePath);
                 }
                 else
                 {
@@ -64,7 +67,6 @@ namespace MLDA_Application.Preparation
             {
                 MessageBox.Show("Error");
             }
-           
         }
 
         private void ShowTable(string filepath)
@@ -130,14 +132,14 @@ namespace MLDA_Application.Preparation
 
         private void guna2VScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
-            dataGridView1.FirstDisplayedScrollingRowIndex = guna2VScrollBar1.Value;  
+            dataGridView1.FirstDisplayedScrollingRowIndex = guna2VScrollBar1.Value;
         }
 
         private void guna2HScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
                 dataGridView1.FirstDisplayedScrollingColumnIndex = guna2HScrollBar1.Value;
         }
-        private string dSetInfo()
+        public string dSetInfo()
         {
             // console.WriteLine("Hello World!");
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
@@ -154,15 +156,19 @@ namespace MLDA_Application.Preparation
             start.RedirectStandardOutput = true;
             start.CreateNoWindow = true;
 
+            prepareModel ps = new prepareModel();
+            ps.path = csv_path;
+            
+            Console.WriteLine("set:"+csv_path);
             // Start the process and get the output
             using (Process process = Process.Start(start))
             {
                 // Read the output from the Python script
                 string output = process.StandardOutput.ReadToEnd();
 
-                Console.WriteLine(output);
+                //Console.WriteLine(output);
                 txtDsInfo.Text = output;
-                return output;
+                return filePath;
             }
         }
     }

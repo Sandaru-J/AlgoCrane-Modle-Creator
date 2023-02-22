@@ -65,6 +65,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Preparation\frmP_clean.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preparation\frmP_clean.Designer.cs">
+      <DependentUpon>frmP_clean.cs</DependentUpon>
+    </Compile>
     <Compile Include="Preparation\frmP_Import.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,16 +83,29 @@
     <Compile Include="Preparation\frmP_Main.Designer.cs">
       <DependentUpon>frmP_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Preparation\prepareModel.cs" />
+    <Compile Include="Preparation\UC_PC_missing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Preparation\UC_PC_missing.Designer.cs">
+      <DependentUpon>UC_PC_missing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preparation\frmP_clean.resx">
+      <DependentUpon>frmP_clean.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preparation\frmP_Import.resx">
       <DependentUpon>frmP_Import.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preparation\frmP_Main.resx">
       <DependentUpon>frmP_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preparation\UC_PC_missing.resx">
+      <DependentUpon>UC_PC_missing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

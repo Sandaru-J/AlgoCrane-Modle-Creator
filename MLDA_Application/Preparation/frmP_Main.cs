@@ -21,8 +21,6 @@ namespace MLDA_Application.Preparation
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-
-       
         }
         private void Form1_Resize(object sender, EventArgs e)
         {
@@ -40,6 +38,7 @@ namespace MLDA_Application.Preparation
                 currentPchildForm.Close();  
             }
             */
+            
             currentPchildForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -52,7 +51,7 @@ namespace MLDA_Application.Preparation
 
         private void btnCatImport_Click(object sender, EventArgs e)
         {
-            OpenPChildForm(new frmP_Import());
+                OpenPChildForm(new frmP_Import());
         }
         private void FormMainMenu_Resize(object sender, EventArgs e)
         {
@@ -60,6 +59,11 @@ namespace MLDA_Application.Preparation
                 FormBorderStyle = FormBorderStyle.None;
             else
                 FormBorderStyle = FormBorderStyle.Sizable;
+        }
+
+        private void btnCleaning_Click(object sender, EventArgs e)
+        {
+                OpenPChildForm(new frmP_clean());
         }
     }
 }
