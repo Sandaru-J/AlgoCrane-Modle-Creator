@@ -19,7 +19,7 @@ namespace MLDA_Application
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());
             //Application.Run(new frmP_Import());
-            //Application.Run(new frmP_Main());
+            //Application.Run(new frmP_clean());
         }
     }
 }

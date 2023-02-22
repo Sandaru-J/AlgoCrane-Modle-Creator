@@ -14,3 +14,5 @@ C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debu
 C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Preparation.frmP_Import.resources
 C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Preparation.frmP_Main.resources
 C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\bin\Debug\Guna.UI2.dll
+C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Preparation.frmP_clean.resources
+C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Preparation.UC_PC_missing.resources

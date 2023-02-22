@@ -34,6 +34,7 @@
             this.pnlPfrmHolder = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnCleaning = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.pnlPfrmHolder.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -43,6 +44,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(70)))));
+            this.panel1.Controls.Add(this.btnCleaning);
             this.panel1.Controls.Add(this.btnCatImport);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -98,6 +100,21 @@
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // btnCleaning
+            // 
+            this.btnCleaning.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCleaning.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCleaning.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCleaning.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCleaning.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCleaning.ForeColor = System.Drawing.Color.White;
+            this.btnCleaning.Location = new System.Drawing.Point(129, 0);
+            this.btnCleaning.Name = "btnCleaning";
+            this.btnCleaning.Size = new System.Drawing.Size(139, 46);
+            this.btnCleaning.TabIndex = 1;
+            this.btnCleaning.Text = "Clean";
+            this.btnCleaning.Click += new System.EventHandler(this.btnCleaning_Click);
+            // 
             // frmP_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,5 +140,6 @@
         private System.Windows.Forms.Panel pnlPfrmHolder;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2Button btnCleaning;
     }
 }
