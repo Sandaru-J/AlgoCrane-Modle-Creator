@@ -14,6 +14,7 @@ namespace MLDA_Application.Preparation
     {
         private frmP_Import frmP_Import1;
         private Form currentPchildForm;
+        private Form currentUC;
         public frmP_Main()
         {
             InitializeComponent();
@@ -22,6 +23,23 @@ namespace MLDA_Application.Preparation
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
+
+        public frmP_Import Import_data
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public frmP_clean data_clean
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void Form1_Resize(object sender, EventArgs e)
         {
            frmP_Import frmP_Import = new frmP_Import();
@@ -64,6 +82,26 @@ namespace MLDA_Application.Preparation
         private void btnCleaning_Click(object sender, EventArgs e)
         {
                 OpenPChildForm(new frmP_clean());
+        }
+
+        private void btnCleaning_MouseHover(object sender, EventArgs e)
+        {
+            contextMenuStrip1.Show(btnCleaning, new Point(0, btnCleaning.Height));
+        }
+        private void OpenUserControls(Form childForm)
+        {
+            currentUC = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlPfrmHolder.Controls.Add(childForm);
+            pnlPfrmHolder.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 }

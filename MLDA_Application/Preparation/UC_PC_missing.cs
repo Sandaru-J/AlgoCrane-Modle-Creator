@@ -24,7 +24,7 @@ namespace MLDA_Application.Preparation
             model = new prepareModel();
             string x = get();
             Console.WriteLine("water:"+x);
-            dsetInfo(1, 0, 0, 0);
+            
             
         }
         public void SetFilePath(string filePath)
@@ -93,6 +93,11 @@ namespace MLDA_Application.Preparation
         private void guna2GradientTileButton3_Click(object sender, EventArgs e)
         {
             dsetInfo(0, 0, 0, 4);
+        }
+
+        private void btnMCheck_Click(object sender, EventArgs e)
+        {
+            dsetInfo(1, 0, 0, 0);
         }
     }
 }
