@@ -89,16 +89,27 @@ namespace MLDA_Application.Preparation.Shared
         private void btnUpload_Click(object sender, EventArgs e)
         {
             string name = txtFileName.Text;
-            MongoCon mongoCon = new MongoCon();
-            bool upload = mongoCon.insertCsv(name,filePath);
-            if(upload)
+            string path=txtFileLoc.Text;
+            if((string.IsNullOrEmpty(txtFileLoc.Text) || txtFileLoc.Text== txtFileLoc.PlaceholderText)
+                || (string.IsNullOrEmpty(txtFileName.Text) || txtFileName.Text==txtFileName.PlaceholderText))
             {
-                MessageBox.Show("File Sucessfully to Database", "Sucess");
-                Dispose();
-            }else
-            {
-                MessageBox.Show("File Uploading Failed", "Error");
+                MessageBox.Show("Enter a name and a location","Missed");
             }
+            else
+            {
+                MongoCon mongoCon = new MongoCon();
+                bool upload = mongoCon.insertCsv(name, path);
+                if (upload)
+                {
+                    MessageBox.Show("File Sucessfully to Database", "Sucess");
+                    Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("File Uploading Failed", "Error");
+                }
+            }
+           
         }
     }
 }

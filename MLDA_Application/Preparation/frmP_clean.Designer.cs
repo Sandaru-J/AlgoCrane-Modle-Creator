@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnMissingval = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.uC_PC_missing1 = new MLDA_Application.Preparation.UC_PC_missing();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +48,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(319, 243);
             this.panel1.TabIndex = 0;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 17;
+            this.listBox1.Location = new System.Drawing.Point(34, 98);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(212, 106);
+            this.listBox1.TabIndex = 2;
             // 
             // btnMissingval
             // 
@@ -84,24 +94,14 @@
             this.uC_PC_missing1.Size = new System.Drawing.Size(945, 492);
             this.uC_PC_missing1.TabIndex = 1;
             // 
-            // listBox1
-            // 
-            this.listBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 17;
-            this.listBox1.Location = new System.Drawing.Point(34, 98);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(212, 106);
-            this.listBox1.TabIndex = 2;
-            // 
             // frmP_clean
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(23)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(945, 492);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.uC_PC_missing1);
+            this.Controls.Add(this.panel1);
             this.Name = "frmP_clean";
             this.Text = "frmP_clean";
             this.panel1.ResumeLayout(false);

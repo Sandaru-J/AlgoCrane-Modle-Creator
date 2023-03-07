@@ -14,7 +14,6 @@ namespace MLDA_Application.Preparation
         {
             get { return dsPath; }
             set { dsPath = value;
-                Console.WriteLine("model:" + dsPath);
             }
         }
 
