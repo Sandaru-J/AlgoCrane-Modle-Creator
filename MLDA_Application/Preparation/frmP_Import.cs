@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MLDA_Application.Preparation.Shared;
 
 namespace MLDA_Application.Preparation
 {
@@ -17,6 +18,7 @@ namespace MLDA_Application.Preparation
     {
         public string filePath;
         private UC_PC_missing ucM;
+        public string fileName;
         public frmP_Import()
         {
             InitializeComponent();
@@ -54,9 +56,9 @@ namespace MLDA_Application.Preparation
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     guna2TextBox1.Text = openFileDialog1.FileName;
-                    Console.WriteLine("imported: " + guna2TextBox1.Text);
                     filePath = openFileDialog1.FileName;
                     ucM.SetFilePath(filePath);
+                    fileName=Path.GetFileName(openFileDialog1.FileName);
                 }
                 else
                 {
@@ -89,7 +91,15 @@ namespace MLDA_Application.Preparation
                     int coloumIndex = 0;
                     foreach (string headerword in headerLabels)
                     {
-                        dr[headerword] = datawords[coloumIndex++];
+                        if(coloumIndex<datawords.Length)
+                        {
+                            dr[headerword] = datawords[coloumIndex++];
+                        }else
+                        {
+                            dr[headerword] = null;
+                            label1.Text = "This file has already Extracted"; 
+                                }
+                        
                     }
                     dt.Rows.Add(dr);
                 }
@@ -111,7 +121,6 @@ namespace MLDA_Application.Preparation
             guna2VScrollBar1.Maximum = dataGridView1.RowCount - 10;
             guna2HScrollBar1.Maximum = dataGridView1.ColumnCount - 1;
             
-            Console.WriteLine(numRows + " " + numVisibleRows);
             /*
             if (numVisibleRows > numRows)
             {
@@ -141,12 +150,10 @@ namespace MLDA_Application.Preparation
         }
         public string dSetInfo()
         {
-            // console.WriteLine("Hello World!");
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
             string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\pi_import.py";
             //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
             string csv_path = @filePath;
-            Console.WriteLine("path in csvupLoad: " + csv_path);
 
             string check_string = "testing 1";
             ProcessStartInfo start = new ProcessStartInfo();
@@ -159,7 +166,6 @@ namespace MLDA_Application.Preparation
             prepareModel ps = new prepareModel();
             ps.path = csv_path;
             
-            Console.WriteLine("set:"+csv_path);
             // Start the process and get the output
             using (Process process = Process.Start(start))
             {
@@ -170,6 +176,13 @@ namespace MLDA_Application.Preparation
                 txtDsInfo.Text = output;
                 return filePath;
             }
+        }
+
+        private void btnExtract_Click(object sender, EventArgs e)
+        {
+           uplPopUp uplPopUp = new uplPopUp(fileName,filePath);
+            DialogResult result= uplPopUp.ShowDialog();
+
         }
     }
 }

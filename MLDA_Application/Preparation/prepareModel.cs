@@ -14,7 +14,14 @@ namespace MLDA_Application.Preparation
         {
             get { return dsPath; }
             set { dsPath = value;
-                Console.WriteLine("model:" + dsPath);
+            }
+        }
+
+        public frmP_Main send_path
+        {
+            get => default;
+            set
+            {
             }
         }
     }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
@@ -39,7 +39,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtDsInfo = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnAnalyze = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExtract = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
@@ -49,6 +49,7 @@
             this.lblDsFileName = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -172,34 +173,36 @@
             this.txtDsInfo.Name = "txtDsInfo";
             this.txtDsInfo.ReadOnly = true;
             this.txtDsInfo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtDsInfo.Size = new System.Drawing.Size(220, 285);
+            this.txtDsInfo.Size = new System.Drawing.Size(220, 281);
             this.txtDsInfo.TabIndex = 0;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.btnAnalyze);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.btnExtract);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 334);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(224, 59);
             this.panel5.TabIndex = 0;
             // 
-            // btnAnalyze
+            // btnExtract
             // 
-            this.btnAnalyze.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAnalyze.BorderRadius = 3;
-            this.btnAnalyze.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.btnAnalyze.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAnalyze.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAnalyze.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAnalyze.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAnalyze.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAnalyze.ForeColor = System.Drawing.Color.White;
-            this.btnAnalyze.Location = new System.Drawing.Point(58, 6);
-            this.btnAnalyze.Name = "btnAnalyze";
-            this.btnAnalyze.Size = new System.Drawing.Size(99, 33);
-            this.btnAnalyze.TabIndex = 5;
-            this.btnAnalyze.Text = "Analyze";
+            this.btnExtract.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExtract.BorderRadius = 3;
+            this.btnExtract.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.btnExtract.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExtract.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExtract.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExtract.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExtract.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExtract.ForeColor = System.Drawing.Color.White;
+            this.btnExtract.Location = new System.Drawing.Point(58, 18);
+            this.btnExtract.Name = "btnExtract";
+            this.btnExtract.Size = new System.Drawing.Size(99, 33);
+            this.btnExtract.TabIndex = 5;
+            this.btnExtract.Text = "Extract";
+            this.btnExtract.Click += new System.EventHandler(this.btnExtract_Click);
             // 
             // panel3
             // 
@@ -315,23 +318,23 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridView1.Location = new System.Drawing.Point(8, 52);
             this.dataGridView1.Name = "dataGridView1";
@@ -343,6 +346,17 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.Location = new System.Drawing.Point(36, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Upload and Save From Here";
             // 
             // frmP_Import
             // 
@@ -361,6 +375,7 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
@@ -381,7 +396,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel3;
-        private Guna.UI2.WinForms.Guna2Button btnAnalyze;
+        private Guna.UI2.WinForms.Guna2Button btnExtract;
         private System.Windows.Forms.Panel panel6;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private System.Windows.Forms.Label lblDsFileName;
@@ -392,5 +407,6 @@
         private System.Windows.Forms.TextBox txtDsInfo;
         private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
         private Guna.UI2.WinForms.Guna2HScrollBar guna2HScrollBar1;
+        private System.Windows.Forms.Label label1;
     }
 }
