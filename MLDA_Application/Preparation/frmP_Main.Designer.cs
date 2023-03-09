@@ -39,6 +39,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.pnlPfrmHolder.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -49,6 +50,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(70)))));
+            this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.btnCleaning);
             this.panel1.Controls.Add(this.btnCatImport);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -129,21 +131,35 @@
             this.toolStripMenuItem1,
             this.toolStripMenuItem2});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(152, 48);
             this.contextMenuStrip1.Text = "Missing Vlues";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
             this.toolStripMenuItem1.Text = "Missing values";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(151, 22);
             this.toolStripMenuItem2.Text = "Duplicates";
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(268, 0);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(139, 46);
+            this.guna2Button1.TabIndex = 2;
+            this.guna2Button1.Text = "Pre Processing";
             // 
             // frmP_Main
             // 
@@ -175,5 +191,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
