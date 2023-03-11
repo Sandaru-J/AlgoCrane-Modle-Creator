@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MLDA_Application.Preparation.PreProcess;
 
 namespace MLDA_Application.Preparation
 {
@@ -102,6 +103,11 @@ namespace MLDA_Application.Preparation
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
           
+        }
+
+        private void btnPreProcess_Click(object sender, EventArgs e)
+        {
+            OpenPChildForm(new frmP_pp());
         }
     }
 }
