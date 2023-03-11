@@ -192,6 +192,18 @@
       <DependentUpon>frmP_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Preparation\prepareModel.cs" />
+    <Compile Include="Preparation\PreProcess\frmP_pp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preparation\PreProcess\frmP_pp.Designer.cs">
+      <DependentUpon>frmP_pp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Preparation\PreProcess\UC_Normalize.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Preparation\PreProcess\UC_Normalize.Designer.cs">
+      <DependentUpon>UC_Normalize.cs</DependentUpon>
+    </Compile>
     <Compile Include="Preparation\Shared\uplPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +230,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Preparation\frmP_Main.resx">
       <DependentUpon>frmP_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preparation\PreProcess\frmP_pp.resx">
+      <DependentUpon>frmP_pp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preparation\PreProcess\UC_Normalize.resx">
+      <DependentUpon>UC_Normalize.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preparation\Shared\uplPopUp.resx">
       <DependentUpon>uplPopUp.cs</DependentUpon>
