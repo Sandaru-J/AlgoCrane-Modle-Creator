@@ -20,7 +20,7 @@ namespace MLDA_Application.Preparation.PreProcess
 
         public void updatetext(string text)
         {
-            txtbxPP.Text += text; 
+            txtbxPP.Text +=Environment.NewLine + text;
             txtbxPP.SelectionStart = txtbxPP.TextLength;
             txtbxPP.ScrollToCaret();
             

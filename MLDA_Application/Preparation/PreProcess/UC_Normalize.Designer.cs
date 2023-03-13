@@ -40,8 +40,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtStd = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnNrmlzPrcd = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.NuupdMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NuupdMin)).BeginInit();
             this.SuspendLayout();
@@ -96,6 +97,7 @@
             this.BtnZcore.Size = new System.Drawing.Size(76, 35);
             this.BtnZcore.TabIndex = 4;
             this.BtnZcore.Text = "Zscore";
+            this.BtnZcore.Click += new System.EventHandler(this.BtnZcore_Click);
             // 
             // label3
             // 
@@ -114,9 +116,19 @@
             this.NuupdMax.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.NuupdMax.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NuupdMax.Location = new System.Drawing.Point(74, 195);
+            this.NuupdMax.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.NuupdMax.Name = "NuupdMax";
             this.NuupdMax.Size = new System.Drawing.Size(64, 28);
             this.NuupdMax.TabIndex = 6;
+            this.NuupdMax.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // NuupdMin
             // 
@@ -124,15 +136,15 @@
             this.NuupdMin.BorderRadius = 2;
             this.NuupdMin.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.NuupdMin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.NuupdMin.Location = new System.Drawing.Point(185, 195);
+            this.NuupdMin.Location = new System.Drawing.Point(221, 195);
+            this.NuupdMin.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.NuupdMin.Name = "NuupdMin";
             this.NuupdMin.Size = new System.Drawing.Size(68, 28);
             this.NuupdMin.TabIndex = 7;
-            this.NuupdMin.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label4
             // 
@@ -148,7 +160,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(145, 203);
+            this.label5.Location = new System.Drawing.Point(173, 203);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 20);
             this.label5.TabIndex = 9;
@@ -179,7 +191,7 @@
             this.txtStd.Location = new System.Drawing.Point(214, 232);
             this.txtStd.Name = "txtStd";
             this.txtStd.PasswordChar = '\0';
-            this.txtStd.PlaceholderText = "default 1";
+            this.txtStd.PlaceholderText = "1";
             this.txtStd.SelectedText = "";
             this.txtStd.Size = new System.Drawing.Size(76, 30);
             this.txtStd.TabIndex = 11;
@@ -193,25 +205,28 @@
             this.btnNrmlzPrcd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnNrmlzPrcd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnNrmlzPrcd.ForeColor = System.Drawing.Color.White;
-            this.btnNrmlzPrcd.Location = new System.Drawing.Point(37, 288);
+            this.btnNrmlzPrcd.Location = new System.Drawing.Point(36, 288);
             this.btnNrmlzPrcd.Name = "btnNrmlzPrcd";
-            this.btnNrmlzPrcd.Size = new System.Drawing.Size(94, 39);
+            this.btnNrmlzPrcd.Size = new System.Drawing.Size(102, 39);
             this.btnNrmlzPrcd.TabIndex = 12;
             this.btnNrmlzPrcd.Text = "Proceed";
+            this.btnNrmlzPrcd.Click += new System.EventHandler(this.btnNrmlzPrcd_Click);
             // 
-            // guna2Button2
+            // btnCancel
             // 
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(149, 288);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(98, 39);
-            this.guna2Button2.TabIndex = 13;
-            this.guna2Button2.Text = "guna2Button2";
+            this.btnCancel.BorderRadius = 3;
+            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(183, 288);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(107, 39);
+            this.btnCancel.TabIndex = 13;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // guna2Button3
             // 
@@ -227,13 +242,28 @@
             this.guna2Button3.TabIndex = 14;
             this.guna2Button3.Text = "guna2Button3";
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Stackpath;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(136, 289);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(41, 38);
+            this.iconButton1.TabIndex = 15;
+            this.iconButton1.Text = "iconButton1";
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // UC_Normalize
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.guna2Button3);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnNrmlzPrcd);
             this.Controls.Add(this.txtStd);
             this.Controls.Add(this.label6);
@@ -269,7 +299,8 @@
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2TextBox txtStd;
         private Guna.UI2.WinForms.Guna2Button btnNrmlzPrcd;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

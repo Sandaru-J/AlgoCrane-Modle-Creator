@@ -211,12 +211,16 @@
             this.txtbxPP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtbxPP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.txtbxPP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxPP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtbxPP.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxPP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtbxPP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxPP.Location = new System.Drawing.Point(16, 59);
+            this.txtbxPP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxPP.Multiline = true;
             this.txtbxPP.Name = "txtbxPP";
             this.txtbxPP.PasswordChar = '\0';
             this.txtbxPP.PlaceholderText = "";
+            this.txtbxPP.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtbxPP.SelectedText = "";
             this.txtbxPP.Size = new System.Drawing.Size(550, 351);
             this.txtbxPP.TabIndex = 5;
