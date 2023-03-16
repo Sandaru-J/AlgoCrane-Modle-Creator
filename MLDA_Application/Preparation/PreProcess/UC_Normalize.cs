@@ -27,9 +27,11 @@ namespace MLDA_Application.Preparation.PreProcess
         private void btnMinMax_Click(object sender, EventArgs e)
         {
             //btnMinMax.FillColor = Color.White;
+            //btnMinMax.BorderColor = Color.Black;
             txtStd.Enabled = false;
             NuupdMin.Enabled = true;
             NuupdMax.Enabled = true;
+            NupdDcml.Enabled = false;
             Method = 1;
             frmP_pp pp = (frmP_pp)this.ParentForm;
             pp.updatetext("MinMax Scaler Selected");
@@ -39,7 +41,7 @@ namespace MLDA_Application.Preparation.PreProcess
         public void normalize(int flag1)
         {
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
-            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Testing\pyScripts\cusNomlz.py";
+            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\pp_normalize.py";
             string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
             //string csv_path = @filePath;
             
@@ -47,6 +49,7 @@ namespace MLDA_Application.Preparation.PreProcess
             int method = Method;
             int min = (int)NuupdMin.Value;
             int max = (int)NuupdMax.Value;
+            int dcml=(int)NupdDcml.Value;
             int task = flag1;
             //string std  = txtStd.Text;
             double std = 0.1;
@@ -60,6 +63,7 @@ namespace MLDA_Application.Preparation.PreProcess
                                 $" \"{min}\"" +
                                 $" \"{max}\""+
                                 $" \"{std}\""+
+                                $" \"{dcml}\"" +
                                 $" \"{task}\"";
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
@@ -85,18 +89,17 @@ namespace MLDA_Application.Preparation.PreProcess
                 //pp.updatetext(output);
             }
         }
-
         private void BtnZcore_Click(object sender, EventArgs e)
         {
             //BtnZcore.FillColor = Color.Red;
             txtStd.Enabled = true;
             NuupdMax.Enabled = false;
             NuupdMin.Enabled = false;
+            NupdDcml.Enabled = false;
             Method = 2;
             frmP_pp pp = (frmP_pp)this.ParentForm;
             pp.updatetext("Zscore Standard Scaler Selected");
         }
-
         private void btnNrmlzPrcd_Click(object sender, EventArgs e)
         {
             if(NuupdMax.Value<NuupdMin.Value)
@@ -109,9 +112,7 @@ namespace MLDA_Application.Preparation.PreProcess
                 pp.updatetext("Proceeding");
                 normalize(1);
             }
-            
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             frmP_pp pp = (frmP_pp)this.ParentForm;
@@ -123,10 +124,19 @@ namespace MLDA_Application.Preparation.PreProcess
             BtnZcore.Enabled = true;
             btnMinMax.Enabled = true;
         }
-
         private void iconButton1_Click(object sender, EventArgs e)
         {
             normalize(2);
+        }
+        private void btnDcmlScl_Click(object sender, EventArgs e)
+        {
+            NuupdMax.Enabled = false;
+            NuupdMin.Enabled = false;
+            txtStd.Enabled = false;
+            NupdDcml.Enabled = true;
+            Method = 3;
+            frmP_pp pp = (frmP_pp)this.ParentForm;
+            pp.updatetext("Decimal Scalling Selected");
         }
     }
 }

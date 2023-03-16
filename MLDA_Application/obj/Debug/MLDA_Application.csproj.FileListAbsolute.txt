@@ -61,3 +61,4 @@ C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\bin\Debu
 C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Preparation.PreProcess.frmP_pp.resources
 C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Preparation.Shared.uplPopUp.resources
 C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Preparation.PreProcess.UC_Normalize.resources
+C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Preparation.PreProcess.UC_Encoding.resources

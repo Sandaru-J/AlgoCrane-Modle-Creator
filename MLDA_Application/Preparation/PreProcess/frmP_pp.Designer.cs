@@ -43,6 +43,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtbxPP = new Guna.UI2.WinForms.Guna2TextBox();
             this.uC_Normalize1 = new MLDA_Application.Preparation.PreProcess.UC_Normalize();
+            this.uC_Encoding1 = new MLDA_Application.Preparation.PreProcess.UC_Encoding();
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -82,6 +83,7 @@
             // 
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel9.BackColor = System.Drawing.Color.DimGray;
+            this.panel9.Controls.Add(this.uC_Encoding1);
             this.panel9.Controls.Add(this.uC_Normalize1);
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Location = new System.Drawing.Point(12, 12);
@@ -109,7 +111,7 @@
             this.guna2GradientButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2GradientButton3.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2GradientButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton3.FillColor = System.Drawing.Color.MediumBlue;
+            this.guna2GradientButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(70)))));
             this.guna2GradientButton3.FillColor2 = System.Drawing.Color.MidnightBlue;
             this.guna2GradientButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GradientButton3.ForeColor = System.Drawing.Color.White;
@@ -118,7 +120,7 @@
             this.guna2GradientButton3.Name = "guna2GradientButton3";
             this.guna2GradientButton3.Size = new System.Drawing.Size(106, 58);
             this.guna2GradientButton3.TabIndex = 2;
-            this.guna2GradientButton3.Text = "guna2GradientButton3";
+            this.guna2GradientButton3.Text = "Feature Selection";
             // 
             // btnNormalize
             // 
@@ -129,16 +131,17 @@
             this.btnNormalize.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNormalize.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNormalize.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNormalize.FillColor = System.Drawing.Color.MediumBlue;
+            this.btnNormalize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(70)))));
             this.btnNormalize.FillColor2 = System.Drawing.Color.MidnightBlue;
             this.btnNormalize.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnNormalize.ForeColor = System.Drawing.Color.White;
             this.btnNormalize.IndicateFocus = true;
-            this.btnNormalize.Location = new System.Drawing.Point(108, 3);
+            this.btnNormalize.Location = new System.Drawing.Point(2, 3);
             this.btnNormalize.Name = "btnNormalize";
             this.btnNormalize.Size = new System.Drawing.Size(106, 58);
             this.btnNormalize.TabIndex = 1;
             this.btnNormalize.Text = "Normalize";
+            this.btnNormalize.Click += new System.EventHandler(this.btnNormalize_Click);
             // 
             // btnscaling
             // 
@@ -150,15 +153,16 @@
             this.btnscaling.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnscaling.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnscaling.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(70)))));
-            this.btnscaling.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.btnscaling.FillColor2 = System.Drawing.Color.MidnightBlue;
             this.btnscaling.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnscaling.ForeColor = System.Drawing.Color.White;
             this.btnscaling.IndicateFocus = true;
-            this.btnscaling.Location = new System.Drawing.Point(3, 3);
+            this.btnscaling.Location = new System.Drawing.Point(108, 3);
             this.btnscaling.Name = "btnscaling";
             this.btnscaling.Size = new System.Drawing.Size(106, 58);
             this.btnscaling.TabIndex = 0;
-            this.btnscaling.Text = "Scaling";
+            this.btnscaling.Text = "Encode";
+            this.btnscaling.Click += new System.EventHandler(this.btnscaling_Click);
             // 
             // panel7
             // 
@@ -215,7 +219,7 @@
             this.txtbxPP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtbxPP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxPP.Location = new System.Drawing.Point(16, 59);
-            this.txtbxPP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxPP.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxPP.Multiline = true;
             this.txtbxPP.Name = "txtbxPP";
             this.txtbxPP.PasswordChar = '\0';
@@ -230,8 +234,16 @@
             this.uC_Normalize1.BackColor = System.Drawing.Color.DimGray;
             this.uC_Normalize1.Location = new System.Drawing.Point(7, 74);
             this.uC_Normalize1.Name = "uC_Normalize1";
-            this.uC_Normalize1.Size = new System.Drawing.Size(312, 345);
+            this.uC_Normalize1.Size = new System.Drawing.Size(312, 374);
             this.uC_Normalize1.TabIndex = 1;
+            // 
+            // uC_Encoding1
+            // 
+            this.uC_Encoding1.BackColor = System.Drawing.Color.DimGray;
+            this.uC_Encoding1.Location = new System.Drawing.Point(4, 70);
+            this.uC_Encoding1.Name = "uC_Encoding1";
+            this.uC_Encoding1.Size = new System.Drawing.Size(315, 400);
+            this.uC_Encoding1.TabIndex = 2;
             // 
             // frmP_pp
             // 
@@ -272,5 +284,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
         private Guna.UI2.WinForms.Guna2GradientButton btnNormalize;
         private UC_Normalize uC_Normalize1;
+        private UC_Encoding uC_Encoding1;
     }
 }

@@ -198,6 +198,12 @@
     <Compile Include="Preparation\PreProcess\frmP_pp.Designer.cs">
       <DependentUpon>frmP_pp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Preparation\PreProcess\UC_Encoding.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Preparation\PreProcess\UC_Encoding.Designer.cs">
+      <DependentUpon>UC_Encoding.cs</DependentUpon>
+    </Compile>
     <Compile Include="Preparation\PreProcess\UC_Normalize.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Preparation\PreProcess\frmP_pp.resx">
       <DependentUpon>frmP_pp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preparation\PreProcess\UC_Encoding.resx">
+      <DependentUpon>UC_Encoding.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preparation\PreProcess\UC_Normalize.resx">
       <DependentUpon>UC_Normalize.cs</DependentUpon>

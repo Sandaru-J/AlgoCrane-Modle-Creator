@@ -23,7 +23,16 @@ namespace MLDA_Application.Preparation.PreProcess
             txtbxPP.Text +=Environment.NewLine + text;
             txtbxPP.SelectionStart = txtbxPP.TextLength;
             txtbxPP.ScrollToCaret();
-            
+        }
+
+        private void btnNormalize_Click(object sender, EventArgs e)
+        {
+            uC_Normalize1.BringToFront();
+        }
+
+        private void btnscaling_Click(object sender, EventArgs e)
+        {
+            uC_Encoding1.BringToFront();
         }
     }
 }
