@@ -68,7 +68,7 @@
             this.iconButton2.Size = new System.Drawing.Size(137, 55);
             this.iconButton2.TabIndex = 2;
             this.iconButton2.Tag = "Train";
-            this.iconButton2.Text = "Prepare";
+            this.iconButton2.Text = "Training";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
             this.iconButton2.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
