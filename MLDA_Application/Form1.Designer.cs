@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.MBtn_Train = new FontAwesome.Sharp.IconButton();
             this.MpBtn_Prepare = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
@@ -42,7 +42,7 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.pnlMenu.Controls.Add(this.iconButton2);
+            this.pnlMenu.Controls.Add(this.MBtn_Train);
             this.pnlMenu.Controls.Add(this.MpBtn_Prepare);
             this.pnlMenu.Controls.Add(this.pnlLogo);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -52,26 +52,27 @@
             this.pnlMenu.TabIndex = 0;
             this.pnlMenu.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
             // 
-            // iconButton2
+            // MBtn_Train
             // 
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Beer;
-            this.iconButton2.IconColor = System.Drawing.Color.SandyBrown;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 154);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(137, 55);
-            this.iconButton2.TabIndex = 2;
-            this.iconButton2.Tag = "Train";
-            this.iconButton2.Text = "Prepare";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
+            this.MBtn_Train.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MBtn_Train.FlatAppearance.BorderSize = 0;
+            this.MBtn_Train.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MBtn_Train.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MBtn_Train.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.MBtn_Train.IconChar = FontAwesome.Sharp.IconChar.Beer;
+            this.MBtn_Train.IconColor = System.Drawing.Color.SandyBrown;
+            this.MBtn_Train.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MBtn_Train.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MBtn_Train.Location = new System.Drawing.Point(0, 154);
+            this.MBtn_Train.Name = "MBtn_Train";
+            this.MBtn_Train.Size = new System.Drawing.Size(137, 55);
+            this.MBtn_Train.TabIndex = 2;
+            this.MBtn_Train.Tag = "Train";
+            this.MBtn_Train.Text = "Train";
+            this.MBtn_Train.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.MBtn_Train.UseVisualStyleBackColor = true;
+            this.MBtn_Train.Click += new System.EventHandler(this.MBtn_Train_Click);
+            this.MBtn_Train.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
             // 
             // MpBtn_Prepare
             // 
@@ -166,7 +167,7 @@
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel pnlChildHolder;
         private FontAwesome.Sharp.IconButton btnMenu;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton MBtn_Train;
     }
 }
 

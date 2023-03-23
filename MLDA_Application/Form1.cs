@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MLDA_Application.Train;
 
 
 
@@ -108,6 +109,10 @@ namespace MLDA_Application
                 }
             }
           
+        }
+        private void MBtn_Train_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Train.frmT_Main());
         }
     }
 }
