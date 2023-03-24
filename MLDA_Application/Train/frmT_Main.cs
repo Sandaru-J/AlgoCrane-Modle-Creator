@@ -132,7 +132,6 @@ namespace MLDA_Application.Train
             string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Testing\pyScripts\sampling.py";
             string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\MelBon Housing\melb_data.csv";
             //string csv_path = @filePath;
-            Console.WriteLine("path in csvupLoad: " + csv_path);
 
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = python_Interpreter_Path;
@@ -184,7 +183,6 @@ namespace MLDA_Application.Train
             //txtBxCmd.Text = e.Input2;
 
             Console.WriteLine(e.Input2 + e.Input1+e.Type);
-            
             if (e.Type)
             {
                 filename = e.Input1;
@@ -193,9 +191,8 @@ namespace MLDA_Application.Train
             }
             if(!e.Type)
             {
-                Console.WriteLine("in here");
-                fiterSmple(5);
                 
+                fiterSmple(5);
             }
         }
     }
