@@ -23,9 +23,6 @@ namespace MLDA_Application.Preparation
             txtCleanView.Padding = new Padding(15, 5, 5, 5);
             model = new prepareModel();
             string x = get();
-            Console.WriteLine("water:"+x);
-            
-            
         }
         public void SetFilePath(string filePath)
         {
