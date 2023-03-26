@@ -38,7 +38,7 @@ namespace MLDA_Application.Preparation
             
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
             string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\pc_missing.py";
-            string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\MelBon Housing\melb_data.csv";
+            string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Trunfo AirPlanes\airplanes.csv";
             //string csv_path = @filePath;
             Console.WriteLine("path in csvupLoad: " + csv_path);
 
