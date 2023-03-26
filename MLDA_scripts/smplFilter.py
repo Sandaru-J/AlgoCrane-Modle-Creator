@@ -46,7 +46,6 @@ if "4" in btn:
 
     # random sampling
     sample = data.sample(n=sample_size)
-    print("in sample")
     print(sample)
 
 if "1" in btn:
@@ -98,7 +97,7 @@ if "5" in btn:
         filtered_data = data
     type=False
     # save_as_new_file = True
-    if type:       
+    if type:
         # file_path=r'C:\Users\Sandaru\Desktop\Sophia\Datasets'
         filtered_data.to_csv(f"{fileLoc}/{fileName}.csv", index=False)
         print("Filtered data saved as new file:", f"{fileLoc}/{fileName}.csv")
@@ -107,7 +106,3 @@ if "5" in btn:
         filtered_data.to_csv(csv_file_path, index=False)
         print("Filtered data updated in file:", csv_file_path)
 
-
-print("Random sample:")
-
-print(data.shape)

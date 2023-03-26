@@ -13,11 +13,15 @@ namespace MLDA_Application.Train
 {
     public partial class frmT_Main : Form
     {
-        int smplvalue;
+        int smplvalue=50;
         string colName;
         string colValue;
         string filename;
         string path;
+        string con_cols;
+        string targetCol;
+        int noOfCols;
+        int btnSub = 0;
         public frmT_Main()
         {
             InitializeComponent();
@@ -195,5 +199,108 @@ namespace MLDA_Application.Train
                 fiterSmple(5);
             }
         }
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            txtBxCon_Cols.Text = "All Columns Selected";
+            btnSub = 1;
+        }
+        public void featureSelect(int button)
+        {
+            int featureBtn = button;
+            string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
+            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\FeatureSelect.py";
+            string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
+            //string csv_path = @filePath;
+
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.FileName = python_Interpreter_Path;
+            start.Arguments = $"\"{python_Script_Path}\"" +
+                                $" \"{csv_path}\"" +
+                                $" \"{featureBtn}\""+
+                                $" \"{con_cols}\"" +
+                                $" \"{targetCol}\"" +
+                                $" \"{noOfCols}\""+
+                                $" \"{btnSub}\"";
+            start.UseShellExecute = false;
+            start.RedirectStandardOutput = true;
+            start.CreateNoWindow = true;
+
+            //Console.WriteLine("set:" + csv_path);
+            // Start the process and get the output
+            using (Process process = Process.Start(start))
+            {
+                // Read the output from the Python script
+                string output = process.StandardOutput.ReadToEnd();
+
+                txtBxCmd.Text = txtBxCmd.Text + output;
+                txtBxCmd.SelectionStart = txtBxCmd.TextLength;
+                txtBxCmd.ScrollToCaret();
+            }
+        }
+
+        private void btnPrintCol_Click(object sender, EventArgs e)
+        {
+            featureSelect(1);
+        }
+
+        private void BtnCheckFeSe_Click(object sender, EventArgs e)
+        {
+            if ((string.IsNullOrEmpty(txtBxCon_Cols.Text)) ||
+                (string.IsNullOrEmpty(txtBx_targtCol.Text)) || 
+                (string.IsNullOrEmpty(NuUpD_no_of_cols.Value.ToString())))
+            {
+                MessageBox.Show("Text Fields are empty to Proceed", "Missing");
+            }
+            else
+            {
+                con_cols= txtBxCon_Cols.Text;
+                targetCol = txtBx_targtCol.Text;
+                noOfCols = (int)NuUpD_no_of_cols.Value;
+                featureSelect(2);
+            }
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            txtBx_targtCol.Text = " ";
+            txtBxCon_Cols.Text = " ";
+            NuUpD_no_of_cols.ResetText();
+        }
+
+        private void BtnMse_Click(object sender, EventArgs e)
+        {
+            if ((string.IsNullOrEmpty(txtBxCon_Cols.Text)) ||
+               (string.IsNullOrEmpty(txtBx_targtCol.Text)) ||
+               (string.IsNullOrEmpty(NuUpD_no_of_cols.Value.ToString())))
+            {
+                MessageBox.Show("Text Fields are empty to Proceed", "Missing");
+            }
+            else
+            {
+                con_cols = txtBxCon_Cols.Text;
+                targetCol = txtBx_targtCol.Text;
+                noOfCols = (int)NuUpD_no_of_cols.Value;
+                featureSelect(3);
+            }
+        }
+
+        private void BtnRSq_Click(object sender, EventArgs e)
+        {
+            if ((string.IsNullOrEmpty(txtBxCon_Cols.Text)) ||
+               (string.IsNullOrEmpty(txtBx_targtCol.Text)) ||
+               (string.IsNullOrEmpty(NuUpD_no_of_cols.Value.ToString())))
+            {
+                MessageBox.Show("Text Fields are empty to Proceed", "Missing");
+            }
+            else
+            {
+                con_cols = txtBxCon_Cols.Text;
+                targetCol = txtBx_targtCol.Text;
+                noOfCols = (int)NuUpD_no_of_cols.Value;
+                featureSelect(4);
+            }
+        }
+
+        
     }
 }
