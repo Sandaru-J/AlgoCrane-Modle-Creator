@@ -35,6 +35,8 @@
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlChildHolder = new System.Windows.Forms.Panel();
+            this.btnVisual = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             this.SuspendLayout();
@@ -42,6 +44,8 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.pnlMenu.Controls.Add(this.btnVisual);
+            this.pnlMenu.Controls.Add(this.iconButton2);
             this.pnlMenu.Controls.Add(this.MBtn_Train);
             this.pnlMenu.Controls.Add(this.MpBtn_Prepare);
             this.pnlMenu.Controls.Add(this.pnlLogo);
@@ -140,6 +144,47 @@
             this.pnlChildHolder.Size = new System.Drawing.Size(784, 477);
             this.pnlChildHolder.TabIndex = 2;
             // 
+            // btnVisual
+            // 
+            this.btnVisual.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVisual.FlatAppearance.BorderSize = 0;
+            this.btnVisual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVisual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisual.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnVisual.IconChar = FontAwesome.Sharp.IconChar.Beer;
+            this.btnVisual.IconColor = System.Drawing.Color.SandyBrown;
+            this.btnVisual.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVisual.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVisual.Location = new System.Drawing.Point(0, 264);
+            this.btnVisual.Name = "btnVisual";
+            this.btnVisual.Size = new System.Drawing.Size(137, 55);
+            this.btnVisual.TabIndex = 4;
+            this.btnVisual.Tag = "";
+            this.btnVisual.Text = "Visualization";
+            this.btnVisual.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVisual.UseVisualStyleBackColor = true;
+            this.btnVisual.Click += new System.EventHandler(this.btnVisual_Click);
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Beer;
+            this.iconButton2.IconColor = System.Drawing.Color.SandyBrown;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.Location = new System.Drawing.Point(0, 209);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(137, 55);
+            this.iconButton2.TabIndex = 3;
+            this.iconButton2.Tag = "";
+            this.iconButton2.Text = "Template";
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,6 +213,8 @@
         private System.Windows.Forms.Panel pnlChildHolder;
         private FontAwesome.Sharp.IconButton btnMenu;
         private FontAwesome.Sharp.IconButton MBtn_Train;
+        private FontAwesome.Sharp.IconButton btnVisual;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }
 

@@ -237,6 +237,18 @@
     <Compile Include="Train\UpSvPopUp.Designer.cs">
       <DependentUpon>UpSvPopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Visualization\frmV_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visualization\frmV_Main.Designer.cs">
+      <DependentUpon>frmV_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visualization\vizualPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visualization\vizualPopUp.Designer.cs">
+      <DependentUpon>vizualPopUp.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,6 +290,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Train\UpSvPopUp.resx">
       <DependentUpon>UpSvPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visualization\frmV_Main.resx">
+      <DependentUpon>frmV_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visualization\vizualPopUp.resx">
+      <DependentUpon>vizualPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="libmongocrypt.dylib" />
     <None Include="libmongocrypt.so" />

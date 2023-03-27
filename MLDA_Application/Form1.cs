@@ -114,5 +114,10 @@ namespace MLDA_Application
         {
             OpenChildForm(new Train.frmT_Main());
         }
+
+        private void btnVisual_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Visualization.frmV_Main());
+        }
     }
 }
