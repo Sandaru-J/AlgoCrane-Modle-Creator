@@ -36,10 +36,18 @@ namespace MLDA_Application.Train
         int noOfCols;
         int btnSub = 0;
         int algobtn = 1;
-        string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\Iris set\iris_test.csv";
+        //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\Iris set\iris_test.csv";
+        //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
+        string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Ca  Housing Prices\housing.csv";
         public frmT_Main()
         {
             InitializeComponent();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
         }
 
         public void preTrainScript(int flag1)
@@ -327,7 +335,7 @@ namespace MLDA_Application.Train
         {
             int btn = flag1;
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
-            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Testing\pyScripts\train1.py";
+            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\Train&Model.py";
             //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
             //string csv_path = @filePath;
 
@@ -390,6 +398,7 @@ namespace MLDA_Application.Train
         {
             try
             {
+                /*
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     txtBxModLoc.Text= openFileDialog1.FileName;
@@ -400,6 +409,14 @@ namespace MLDA_Application.Train
                 else
                 {
 
+                }
+                */
+                FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+                folderBrowserDialog.RootFolder = Environment.SpecialFolder.Desktop;
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txtBxModLoc.Text = folderBrowserDialog.SelectedPath;
+                    mdlLoc = folderBrowserDialog.SelectedPath;
                 }
             }
             catch (Exception ex)
