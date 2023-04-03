@@ -81,6 +81,8 @@ if "2" in btn:
     print(f"\nSelected {num_cols_to_keep} Features:")
     for element in selected_cols:
         print(element)
+    print("\nCopy these for Training")
+    print(','.join(selected_cols))
 
 
 if "3" in btn:

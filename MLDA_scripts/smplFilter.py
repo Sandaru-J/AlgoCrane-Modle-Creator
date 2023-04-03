@@ -1,6 +1,7 @@
 import pandas as pd
 import random
 import sys
+import time
 
 rows=[]
 path=sys.argv[1]
@@ -13,12 +14,14 @@ fileName=sys.argv[6]
 fileLoc=sys.argv[7]
 
 
-csv_file_path = r'C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv'
-# read CSV data into a Pandas dataframe
-data = pd.read_csv(csv_file_path)
+with open(path, 'r') as file:
+    data = pd.read_csv(file)
+csv_file_path = r'C:\Users\Sandaru\Desktop\Sophia\Datasets'
+# # read CSV data into a Pandas dataframe
+# data = pd.read_csv(path)
 
 if "2" in btn:
-
+    start_time = time.time()
     column_name=colName
     while column_name not in data.columns:
         if column_name not in data.columns:
@@ -79,7 +82,12 @@ if "1" in btn:
         filtered_data.to_csv(csv_file_path, index=False)
         print("Sample updated in file:", csv_file_path)
 
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+
+print(f"Time taken: {elapsed_time:.4f} seconds")
 if "5" in btn:
+    start_time = time.time()
     column_name=colName
     while column_name not in data.columns:
         if column_name not in data.columns:
@@ -106,3 +114,7 @@ if "5" in btn:
         filtered_data.to_csv(csv_file_path, index=False)
         print("Filtered data updated in file:", csv_file_path)
 
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+
+    print(f"Time taken: {elapsed_time:.4f} seconds")
