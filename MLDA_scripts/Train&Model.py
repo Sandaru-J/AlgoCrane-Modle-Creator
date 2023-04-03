@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, accuracy_score, confusion_matrix
+from sklearn.metrics import mean_squared_error, accuracy_score, confusion_matrix, mean_absolute_percentage_error
 import joblib
 import sys
 import time
@@ -66,13 +66,24 @@ if "1" in btn:
         test_score = lr.score(X_test, y_test)
         print(f"The R-squared score on the testing set is {test_score:.2f}")
 
+        # # Evaluate the model on the testing set
+        # y_pred = lr.predict(X_test)
+        # mse = mean_squared_error(y_test, y_pred)
+        # test_accuracy = 100 - mse/y_test.mean() * 100
+        # print(f"The mean squared error on the testing set is {mse:.2f}")
+        # print(f"The testing accuracy is {test_accuracy:.2f}%")
+        # print("Model Trained Successfully")
+
         # Evaluate the model on the testing set
         y_pred = lr.predict(X_test)
         mse = mean_squared_error(y_test, y_pred)
-        test_accuracy = 100 - mse/y_test.mean() * 100
+        mape = mean_absolute_percentage_error(y_test, y_pred)
+        # test_accuracy = 100 - mse/y_test.mean() * 100
         print(f"The mean squared error on the testing set is {mse:.2f}")
-        print(f"The testing accuracy is {test_accuracy:.2f}%")
+        print(f"The testing accuracy is {mape:.2f}%")
+
         print("Model Trained Successfully")
+
 
 
 

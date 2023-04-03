@@ -38,7 +38,7 @@ namespace MLDA_Application.Train
         int algobtn = 1;
         //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\Iris set\iris_test.csv";
         //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
-        string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Ca  Housing Prices\housing.csv";
+        string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Supermarket sales\supermarket_sales - Sheet1.csv";
         public frmT_Main()
         {
             InitializeComponent();
@@ -54,7 +54,7 @@ namespace MLDA_Application.Train
         {
             int button = flag1;
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
-            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Testing\pyScripts\preInfo.py";
+            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\PreTrainInfo.py";
             //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
             //string csv_path = @filePath;
             Console.WriteLine("path in csvupLoad: " + csv_path);
