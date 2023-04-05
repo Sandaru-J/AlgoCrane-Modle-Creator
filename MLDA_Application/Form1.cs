@@ -10,14 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MLDA_Application.Train;
-
-
+using MLDA_Application.Shared;
 
 namespace MLDA_Application
 {
     public partial class FormMain : Form
     {
         private Form currentChildForm;
+
+        private frmP_Main instaPrepare;
+        private frmT_Main instaTrain;
+
+        string dfName;
         public FormMain()
         {
             InitializeComponent();
@@ -28,6 +32,7 @@ namespace MLDA_Application
             this.ControlBox = false;
             this.DoubleBuffered= true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -44,9 +49,14 @@ namespace MLDA_Application
        
         private void OpenChildForm(Form childForm)
         {
-            if(currentChildForm!=null)
+            foreach (Control control in pnlChildHolder.Controls)
             {
-                currentChildForm.Close();
+                if (control.GetType() == childForm.GetType())
+                {
+                    // Child form instance already exists, bring it to front
+                    control.BringToFront();
+                    return;
+                }
             }
             currentChildForm = childForm;
             childForm.TopLevel = false;
@@ -57,10 +67,24 @@ namespace MLDA_Application
             childForm.BringToFront();
             childForm.Show();
         }
-
+        private void instaPrepare_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instaPrepare.FormClosed -= instaPrepare_FormClosed;
+            instaPrepare = null;
+        }
+        private void instaTrain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instaTrain.FormClosed -= instaTrain_FormClosed;
+            instaTrain = null;
+        }
         private void MpBtn_Prepare_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Preparation.frmP_Main());
+            if (instaPrepare== null)
+            {
+                instaPrepare = new frmP_Main();
+                instaPrepare.FormClosed += instaPrepare_FormClosed;
+            }
+            OpenChildForm(instaPrepare);
         }
 
         private void FormMain_Resize(object sender, EventArgs e)
@@ -112,7 +136,27 @@ namespace MLDA_Application
         }
         private void MBtn_Train_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Train.frmT_Main());
+            if (instaTrain== null)
+            {
+                instaTrain = new frmT_Main();
+                instaTrain.FormClosed += instaTrain_FormClosed;
+            }
+            OpenChildForm(instaTrain);
+        }
+
+        private void btnLoadDf_Click(object sender, EventArgs e)
+        {
+            var popupLoad = new frmDfLoad();
+            popupLoad.DataSent += PopUpForm_DataSent;
+            //popupLoad.Owner = this;
+            popupLoad.ShowDialog();
+        }
+        private void PopUpForm_DataSent(object sender, Shared.DataSentEventArgs e)
+        {
+            Console.WriteLine(e.name + e.path);
+            //MpBtn_Prepare.Text = e.name;
+            dfName = e.name;
+            //PathModel.Path = e.path;
         }
     }
 }

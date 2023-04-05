@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmP_Main));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPreProcess = new Guna.UI2.WinForms.Guna2Button();
             this.btnCleaning = new Guna.UI2.WinForms.Guna2Button();
             this.btnCatImport = new FontAwesome.Sharp.IconButton();
             this.pnlPfrmHolder = new System.Windows.Forms.Panel();
@@ -39,7 +40,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnPreProcess = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.pnlPfrmHolder.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,8 +60,25 @@
             this.panel1.Size = new System.Drawing.Size(767, 47);
             this.panel1.TabIndex = 0;
             // 
+            // btnPreProcess
+            // 
+            this.btnPreProcess.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btnPreProcess.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPreProcess.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPreProcess.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPreProcess.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPreProcess.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPreProcess.ForeColor = System.Drawing.Color.White;
+            this.btnPreProcess.Location = new System.Drawing.Point(268, 0);
+            this.btnPreProcess.Name = "btnPreProcess";
+            this.btnPreProcess.Size = new System.Drawing.Size(139, 46);
+            this.btnPreProcess.TabIndex = 2;
+            this.btnPreProcess.Text = "Pre Processing";
+            this.btnPreProcess.Click += new System.EventHandler(this.btnPreProcess_Click);
+            // 
             // btnCleaning
             // 
+            this.btnCleaning.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
             this.btnCleaning.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCleaning.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCleaning.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -146,21 +163,6 @@
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(151, 22);
             this.toolStripMenuItem2.Text = "Duplicates";
-            // 
-            // btnPreProcess
-            // 
-            this.btnPreProcess.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPreProcess.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPreProcess.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPreProcess.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPreProcess.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnPreProcess.ForeColor = System.Drawing.Color.White;
-            this.btnPreProcess.Location = new System.Drawing.Point(268, 0);
-            this.btnPreProcess.Name = "btnPreProcess";
-            this.btnPreProcess.Size = new System.Drawing.Size(139, 46);
-            this.btnPreProcess.TabIndex = 2;
-            this.btnPreProcess.Text = "Pre Processing";
-            this.btnPreProcess.Click += new System.EventHandler(this.btnPreProcess_Click);
             // 
             // frmP_Main
             // 

@@ -3,14 +3,17 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder, OrdinalEncoder
 import os,sys
 
 rows = []
-technique=sys.argv[1]
-otpType=sys.argv[2]
-unknCat=sys.argv[3]
-scale=sys.argv[4]
+path=sys.argv[1]
+technique=sys.argv[2]
+otpType=sys.argv[3]
+unknCat=sys.argv[4]
+scale=sys.argv[5]
 
 # Load dataset
-url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data'
-df = pd.read_csv(r"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv")
+# url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data'
+# df = pd.read_csv(r"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv")
+with open(path, 'r') as file:
+    df = pd.read_csv(file)
 # df = pd.read_csv(url)
 # print("technique: ",technique,"\t","outputype: ",otpType,"\t","unknown: ",unknCat,"\t","scale: ",scale,"\t")
 

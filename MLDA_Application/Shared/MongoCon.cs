@@ -86,5 +86,40 @@ namespace MLDA_Application.Shared
             return names;
         }
 
+        public List<DataFile> DgvData()
+        {
+            // Create a MongoDB client
+            var connectionString = "mongodb+srv://SiteUser:nAxKdh83uoIeaWFc@cluster0.h9ytvqs.mongodb.net";
+            var client = new MongoClient(connectionString);
+
+            // Get a database reference
+            var databaseName = "MLDA";
+            var database = client.GetDatabase(databaseName);
+
+            // Get a collection reference
+            var collectionName = "DataFiles";
+            var collection = database.GetCollection<BsonDocument>(collectionName);
+
+            var projection = Builders<BsonDocument>.Projection.Include("name").Include("path");
+
+            // Retrieve the documents in the collection with the name and path fields
+            var documents = collection.Find(new BsonDocument()).Project(projection).ToList();
+
+            // Convert the documents to a list of DataFile objects
+            var dataFiles = documents.Select(d => new DataFile
+            {
+                Name = d["name"].AsString,
+                Path = d["path"].AsString
+            }).ToList();
+
+            return dataFiles;
+        }
+
     }
+    public class DataFile
+    {
+        public string Name { get; set; }
+        public string Path { get; set; }
+    }
+
 }

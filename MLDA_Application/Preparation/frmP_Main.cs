@@ -16,6 +16,10 @@ namespace MLDA_Application.Preparation
         private frmP_Import frmP_Import1;
         private Form currentPchildForm;
         private Form currentUC;
+
+        private frmP_clean instClean;
+        private frmP_pp instPreProcess;
+        private frmP_Import instImport;
         public frmP_Main()
         {
             InitializeComponent();
@@ -48,16 +52,18 @@ namespace MLDA_Application.Preparation
             frmP_Import.Width = this.Width;
             frmP_Import.Height = this.Height;
         }
-
-
         private void OpenPChildForm(Form childForm)
         {
-            /*if(currentPchildForm == null)
+            // Check if the child form instance already exists
+            foreach (Control control in pnlPfrmHolder.Controls)
             {
-                currentPchildForm.Close();  
+                if (control.GetType() == childForm.GetType())
+                {
+                    // Child form instance already exists, bring it to front
+                    control.BringToFront();
+                    return;
+                }
             }
-            */
-            
             currentPchildForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -66,11 +72,36 @@ namespace MLDA_Application.Preparation
             pnlPfrmHolder.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+
+            currentPchildForm = childForm;
+        }
+
+        private void instClean_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instClean.FormClosed -= instClean_FormClosed;
+            instClean = null;
+        }
+
+        private void instPreProcess_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instPreProcess.FormClosed -= instPreProcess_FormClosed;
+            instPreProcess = null;
+        }
+
+        private void instImport_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instImport.FormClosed -= instImport_FormClosed;
+            instImport = null;
         }
 
         private void btnCatImport_Click(object sender, EventArgs e)
         {
-                OpenPChildForm(new frmP_Import());
+            if (instImport == null)
+            {
+                instImport = new frmP_Import();
+                instImport.FormClosed += instImport_FormClosed;
+            }
+            OpenPChildForm(instImport);
         }
         private void FormMainMenu_Resize(object sender, EventArgs e)
         {
@@ -82,12 +113,18 @@ namespace MLDA_Application.Preparation
 
         private void btnCleaning_Click(object sender, EventArgs e)
         {
-                OpenPChildForm(new frmP_clean());
+            btnPreProcess.Checked = false;
+            if(instClean == null)
+            {
+                instClean = new frmP_clean();
+                instClean.FormClosed += instClean_FormClosed;
+            }
+                OpenPChildForm(instClean);
         }
 
         private void btnCleaning_MouseHover(object sender, EventArgs e)
         {
-            contextMenuStrip1.Show(btnCleaning, new Point(0, btnCleaning.Height));
+            //contextMenuStrip1.Show(btnCleaning, new Point(0, btnCleaning.Height));
         }
         private void OpenUserControls(Form childForm)
         {
@@ -107,7 +144,13 @@ namespace MLDA_Application.Preparation
 
         private void btnPreProcess_Click(object sender, EventArgs e)
         {
-            OpenPChildForm(new frmP_pp());
+            btnCleaning.Checked = false;
+            if (instPreProcess== null)
+            {
+                instPreProcess = new frmP_pp();
+                instPreProcess.FormClosed += instPreProcess_FormClosed;
+            }
+            OpenPChildForm(instPreProcess);
         }
     }
 }

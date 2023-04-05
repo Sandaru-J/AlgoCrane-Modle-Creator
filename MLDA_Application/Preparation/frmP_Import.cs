@@ -10,15 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MLDA_Application.Preparation.Shared;
+using MLDA_Application.Shared;
 
 namespace MLDA_Application.Preparation
 {
-
     public partial class frmP_Import : Form
     {
+        string tempName;
+        string tempPath;
         public string filePath;
         private UC_PC_missing ucM;
         public string fileName;
+
         public frmP_Import()
         {
             InitializeComponent();
@@ -57,7 +60,7 @@ namespace MLDA_Application.Preparation
                 {
                     guna2TextBox1.Text = openFileDialog1.FileName;
                     filePath = openFileDialog1.FileName;
-                    ucM.SetFilePath(filePath);
+                    //ucM.SetFilePath(filePath);
                     fileName=Path.GetFileName(openFileDialog1.FileName);
                 }
                 else
@@ -99,7 +102,6 @@ namespace MLDA_Application.Preparation
                             dr[headerword] = null;
                             label1.Text = "This file has already Extracted"; 
                                 }
-                        
                     }
                     dt.Rows.Add(dr);
                 }
@@ -184,5 +186,11 @@ namespace MLDA_Application.Preparation
             DialogResult result= uplPopUp.ShowDialog();
 
         }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Cancel Cliked");
+            
+        }
+
     }
 }
