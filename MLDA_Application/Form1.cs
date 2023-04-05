@@ -10,8 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MLDA_Application.Train;
-
-
+using MLDA_Application.Shared;
 
 namespace MLDA_Application
 {
@@ -21,6 +20,8 @@ namespace MLDA_Application
 
         private frmP_Main instaPrepare;
         private frmT_Main instaTrain;
+
+        string dfName;
         public FormMain()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace MLDA_Application
             this.ControlBox = false;
             this.DoubleBuffered= true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -56,10 +58,6 @@ namespace MLDA_Application
                     return;
                 }
             }
-            //if (currentChildForm!=null)
-            //{
-                //currentChildForm.Close();
-            //}
             currentChildForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -144,6 +142,21 @@ namespace MLDA_Application
                 instaTrain.FormClosed += instaTrain_FormClosed;
             }
             OpenChildForm(instaTrain);
+        }
+
+        private void btnLoadDf_Click(object sender, EventArgs e)
+        {
+            var popupLoad = new frmDfLoad();
+            popupLoad.DataSent += PopUpForm_DataSent;
+            //popupLoad.Owner = this;
+            popupLoad.ShowDialog();
+        }
+        private void PopUpForm_DataSent(object sender, Shared.DataSentEventArgs e)
+        {
+            Console.WriteLine(e.name + e.path);
+            //MpBtn_Prepare.Text = e.name;
+            dfName = e.name;
+            //PathModel.Path = e.path;
         }
     }
 }

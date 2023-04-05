@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MLDA_Application.Shared;
 
 namespace MLDA_Application.Preparation.PreProcess
 {
@@ -19,11 +20,41 @@ namespace MLDA_Application.Preparation.PreProcess
         int Min=0;
         int Std = 1;
         int Method = 1;
+
+        public string filePath;
+        public string fileName;
         public UC_Normalize()
         {
             InitializeComponent();
+            filePath = PathModel.Path;
+            fileName = PathModel.Name;
         }
-
+        public bool DfChekc()
+        {
+            if (filePath == null)
+            {
+                DialogResult result = MessageBox.Show("You Have not selected any DataSets." +
+                    "Click Refresh to if already Selected.",
+                    "Warning", MessageBoxButtons.RetryCancel);
+                if (result == DialogResult.Retry)
+                {
+                    filePath = PathModel.Path;
+                    fileName = PathModel.Name;
+                    //if (filePath != null)
+                    //{
+                    //txtCleanView.Text += txtCleanView.Text + "File " + fileName + " Selected."+"\r";
+                    //}
+                    if (filePath == null)
+                    {
+                        MessageBox.Show("You Have not Selected");
+                        return false;
+                    }
+                    return true;
+                }
+                return false;
+            }
+            return true;
+        }
         private void btnMinMax_Click(object sender, EventArgs e)
         {
             //btnMinMax.FillColor = Color.White;
@@ -40,10 +71,15 @@ namespace MLDA_Application.Preparation.PreProcess
         
         public void normalize(int flag1)
         {
+            bool check = DfChekc();
+            if (!check)
+            {
+                return;
+            }
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
             string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\pp_normalize.py";
-            string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
-            //string csv_path = @filePath;
+            //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
+            string csv_path = @filePath;
             
             int init;
             int method = Method;

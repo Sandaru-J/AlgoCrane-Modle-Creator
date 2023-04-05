@@ -18,9 +18,8 @@ namespace MLDA_Application.Preparation
             InitializeComponent();
             listBox1.Padding= new Padding(15, 5, 5, 5);
             //bindList();
-            uC_PC_missing1.Visible = false;
+            //uC_PC_missing1.Visible = false;
         }
-
         private void btnMissingval_Click(object sender, EventArgs e)
         {
             uC_PC_missing1.Show();

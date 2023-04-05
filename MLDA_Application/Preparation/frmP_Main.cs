@@ -52,8 +52,6 @@ namespace MLDA_Application.Preparation
             frmP_Import.Width = this.Width;
             frmP_Import.Height = this.Height;
         }
-
-
         private void OpenPChildForm(Form childForm)
         {
             // Check if the child form instance already exists
@@ -66,7 +64,6 @@ namespace MLDA_Application.Preparation
                     return;
                 }
             }
-
             currentPchildForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -116,6 +113,7 @@ namespace MLDA_Application.Preparation
 
         private void btnCleaning_Click(object sender, EventArgs e)
         {
+            btnPreProcess.Checked = false;
             if(instClean == null)
             {
                 instClean = new frmP_clean();
@@ -126,7 +124,7 @@ namespace MLDA_Application.Preparation
 
         private void btnCleaning_MouseHover(object sender, EventArgs e)
         {
-            contextMenuStrip1.Show(btnCleaning, new Point(0, btnCleaning.Height));
+            //contextMenuStrip1.Show(btnCleaning, new Point(0, btnCleaning.Height));
         }
         private void OpenUserControls(Form childForm)
         {
@@ -146,6 +144,7 @@ namespace MLDA_Application.Preparation
 
         private void btnPreProcess_Click(object sender, EventArgs e)
         {
+            btnCleaning.Checked = false;
             if (instPreProcess== null)
             {
                 instPreProcess = new frmP_pp();

@@ -35,8 +35,10 @@
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlChildHolder = new System.Windows.Forms.Panel();
+            this.btnLoadDf = new Guna.UI2.WinForms.Guna2Button();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
+            this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -123,6 +125,7 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.pnlTop.Controls.Add(this.btnLoadDf);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(137, 0);
             this.pnlTop.Name = "pnlTop";
@@ -140,6 +143,25 @@
             this.pnlChildHolder.Size = new System.Drawing.Size(784, 477);
             this.pnlChildHolder.TabIndex = 2;
             // 
+            // btnLoadDf
+            // 
+            this.btnLoadDf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLoadDf.BorderRadius = 1;
+            this.btnLoadDf.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadDf.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadDf.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoadDf.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoadDf.FillColor = System.Drawing.Color.Orange;
+            this.btnLoadDf.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLoadDf.ForeColor = System.Drawing.Color.White;
+            this.btnLoadDf.Location = new System.Drawing.Point(676, 21);
+            this.btnLoadDf.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
+            this.btnLoadDf.Name = "btnLoadDf";
+            this.btnLoadDf.Size = new System.Drawing.Size(96, 30);
+            this.btnLoadDf.TabIndex = 0;
+            this.btnLoadDf.Text = "Load DF";
+            this.btnLoadDf.Click += new System.EventHandler(this.btnLoadDf_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,6 +177,7 @@
             this.Resize += new System.EventHandler(this.FormMain_Resize);
             this.pnlMenu.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
+            this.pnlTop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -168,6 +191,7 @@
         private System.Windows.Forms.Panel pnlChildHolder;
         private FontAwesome.Sharp.IconButton btnMenu;
         private FontAwesome.Sharp.IconButton MBtn_Train;
+        private Guna.UI2.WinForms.Guna2Button btnLoadDf;
     }
 }
 

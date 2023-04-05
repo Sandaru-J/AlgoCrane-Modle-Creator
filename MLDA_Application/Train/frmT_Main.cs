@@ -37,8 +37,8 @@ namespace MLDA_Application.Train
         int btnSub = 0;
         int algobtn = 1;
         //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\Iris set\iris_test.csv";
-        //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
-        string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Supermarket sales\supermarket_sales - Sheet1.csv";
+        string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
+        //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Supermarket sales\supermarket_sales - Sheet1.csv";
         public frmT_Main()
         {
             InitializeComponent();

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MLDA_Application.Shared;
 
 namespace MLDA_Application.Preparation.PreProcess
 {
@@ -21,17 +22,52 @@ namespace MLDA_Application.Preparation.PreProcess
         int scale = 1;
 
         private bool btnTechnique=false;
+        public string filePath;
+        public string fileName;
         public UC_Encoding()
         {
             InitializeComponent();
+            filePath = PathModel.Path;
+            fileName = PathModel.Name;
         }
 
+        public bool DfChekc()
+        {
+            if (filePath == null)
+            {
+                DialogResult result = MessageBox.Show("You Have not selected any DataSets." +
+                    "Click Refresh to if already Selected.",
+                    "Warning", MessageBoxButtons.RetryCancel);
+                if (result == DialogResult.Retry)
+                {
+                    filePath = PathModel.Path;
+                    fileName = PathModel.Name;
+                    //if (filePath != null)
+                    //{
+                    //txtCleanView.Text += txtCleanView.Text + "File " + fileName + " Selected."+"\r";
+                    //}
+                    if (filePath == null)
+                    {
+                        MessageBox.Show("You Have not Selected");
+                        return false;
+                    }
+                    return true;
+                }
+                return false;
+            }
+            return true;
+        }
         private void encode()
         {
+            bool check = DfChekc();
+            if (!check)
+            {
+                return;
+            }
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
             string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\pp_encoding.py";
-            string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
-            //string csv_path = @filePath;
+            //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
+            string csv_path = @filePath;
 
             int init;
             int task;
@@ -41,7 +77,7 @@ namespace MLDA_Application.Preparation.PreProcess
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = python_Interpreter_Path;
             start.Arguments = $"\"{python_Script_Path}\"" +
-                                //$" \"{csv_path}\"" +
+                                $" \"{csv_path}\"" +
                                 //$" \"{init}\"" +
                                 $" \"{technique}\"" +
                                 $" \"{outputType}\"" +
@@ -71,7 +107,7 @@ namespace MLDA_Application.Preparation.PreProcess
                 //frmP_pp pp = (frmP_pp)this.ParentForm;
                 //pp.updatetext(output);
             }
-            btnPrcd.Text = "Proceed";
+            //btnPrcd.Text = "Proceed";
         }
 
         private void btnLabel_Click(object sender, EventArgs e)
