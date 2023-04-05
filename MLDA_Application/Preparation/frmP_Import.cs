@@ -184,12 +184,10 @@ namespace MLDA_Application.Preparation
         {
            uplPopUp uplPopUp = new uplPopUp(fileName,filePath);
             DialogResult result= uplPopUp.ShowDialog();
-
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Cancel Cliked");
-            
+            this.Close();
         }
 
     }
