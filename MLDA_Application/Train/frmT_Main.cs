@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MLDA_Application.Shared;
 
 namespace MLDA_Application.Train
 {
@@ -36,14 +37,46 @@ namespace MLDA_Application.Train
         int noOfCols;
         int btnSub = 0;
         int algobtn = 1;
+
+        public string fileName;
+        public string filePath;
+
         //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\Iris set\iris_test.csv";
-        string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
+        //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
         //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Supermarket sales\supermarket_sales - Sheet1.csv";
         public frmT_Main()
         {
             InitializeComponent();
+            fileName = PathModel.Name;
+            filePath = PathModel.Path;
         }
 
+        public bool DfChekc()
+        {
+            if (filePath == null)
+            {
+                DialogResult result = MessageBox.Show("You Have not selected any DataSets." +
+                    "Click Refresh to if already Selected.",
+                    "Warning", MessageBoxButtons.RetryCancel);
+                if (result == DialogResult.Retry)
+                {
+                    filePath = PathModel.Path;
+                    fileName = PathModel.Name;
+                    //if (filePath != null)
+                    //{
+                    //txtCleanView.Text += txtCleanView.Text + "File " + fileName + " Selected."+"\r";
+                    //}
+                    if (filePath == null)
+                    {
+                        MessageBox.Show("You Have not Selected");
+                        return false;
+                    }
+                    return true;
+                }
+                return false;
+            }
+            return true;
+        }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             e.Cancel = true;
@@ -52,11 +85,16 @@ namespace MLDA_Application.Train
 
         public void preTrainScript(int flag1)
         {
+            bool check = DfChekc();
+            if (!check)
+            {
+                return;
+            }
             int button = flag1;
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
             string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\PreTrainInfo.py";
             //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
-            //string csv_path = @filePath;
+            string csv_path = @filePath;
             Console.WriteLine("path in csvupLoad: " + csv_path);
 
             ProcessStartInfo start = new ProcessStartInfo();
@@ -154,11 +192,16 @@ namespace MLDA_Application.Train
         }
         private void fiterSmple(int flag1)
         {
+            bool check = DfChekc();
+            if (!check)
+            {
+                return;
+            }
             int fBtn = flag1;
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
             string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Testing\pyScripts\sampling.py";
             //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\MelBon Housing\melb_data.csv";
-            //string csv_path = @filePath;
+            string csv_path = @filePath;
 
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = python_Interpreter_Path;
@@ -229,11 +272,16 @@ namespace MLDA_Application.Train
         }
         public void featureSelect(int button)
         {
+            bool check = DfChekc();
+            if (!check)
+            {
+                return;
+            }
             int featureBtn = button;
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
             string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\FeatureSelect.py";
             //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
-            //string csv_path = @filePath;
+            string csv_path = @filePath;
 
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = python_Interpreter_Path;
@@ -333,11 +381,16 @@ namespace MLDA_Application.Train
 
         public void TrainScript(int flag1)
         {
+            bool check = DfChekc();
+            if (!check)
+            {
+                return;
+            }
             int btn = flag1;
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
             string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\Train&Model.py";
             //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv";
-            //string csv_path = @filePath;
+            string csv_path = @filePath;
 
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = python_Interpreter_Path;
