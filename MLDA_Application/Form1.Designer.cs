@@ -34,8 +34,9 @@
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.pnlChildHolder = new System.Windows.Forms.Panel();
             this.btnLoadDf = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlChildHolder = new System.Windows.Forms.Panel();
+            this.btnUpld = new Guna.UI2.WinForms.Guna2Button();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             this.pnlTop.SuspendLayout();
@@ -125,6 +126,7 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.pnlTop.Controls.Add(this.btnUpld);
             this.pnlTop.Controls.Add(this.btnLoadDf);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(137, 0);
@@ -132,16 +134,6 @@
             this.pnlTop.Size = new System.Drawing.Size(784, 75);
             this.pnlTop.TabIndex = 1;
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
-            // 
-            // pnlChildHolder
-            // 
-            this.pnlChildHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.pnlChildHolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlChildHolder.Location = new System.Drawing.Point(137, 75);
-            this.pnlChildHolder.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlChildHolder.Name = "pnlChildHolder";
-            this.pnlChildHolder.Size = new System.Drawing.Size(784, 477);
-            this.pnlChildHolder.TabIndex = 2;
             // 
             // btnLoadDf
             // 
@@ -154,13 +146,42 @@
             this.btnLoadDf.FillColor = System.Drawing.Color.Orange;
             this.btnLoadDf.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLoadDf.ForeColor = System.Drawing.Color.White;
-            this.btnLoadDf.Location = new System.Drawing.Point(676, 21);
+            this.btnLoadDf.Location = new System.Drawing.Point(561, 27);
             this.btnLoadDf.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
             this.btnLoadDf.Name = "btnLoadDf";
             this.btnLoadDf.Size = new System.Drawing.Size(96, 30);
             this.btnLoadDf.TabIndex = 0;
             this.btnLoadDf.Text = "Load DF";
             this.btnLoadDf.Click += new System.EventHandler(this.btnLoadDf_Click);
+            // 
+            // pnlChildHolder
+            // 
+            this.pnlChildHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.pnlChildHolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlChildHolder.Location = new System.Drawing.Point(137, 75);
+            this.pnlChildHolder.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlChildHolder.Name = "pnlChildHolder";
+            this.pnlChildHolder.Size = new System.Drawing.Size(784, 477);
+            this.pnlChildHolder.TabIndex = 2;
+            // 
+            // btnUpld
+            // 
+            this.btnUpld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpld.BorderRadius = 1;
+            this.btnUpld.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpld.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpld.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpld.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpld.FillColor = System.Drawing.Color.Orange;
+            this.btnUpld.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUpld.ForeColor = System.Drawing.Color.White;
+            this.btnUpld.Location = new System.Drawing.Point(664, 27);
+            this.btnUpld.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
+            this.btnUpld.Name = "btnUpld";
+            this.btnUpld.Size = new System.Drawing.Size(96, 30);
+            this.btnUpld.TabIndex = 1;
+            this.btnUpld.Text = "Upload";
+            this.btnUpld.Click += new System.EventHandler(this.btnUpld_Click);
             // 
             // FormMain
             // 
@@ -192,6 +213,7 @@
         private FontAwesome.Sharp.IconButton btnMenu;
         private FontAwesome.Sharp.IconButton MBtn_Train;
         private Guna.UI2.WinForms.Guna2Button btnLoadDf;
+        private Guna.UI2.WinForms.Guna2Button btnUpld;
     }
 }
 

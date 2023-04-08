@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MLDA_Application.Shared;
+using System.Net;
 
 namespace MLDA_Application.Preparation.Shared
 {
@@ -28,11 +29,17 @@ namespace MLDA_Application.Preparation.Shared
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-            folderBrowserDialog.RootFolder=Environment.SpecialFolder.Desktop;
-            if(folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            //FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            //folderBrowserDialog.RootFolder=Environment.SpecialFolder.Desktop;
+            //if(folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            //{
+            //txtFileLoc.Text = folderBrowserDialog.SelectedPath;
+            //}
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "CSV files (*.csv)|*.csv";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                txtFileLoc.Text = folderBrowserDialog.SelectedPath;
+                txtFileLoc.Text = openFileDialog.FileName;
             }
         }
 
@@ -88,6 +95,21 @@ namespace MLDA_Application.Preparation.Shared
 
         private void btnUpload_Click(object sender, EventArgs e)
         {
+            bool isConnected = false;
+            try
+            {
+                using (var client = new WebClient())
+                using(var stream = client.OpenRead("https://www.google.com"))
+                {
+                    isConnected = true;
+                }
+            }
+            catch
+            {
+                isConnected = false;
+                MessageBox.Show("No Network Connection Found", "Network Error");
+                return;
+            }
             string name = txtFileName.Text;
             string path=txtFileLoc.Text;
             if((string.IsNullOrEmpty(txtFileLoc.Text) || txtFileLoc.Text== txtFileLoc.PlaceholderText)

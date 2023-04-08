@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MLDA_Application.Train;
 using MLDA_Application.Shared;
+using MLDA_Application.Preparation.Shared;
 
 namespace MLDA_Application
 {
@@ -157,6 +158,12 @@ namespace MLDA_Application
             //MpBtn_Prepare.Text = e.name;
             dfName = e.name;
             //PathModel.Path = e.path;
+        }
+
+        private void btnUpld_Click(object sender, EventArgs e)
+        {
+          DfUpload dfObj = new DfUpload();
+            dfObj.ShowDialog();
         }
     }
 }
