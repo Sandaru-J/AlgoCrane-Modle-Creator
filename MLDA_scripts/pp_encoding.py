@@ -8,6 +8,7 @@ technique=sys.argv[2]
 otpType=sys.argv[3]
 unknCat=sys.argv[4]
 scale=sys.argv[5]
+saveCheck=sys.argv[6]
 
 # Load dataset
 # url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data'
@@ -111,3 +112,9 @@ for col in encode_cols:
 print("\nEncoded dataset:")
 print(df.head())
 print("Data Set Encoded!")
+
+if "1" in saveCheck:
+    df.to_csv(path, index=False)
+    print("Encoded dataset saved"
+# file.seek(0)
+)

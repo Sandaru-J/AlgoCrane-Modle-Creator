@@ -32,6 +32,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.uC_Encoding1 = new MLDA_Application.Preparation.PreProcess.UC_Encoding();
+            this.uC_Normalize1 = new MLDA_Application.Preparation.PreProcess.UC_Normalize();
             this.panel10 = new System.Windows.Forms.Panel();
             this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnNormalize = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -42,8 +44,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtbxPP = new Guna.UI2.WinForms.Guna2TextBox();
-            this.uC_Normalize1 = new MLDA_Application.Preparation.PreProcess.UC_Normalize();
-            this.uC_Encoding1 = new MLDA_Application.Preparation.PreProcess.UC_Encoding();
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -90,6 +90,22 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(323, 328);
             this.panel9.TabIndex = 0;
+            // 
+            // uC_Encoding1
+            // 
+            this.uC_Encoding1.BackColor = System.Drawing.Color.DimGray;
+            this.uC_Encoding1.Location = new System.Drawing.Point(4, 70);
+            this.uC_Encoding1.Name = "uC_Encoding1";
+            this.uC_Encoding1.Size = new System.Drawing.Size(315, 400);
+            this.uC_Encoding1.TabIndex = 2;
+            // 
+            // uC_Normalize1
+            // 
+            this.uC_Normalize1.BackColor = System.Drawing.Color.DimGray;
+            this.uC_Normalize1.Location = new System.Drawing.Point(7, 74);
+            this.uC_Normalize1.Name = "uC_Normalize1";
+            this.uC_Normalize1.Size = new System.Drawing.Size(312, 374);
+            this.uC_Normalize1.TabIndex = 1;
             // 
             // panel10
             // 
@@ -228,22 +244,6 @@
             this.txtbxPP.SelectedText = "";
             this.txtbxPP.Size = new System.Drawing.Size(550, 351);
             this.txtbxPP.TabIndex = 5;
-            // 
-            // uC_Normalize1
-            // 
-            this.uC_Normalize1.BackColor = System.Drawing.Color.DimGray;
-            this.uC_Normalize1.Location = new System.Drawing.Point(7, 74);
-            this.uC_Normalize1.Name = "uC_Normalize1";
-            this.uC_Normalize1.Size = new System.Drawing.Size(312, 374);
-            this.uC_Normalize1.TabIndex = 1;
-            // 
-            // uC_Encoding1
-            // 
-            this.uC_Encoding1.BackColor = System.Drawing.Color.DimGray;
-            this.uC_Encoding1.Location = new System.Drawing.Point(4, 70);
-            this.uC_Encoding1.Name = "uC_Encoding1";
-            this.uC_Encoding1.Size = new System.Drawing.Size(315, 400);
-            this.uC_Encoding1.TabIndex = 2;
             // 
             // frmP_pp
             // 

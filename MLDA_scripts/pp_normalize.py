@@ -14,6 +14,7 @@ max=sys.argv[4]
 std=sys.argv[5]
 decimals=sys.argv[6]
 flag1=sys.argv[7]
+checkSav=sys.argv[8]
 
 float(std)
 # Read in the dataset
@@ -81,6 +82,11 @@ if "1" in flag1:
     print(df)
     print("\n")
     print(df[columns_to_normalize])
+
+    if "1" in checkSav:
+        df.to_csv(path, index=False)
+        print("Normalized Data Updated")
+
     # Save the normalized dataset to a new file
     # output_file = input("Enter output file name: ")
     # df.to_csv(output_file, index=False)
