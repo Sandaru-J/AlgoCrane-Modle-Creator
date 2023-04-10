@@ -20,6 +20,8 @@ namespace MLDA_Application.Preparation
         public string filePath;
         public string fileName;
 
+        int saveCheck =0;
+
         public UC_PC_missing()
         {
             InitializeComponent();
@@ -70,8 +72,12 @@ namespace MLDA_Application.Preparation
                 });
             }*/
         }
-        public string dsetInfo(int flag1, int flag2,int flag3, int flag4)
+        public string dsetInfo(int flag1)
         {
+            if (chckBxClean.Checked)
+            {
+                saveCheck = 1;
+            }
             bool check = DfChekc();
             if (!check)
             {
@@ -82,20 +88,15 @@ namespace MLDA_Application.Preparation
             //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Trunfo AirPlanes\airplanes.csv";
             string csv_path = @filePath;
 
-            int init=flag1;
-            int mean=flag2;
-            int mode=flag3;
-            int median=flag4;
+            int btn=flag1;
 
             int check_string = flag1;
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = python_Interpreter_Path;
             start.Arguments = $"\"{python_Script_Path}\"" +
                                 $" \"{csv_path}\"" +
-                                $" \"{init}\"" +
-                                $" \"{mean}\"" +
-                                $" \"{mode}\"" +
-                                $" \"{median}\"";
+                                $" \"{btn}\"" +
+                                $" \"{saveCheck}\"";
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
             start.CreateNoWindow = true;
@@ -113,12 +114,17 @@ namespace MLDA_Application.Preparation
                 txtCleanView.Text =txtCleanView.Text+ output;
                 txtCleanView.SelectionStart = txtCleanView.TextLength;
                 txtCleanView.ScrollToCaret();
+                chckBxClean.Checked = false;
                 return output;
             }
         }
 
         private string dupplicate(int flag1)
         {
+            if (chckBxClean.Checked)
+            {
+                saveCheck = 1;
+            }
             bool check = DfChekc();
             if (!check)
             {
@@ -134,7 +140,8 @@ namespace MLDA_Application.Preparation
             start.FileName = python_Interpreter_Path;
             start.Arguments = $"\"{python_Script_Path}\"" +
                                 $" \"{csv_path}\"" +
-                                $" \"{init}\""; 
+                                $" \"{init}\""+
+                                $" \"{saveCheck}\""; 
                                 //$" \"{mean}\"" +
                                 //$" \"{mode}\"" +
                                 //$" \"{median}\"";
@@ -146,7 +153,6 @@ namespace MLDA_Application.Preparation
             prepareModel ps = new prepareModel();
             ps.path = csv_path;
 
-            Console.WriteLine("set:" + csv_path);
             // Start the process and get the output
             using (Process process = Process.Start(start))
             {
@@ -156,32 +162,71 @@ namespace MLDA_Application.Preparation
                 txtCleanView.Text = txtCleanView.Text + output;
                 txtCleanView.SelectionStart = txtCleanView.TextLength;
                 txtCleanView.ScrollToCaret();
+                chckBxClean.Checked = false;
                 return output;
             }
         }
         private void btnMeanFill_Click(object sender, EventArgs e)
         {
-            dsetInfo(0, 2, 0, 0);
+            dsetInfo(3);
         }
 
         private void guna2GradientTileButton2_Click(object sender, EventArgs e)
         {
-            dsetInfo(0, 0, 3, 0);
+            dsetInfo(4);
         }
 
         private void guna2GradientTileButton3_Click(object sender, EventArgs e)
         {
-            dsetInfo(0, 0, 0, 4);
+            dsetInfo(5);
         }
 
         private void btnMCheck_Click(object sender, EventArgs e)
         {
-            dsetInfo(1, 0, 0, 0);
+            dsetInfo(1);
+            btnDropDup.Enabled = false;
+            btnModeFill.Enabled = true;
+            btnMedianFIll.Enabled = true;
+            btnMeanFill.Enabled = true;
+            btnDropMissing.Enabled=true;
+            guna2GradientTileButton1.Checked = false;
         }
 
         private void guna2GradientTileButton1_Click(object sender, EventArgs e)
         {
             dupplicate(1);
+            btnDropDup.Enabled = true;
+            btnMeanFill.Enabled = false;
+            btnMedianFIll.Enabled = false;
+            btnModeFill.Enabled = false;
+            btnDropMissing.Enabled = false;
+            btnMCheck.Checked = false;
+        }
+
+        private void btnDropMissing_Click(object sender, EventArgs e)
+        {
+            dsetInfo(2);
+        }
+
+        private void btnDropDup_Click(object sender, EventArgs e)
+        {
+            dupplicate(2);
+        }
+
+        private void chckBxClean_CheckStateChanged(object sender, EventArgs e)
+        {
+            if(chckBxClean.Checked)
+            {
+                txtCleanView.Text = txtCleanView.Text + "\nSaving checked";
+                txtCleanView.SelectionStart = txtCleanView.TextLength;
+                txtCleanView.ScrollToCaret();
+            }
+            else
+            {
+                txtCleanView.Text = txtCleanView.Text + "\nSaving Unchecked";
+                txtCleanView.SelectionStart = txtCleanView.TextLength;
+                txtCleanView.ScrollToCaret();
+            }
         }
     }
 }

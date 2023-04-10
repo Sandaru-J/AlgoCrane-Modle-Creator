@@ -47,6 +47,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnDropMissing = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.btnDropDup = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.chckBxClean = new Guna.UI2.WinForms.Guna2CheckBox();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -94,6 +97,9 @@
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel6.BackColor = System.Drawing.Color.DimGray;
+            this.panel6.Controls.Add(this.chckBxClean);
+            this.panel6.Controls.Add(this.btnDropDup);
+            this.panel6.Controls.Add(this.btnDropMissing);
             this.panel6.Controls.Add(this.guna2GradientTileButton3);
             this.panel6.Controls.Add(this.guna2GradientTileButton1);
             this.panel6.Controls.Add(this.btnMCheck);
@@ -128,6 +134,7 @@
             // 
             // guna2GradientTileButton1
             // 
+            this.guna2GradientTileButton1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
             this.guna2GradientTileButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2GradientTileButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2GradientTileButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -147,6 +154,7 @@
             // 
             // btnMCheck
             // 
+            this.btnMCheck.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
             this.btnMCheck.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnMCheck.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnMCheck.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -178,11 +186,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 153);
+            this.label2.Location = new System.Drawing.Point(41, 205);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 16);
+            this.label2.Size = new System.Drawing.Size(191, 16);
             this.label2.TabIndex = 4;
-            this.label2.Text = "For Time Series Data";
+            this.label2.Text = "Checked outBefore Saving";
             // 
             // btnMedianFIll
             // 
@@ -196,7 +204,7 @@
             this.btnMedianFIll.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnMedianFIll.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnMedianFIll.ForeColor = System.Drawing.Color.White;
-            this.btnMedianFIll.Location = new System.Drawing.Point(182, 102);
+            this.btnMedianFIll.Location = new System.Drawing.Point(182, 151);
             this.btnMedianFIll.Name = "btnMedianFIll";
             this.btnMedianFIll.Size = new System.Drawing.Size(80, 40);
             this.btnMedianFIll.TabIndex = 3;
@@ -215,7 +223,7 @@
             this.btnModeFill.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnModeFill.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnModeFill.ForeColor = System.Drawing.Color.White;
-            this.btnModeFill.Location = new System.Drawing.Point(101, 102);
+            this.btnModeFill.Location = new System.Drawing.Point(101, 151);
             this.btnModeFill.Name = "btnModeFill";
             this.btnModeFill.Size = new System.Drawing.Size(80, 40);
             this.btnModeFill.TabIndex = 2;
@@ -234,7 +242,7 @@
             this.btnMeanFill.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnMeanFill.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnMeanFill.ForeColor = System.Drawing.Color.White;
-            this.btnMeanFill.Location = new System.Drawing.Point(20, 102);
+            this.btnMeanFill.Location = new System.Drawing.Point(20, 151);
             this.btnMeanFill.Name = "btnMeanFill";
             this.btnMeanFill.Size = new System.Drawing.Size(80, 40);
             this.btnMeanFill.TabIndex = 1;
@@ -245,7 +253,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 79);
+            this.label1.Location = new System.Drawing.Point(17, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 16);
             this.label1.TabIndex = 0;
@@ -314,6 +322,62 @@
             this.panel4.Size = new System.Drawing.Size(585, 58);
             this.panel4.TabIndex = 0;
             // 
+            // btnDropMissing
+            // 
+            this.btnDropMissing.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDropMissing.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDropMissing.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDropMissing.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDropMissing.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDropMissing.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(70)))));
+            this.btnDropMissing.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.btnDropMissing.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDropMissing.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDropMissing.ForeColor = System.Drawing.Color.White;
+            this.btnDropMissing.Location = new System.Drawing.Point(20, 85);
+            this.btnDropMissing.Name = "btnDropMissing";
+            this.btnDropMissing.Size = new System.Drawing.Size(118, 40);
+            this.btnDropMissing.TabIndex = 9;
+            this.btnDropMissing.Text = "Drop Null";
+            this.btnDropMissing.Click += new System.EventHandler(this.btnDropMissing_Click);
+            // 
+            // btnDropDup
+            // 
+            this.btnDropDup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDropDup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDropDup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDropDup.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDropDup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDropDup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(70)))));
+            this.btnDropDup.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.btnDropDup.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDropDup.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDropDup.ForeColor = System.Drawing.Color.White;
+            this.btnDropDup.Location = new System.Drawing.Point(144, 85);
+            this.btnDropDup.Name = "btnDropDup";
+            this.btnDropDup.Size = new System.Drawing.Size(118, 40);
+            this.btnDropDup.TabIndex = 10;
+            this.btnDropDup.Text = "Drop Dupplicates";
+            this.btnDropDup.Click += new System.EventHandler(this.btnDropDup_Click);
+            // 
+            // chckBxClean
+            // 
+            this.chckBxClean.AutoSize = true;
+            this.chckBxClean.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chckBxClean.CheckedState.BorderRadius = 0;
+            this.chckBxClean.CheckedState.BorderThickness = 0;
+            this.chckBxClean.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chckBxClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.chckBxClean.Location = new System.Drawing.Point(20, 205);
+            this.chckBxClean.Name = "chckBxClean";
+            this.chckBxClean.Size = new System.Drawing.Size(15, 14);
+            this.chckBxClean.TabIndex = 11;
+            this.chckBxClean.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chckBxClean.UncheckedState.BorderRadius = 0;
+            this.chckBxClean.UncheckedState.BorderThickness = 0;
+            this.chckBxClean.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chckBxClean.CheckStateChanged += new System.EventHandler(this.chckBxClean_CheckStateChanged);
+            // 
             // UC_PC_missing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,5 +418,8 @@
         private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton1;
         private Guna.UI2.WinForms.Guna2GradientTileButton btnMCheck;
         private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2GradientTileButton btnDropDup;
+        private Guna.UI2.WinForms.Guna2GradientTileButton btnDropMissing;
+        private Guna.UI2.WinForms.Guna2CheckBox chckBxClean;
     }
 }

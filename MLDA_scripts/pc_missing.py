@@ -1,166 +1,347 @@
 import csv
 import sys
 import pandas as pd
+import numpy as np
 import os
 
 rows = []
 path = sys.argv[1]
 flag1 = sys.argv[2]
-flag2 = sys.argv[3]
-flag3 = sys.argv[4]
-flag4 = sys.argv[5]
-# path = r"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Medical\insurance.csv"
+saveChek=sys.argv[3]
+# path = r"C:\Users\Sandaru\Desktop\Sophia\Datasets\test.csv"
 with open(path, 'r') as file:
     csvreader = pd.read_csv(file)
 
 if "1" in flag1:
 
-    print("No of Missing values by coloumn")
-    # Count missing values by column
-    missing_count = csvreader.isna().sum()
+    df_test=csvreader
+    missing_values = ['n/a', 'na', '--', '-', 'unknown']
 
-    # Filter columns that contain missing values
-    missing_cols = missing_count[missing_count > 0]
+    # Replace with NaN
+    df_test.replace(missing_values, np.nan, inplace=True)
 
-    # Print count of missing values in each column
-    print(missing_cols)
+    if df_test.isna().any().any():
+        # Count missing values by column
+        missing_count = csvreader.isna().sum()
+        print("\nFeatures with missing values by columns")
+        print(missing_count)
+        print("Number of rows containing missing values: ",csvreader.isna().sum().sum())
 
-    missing_values = csvreader.isnull().sum()
+        missing_values = ['n/a', 'na', '--', '-', 'unknown']
+        # Replace values with NaN
+        csvreader.replace(missing_values, np.nan, inplace=True)
+        num_0f_all = csvreader.isna().sum().sum()
+        print("Features with missing values with unKnown figures")
+        print(csvreader.isnull().sum())
 
-    print("\n")
-    total_values = csvreader.shape[0] * csvreader.shape[1]
-    percentage_missing = (missing_values.sum()/total_values) * 100
+        total_values = csvreader.shape[0] * csvreader.shape[1]
+        percentage_missing_rows = (num_0f_all/csvreader.shape[0]) * 100
 
+        percentage_missing_values = (num_0f_all/total_values) * 100
+        total_missing_rows = csvreader[csvreader.isnull().any(axis=1)].shape[0]
+        print("Total number of rows containing missing values:", total_missing_rows)
+        #
+        # Printing the percentage of missing values
+        print("Percentage of missing values by rows: {:.2f}%".format(percentage_missing_rows))
+        print("Percentage of missing values by values: {:.2f}%".format(percentage_missing_values))
+
+        # rows_with_missing_values = df.isnull().sum(axis=1)
+        # rows_with_missing_values = rows_with_missing_values[rows_with_missing_values > 0.1 * df.shape[1]]
+        #
+        # # Printing the number of rows containing missing values more than 50% of the column count
+        # print("Number of rows with more than 50% missing values:", rows_with_missing_values.shape[0])
+    else:
+        print("There are no missing values in the DataFrame")
+
+if "2" in flag1:
+    row=csvreader.shape[0]
+    df_test=csvreader
+    missing_values = ['n/a', 'na', '--', '-', 'unknown']
+    # Replace with NaN
+    df_test.replace(missing_values, np.nan, inplace=True)
+
+    if df_test.isna().any().any():
+        # Replace any occurrences of these string values with NaN
+        csvreader.replace(missing_values, np.nan, inplace=True)
+
+        init_rows=len(csvreader)
+        csvreader.dropna(inplace=True)
+
+        dropped = init_rows-len(csvreader)
+
+        drp_ratio=dropped/row
+        perc_drp=drp_ratio*100
+        if "0" in saveChek:
+            print("\nPercentage of dropping rows: {:.2f}%".format(perc_drp))
+            print(f"{dropped} rows contain missing values to be dropped.")
+
+            if drp_ratio >0.5:
+                print("Warning!")
+                print("More than 50% of rows get dropped.")
+                print("Consider before Saving")
+            # Print number of dropped rows and current shape of dataframe
+
+        if "1" in saveChek:
+            print(f"\nDropped {dropped} rows contain missing values.")
+            print(f"Current shape: {csvreader.shape}")
+            # csvreader.to_csv(path, index=False)
+            print("Dropped Missing values Saved")
+    else:
+        print("This data set contain no missing values to drop")
+
+if "3" in flag1:
+
+    # df_test=csvreader
+    # missing_values = ['n/a', 'na', '--', '-', 'unknown']
+    # # Replace with NaN
+    # df_test.replace(missing_values, np.nan)
+
+    numerical_cols = csvreader.select_dtypes(include=np.number).columns
+    missing_count = csvreader[numerical_cols].isna().sum()
+    print("\nNumber of missing values in Numerical columns")
+    print(missing_count)
     total_missing_rows = csvreader[csvreader.isnull().any(axis=1)].shape[0]
-    print("Total number of rows containing missing values:", total_missing_rows)
+    print("Total number of rows containing all type of missing values:", total_missing_rows)
 
-    # Printing the percentage of missing values
-    print("Percentage of missing values: {:.2f}%".format(percentage_missing))
+    if csvreader[numerical_cols].isna().any().any():
+        if "0" in saveChek:
+            csvreader[numerical_cols] = csvreader[numerical_cols].fillna(csvreader[numerical_cols].mean())
+            print("Missing values filled with mean")
+            missing_count_=csvreader[numerical_cols].isna().sum()
+            print(missing_count_)
 
-    rows_with_missing_values = csvreader.isnull().sum(axis=1)
-    rows_with_missing_values = rows_with_missing_values[rows_with_missing_values > 0.1 * csvreader.shape[1]]
+            total_missing_rows = csvreader[csvreader.isnull().any(axis=1)].shape[0]
+            print("Total number of rows containing missing values:", total_missing_rows)
+        if "1" in saveChek:
+            csvreader[numerical_cols] = csvreader[numerical_cols].fillna(csvreader[numerical_cols].mean())
+            missing_count_=csvreader[numerical_cols].isna().sum()
 
-    # Printing the number of rows containing missing values more than 50% of the column count
-    print("Number of rows with more than 50% missing values:", rows_with_missing_values.shape[0])
+            total_missing_rows = csvreader[csvreader.isnull().any(axis=1)].shape[0]
+            print("Total number of rows containing missing values:", total_missing_rows)
+            # csvreader.to_csv(path, index=False)
+            print("Data Set Saved with filled values.")
 
-if "2" in flag2:
-    print("\n")
-    print("Numerical Missing values columns filled with Mean values\n")
-    print("Rows with missing values before filling:")
-    print(csvreader[csvreader.isnull().any(axis=1)])
+    else:
+        print("No Numerical missing values contain here")
+        print("Try 'Mode' or 'Median' to fill non numerical features")
 
-    # Fill missing values with mean of the column
-    csvreader.fillna(csvreader.mean(), inplace=True)
-
-    # Print the rows with missing values after filling
-    print("Rows with missing values after filling:")
-    print(csvreader[csvreader.isnull().any(axis=1)])
-
-    missing_values = csvreader.isnull().sum()
-    print("\n")
-    total_values = csvreader.shape[0] * csvreader.shape[1]
-    percentage_missing = (missing_values.sum()/total_values) * 100
-
-    print("No of Missing values by coloumn")
-    # Count missing values by column
-    missing_count = csvreader.isna().sum()
-
-    # Filter columns that contain missing values
-    missing_cols = missing_count[missing_count > 0]
-
-    # Print count of missing values in each column
-    print(missing_cols)
-    print("\n")
-
-    total_missing_rows = csvreader[csvreader.isnull().any(axis=1)].shape[0]
-    print("Total number of rows containing missing values:", total_missing_rows)
-
-    # Printing the percentage of missing values
-    print("Percentage of missing values:{:.2f}%".format(percentage_missing))
-
-    rows_with_missing_values = csvreader.isnull().sum(axis=1)
-    rows_with_missing_values = rows_with_missing_values[rows_with_missing_values > 0.1 * csvreader.shape[1]]
-
-    # Printing the number of rows containing missing values more than 50% of the column count
-    print("Number of rows with more than 50% missing values:", rows_with_missing_values.shape[0])
-
-
-if "3" in flag3:
-    # Print the rows with missing values before filling
-    print("Rows with missing values before filling:")
-    print(csvreader[csvreader.isnull().any(axis=1)])
-
-    # Fill missing values with mode of the column
-    csvreader.fillna(csvreader.mode().iloc[0], inplace=True)
-
-    # # Set the file path where you want to save the CSV file
-    # file_path = os.path.join(os.path.expanduser('~'), 'Documents', 'modified_tips.csv')
+if "4" in flag1:
+    # run_script=0
+    # # Define list of string values to replace with NaN
+    # missing_values = ['n/a', 'na', '--', '-', 'unknown']
     #
-    # # Create the directory if it doesn't exist
-    # os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    # # Replace string values with NaN
+    # csvreader.replace(missing_values, np.nan, inplace=True)
     #
-    # # Save the modified dataframe to a CSV file
-    # csvreader.to_csv(file_path, index=False)
+    # # Fill numerical columns with mean
+    # num_numerical_filled=0
+    # numerical_cols = csvreader.select_dtypes(include=[np.number]).columns.tolist()
+    # if numerical_cols:
+    #     if csvreader[numerical_cols].isna().any().any():
+    #         num_numerical_filled = csvreader[numerical_cols].isna().sum().sum()
+    #         csvreader[numerical_cols] = csvreader[numerical_cols].fillna(csvreader[numerical_cols].mean())
+    #     else:
+    #         print("\nNo missing values in numerical columns")
+    #         run_script = run_script+1
     #
-    # if os.path.exists(file_path):
-    #     print(f"File saved successfully to {file_path}")
+    #
+    # # Fill categorical columns with mode
+    # num_categorical_filled=0
+    # categorical_cols = csvreader.select_dtypes(exclude=[np.number]).columns.tolist()
+    # if categorical_cols:
+    #     if csvreader[categorical_cols].isna().any().any():
+    #         num_categorical_filled = csvreader[categorical_cols].isna().sum().sum()
+    #         csvreader[categorical_cols] = csvreader[categorical_cols].fillna(csvreader[categorical_cols].mode().iloc[0])
+    #     else:
+    #         print("No missing values in categorical columns")
+    #         run_script = run_script+1
+    #
+    # if run_script < 2:
+    #     print(f"\nNumber of numerical rows filled: {num_numerical_filled}")
+    #     print(f"Number of categorical rows filled: {num_categorical_filled}")
+    #
+    #     print(csvreader)
+    #     tot=num_numerical_filled+num_categorical_filled
+    #     print(f"Total of {tot} missing values filed using Mode of data set.")
     # else:
-    #     print("Error: file was not saved")
-    # Print the rows with missing values after filling
-    # print("Rows with missing values after filling:")
-    # print(csvreader[csvreader.isnull().any(axis=1)])
+    #     pass
+    run_script=0
+    # Define list of string values to replace with NaN
+    missing_values = ['n/a', 'na', '--', '-', 'unknown']
 
-    missing_values = csvreader.isnull().sum()
-    print("\n")
-    total_values = csvreader.shape[0] * csvreader.shape[1]
-    percentage_missing = (missing_values.sum()/total_values) * 100
+    # Replace string values with NaN
+    csvreader.replace(missing_values, np.nan, inplace=True)
 
-    print("All Missing values columns filled with Mode values\n")
+    # Fill numerical columns with mean
+    num_numerical_filled=0
+    numerical_cols = csvreader.select_dtypes(include=[np.number]).columns.tolist()
 
-    total_missing_rows = csvreader[csvreader.isnull().any(axis=1)].shape[0]
-    print("Total number of rows containing missing values:", total_missing_rows)
+    if "0" in saveChek:
+        if numerical_cols:
+            if csvreader[numerical_cols].isna().any().any():
+                num_numerical_filled = csvreader[numerical_cols].isna().sum().sum()
+                csvreader[numerical_cols] = csvreader[numerical_cols].fillna(csvreader[numerical_cols].mean())
+            else:
+                print("\nNo missing values in numerical columns")
+                run_script = run_script+1
 
-    # Printing the percentage of missing values
-    print("Percentage of missing values:{:.2f}%".format(percentage_missing))
 
-    rows_with_missing_values = csvreader.isnull().sum(axis=1)
-    rows_with_missing_values = rows_with_missing_values[rows_with_missing_values > 0.1 * csvreader.shape[1]]
+        # Fill categorical columns with mode
+        num_categorical_filled=0
+        categorical_cols = csvreader.select_dtypes(exclude=[np.number]).columns.tolist()
+        if categorical_cols:
+            if csvreader[categorical_cols].isna().any().any():
+                num_categorical_filled = csvreader[categorical_cols].isna().sum().sum()
+                csvreader[categorical_cols] = csvreader[categorical_cols].fillna(csvreader[categorical_cols].mode().iloc[0])
+            else:
+                print("No missing values in categorical columns")
+                run_script = run_script+1
 
-    # Printing the number of rows containing missing values more than 50% of the column count
-    print("Number of rows with more than 50% missing values:", rows_with_missing_values.shape[0])
+        if run_script < 2:
+            print(f"\nNumber of numerical rows filled: {num_numerical_filled}")
+            print(f"Number of categorical rows filled: {num_categorical_filled}")
+            print(csvreader)
+            tot=num_numerical_filled+num_categorical_filled
+            print(f"Total of {tot} missing values filed using Mode of data set.")
+        else:
+            pass
 
-if "4" in flag4:
-    print("\n")
-    print("Rows with missing values before filling:")
-    print(csvreader[csvreader.isnull().any(axis=1)])
+    run_script=0
+    if "1" in saveChek:
+        if numerical_cols:
+            if csvreader[numerical_cols].isna().any().any():
+                num_numerical_filled = csvreader[numerical_cols].isna().sum().sum()
+                csvreader[numerical_cols] = csvreader[numerical_cols].fillna(csvreader[numerical_cols].mean())
+            else:
+                print("\nNo missing values in numerical columns")
+                run_script = run_script+1
 
-    # Fill missing values with the median of the column
-    csvreader.fillna(csvreader.median(), inplace=True)
+        # Fill categorical columns with mode
+        num_categorical_filled=0
+        categorical_cols = csvreader.select_dtypes(exclude=[np.number]).columns.tolist()
+        if categorical_cols:
+            if csvreader[categorical_cols].isna().any().any():
+                num_categorical_filled = csvreader[categorical_cols].isna().sum().sum()
+                csvreader[categorical_cols] = csvreader[categorical_cols].fillna(csvreader[categorical_cols].mode().iloc[0])
+            else:
+                print("\nNo missing values in numerical columns")
+                run_script = run_script+1
 
-    print("Rows with missing values after filling:")
-    print(csvreader[csvreader.isnull().any(axis=1)])
+        if run_script < 2:
+            print(f"\nNumber of numerical rows filled: {num_numerical_filled}")
+            print(f"Number of categorical rows filled: {num_categorical_filled}")
+            # csvreader.to_csv(path,index=False)
+            tot=num_numerical_filled+num_categorical_filled
+            print(f"Total of {tot} missing values filed using Mode of data set.")
+            print("File updated with filled missing values.")
+        else:
+            pass
+if "5" in flag1:
+    # run_script = 0
+    # # Define list of string values to replace with NaN
+    # missing_values = ['n/a', 'na', '--', '-', 'unknown']
+    #
+    # # Replace string values with NaN
+    # csvreader.replace(missing_values, np.nan, inplace=True)
+    #
+    # # Fill numerical columns with mean
+    # num_numerical_filled = 0
+    # numerical_cols = csvreader.select_dtypes(include=[np.number]).columns.tolist()
+    # if numerical_cols:
+    #     if csvreader[numerical_cols].isna().any().any():
+    #         num_numerical_filled = csvreader[numerical_cols].isna().sum().sum()
+    #         csvreader[numerical_cols] = csvreader[numerical_cols].fillna(csvreader[numerical_cols].median())
+    #     else:
+    #         print("\nNo missing values in numerical columns")
+    #         run_script = run_script+1
+    #
+    # # Fill categorical columns with mode
+    # num_categorical_filled = 0
+    # categorical_cols = csvreader.select_dtypes(exclude=[np.number]).columns.tolist()
+    # if categorical_cols:
+    #     if csvreader[categorical_cols].isna().any().any():
+    #         num_categorical_filled = csvreader[categorical_cols].isna().sum().sum()
+    #         csvreader[categorical_cols] = csvreader[categorical_cols].fillna(csvreader[categorical_cols].mode().iloc[0])
+    #     else:
+    #         print("No missing values in categorical columns")
+    #         run_script = run_script+1
+    #
+    # if run_script < 2:
+    #     print(f"\nNumber of numerical rows filled: {num_numerical_filled}")
+    #     print(f"Number of categorical rows filled: {num_categorical_filled}")
+    #
+    #     print(csvreader)
+    #     tot = num_numerical_filled + num_categorical_filled
+    #     print(f"Total of {tot} missing values filed using Median of data set.")
+    # else:
+    #     pass
+    run_script = 0
+    # Define list of string values to replace with NaN
+    missing_values = ['n/a', 'na', '--', '-', 'unknown']
 
-    print("Data set missing values filled with Median")
+    # Replace string values with NaN
+    csvreader.replace(missing_values, np.nan, inplace=True)
 
-    print("No of Missing values by coloumn")
-    # Count missing values by column
-    missing_count = csvreader.isna().sum()
+    # Fill numerical columns with mean
+    num_numerical_filled = 0
+    numerical_cols = csvreader.select_dtypes(include=[np.number]).columns.tolist()
 
-    # Filter columns that contain missing values
-    missing_cols = missing_count[missing_count > 0]
+    if "0" in saveChek:
+        if numerical_cols:
+            if csvreader[numerical_cols].isna().any().any():
+                num_numerical_filled = csvreader[numerical_cols].isna().sum().sum()
+                csvreader[numerical_cols] = csvreader[numerical_cols].fillna(csvreader[numerical_cols].median())
+            else:
+                print("\nNo missing values in numerical columns")
+                run_script = run_script+1
 
-    # Print count of missing values in each column
-    print(missing_cols)
+        # Fill categorical columns with mode
+        num_categorical_filled = 0
+        categorical_cols = csvreader.select_dtypes(exclude=[np.number]).columns.tolist()
+        if categorical_cols:
+            if csvreader[categorical_cols].isna().any().any():
+                num_categorical_filled = csvreader[categorical_cols].isna().sum().sum()
+                csvreader[categorical_cols] = csvreader[categorical_cols].fillna(csvreader[categorical_cols].mode().iloc[0])
+            else:
+                print("No missing values in categorical columns")
+                run_script = run_script+1
 
-    missing_values = csvreader.isnull().sum()
-    total_values = csvreader.shape[0] * csvreader.shape[1]
-    percentage_missing = (missing_values.sum()/total_values) * 100
+        if run_script < 2:
+            print(f"\nNumber of numerical rows filled: {num_numerical_filled}")
+            print(f"Number of categorical rows filled: {num_categorical_filled}")
 
-    # Printing the percentage of missing values
-    print("Percentage of missing values:{:.2f}%".format(percentage_missing))
+            print(csvreader)
+            tot = num_numerical_filled + num_categorical_filled
+            print(f"Total of {tot} missing values filed using Median of data set.")
+        else:
+            pass
 
-    rows_with_missing_values = csvreader.isnull().sum(axis=1)
-    rows_with_missing_values = rows_with_missing_values[rows_with_missing_values > 0.1 * csvreader.shape[1]]
+    if "1" in saveChek:
+        if numerical_cols:
+            if csvreader[numerical_cols].isna().any().any():
+                num_numerical_filled = csvreader[numerical_cols].isna().sum().sum()
+                csvreader[numerical_cols] = csvreader[numerical_cols].fillna(csvreader[numerical_cols].median())
+            else:
+                print("\nNo missing values in numerical columns")
+                run_script = run_script+1
 
-    # Printing the number of rows containing missing values more than 50% of the column count
-    print("Number of rows with more than 50% missing values:", rows_with_missing_values.shape[0])
+        # Fill categorical columns with mode
+        num_categorical_filled = 0
+        categorical_cols = csvreader.select_dtypes(exclude=[np.number]).columns.tolist()
+        if categorical_cols:
+            if csvreader[categorical_cols].isna().any().any():
+                num_categorical_filled = csvreader[categorical_cols].isna().sum().sum()
+                csvreader[categorical_cols] = csvreader[categorical_cols].fillna(csvreader[categorical_cols].mode().iloc[0])
+            else:
+                print("No missing values in categorical columns")
+                run_script = run_script+1
+
+        if run_script < 2:
+            print(f"\nNumber of numerical rows filled: {num_numerical_filled}")
+            print(f"Number of categorical rows filled: {num_categorical_filled}")
+            # csvreader.to_csv(path,index=False)
+            tot = num_numerical_filled + num_categorical_filled
+            print(f"Total of {tot} missing values filed using Median of data set.")
+            print("File updated with filled missing values.")
+        else:
+            pass
