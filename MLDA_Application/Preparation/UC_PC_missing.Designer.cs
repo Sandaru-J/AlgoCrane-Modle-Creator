@@ -170,7 +170,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(14, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 16);
+            this.label3.Size = new System.Drawing.Size(95, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Check For";
             // 
@@ -180,7 +180,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(17, 153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 16);
+            this.label2.Size = new System.Drawing.Size(190, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "For Time Series Data";
             // 
@@ -247,7 +247,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(17, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 16);
+            this.label1.Size = new System.Drawing.Size(197, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fill Missing Values By";
             // 
@@ -281,6 +281,7 @@
             this.txtCleanView.ForeColor = System.Drawing.Color.Silver;
             this.txtCleanView.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCleanView.Location = new System.Drawing.Point(16, 58);
+            this.txtCleanView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCleanView.Multiline = true;
             this.txtCleanView.Name = "txtCleanView";
             this.txtCleanView.PasswordChar = '\0';
@@ -289,6 +290,7 @@
             this.txtCleanView.SelectedText = "";
             this.txtCleanView.Size = new System.Drawing.Size(551, 339);
             this.txtCleanView.TabIndex = 3;
+            this.txtCleanView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCleanView_KeyPress);
             // 
             // panel5
             // 

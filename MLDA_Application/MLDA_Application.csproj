@@ -224,6 +224,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\CliSwitch.cs" />
     <Compile Include="Shared\DfUpload.cs">
       <SubType>Form</SubType>
     </Compile>
