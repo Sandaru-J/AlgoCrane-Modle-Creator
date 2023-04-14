@@ -16,18 +16,18 @@ namespace MLDA_Application.Train
 {
     public partial class frmT_Main : Form
     {
-        int smplvalue=50;
+        int smplvalue = 50;
         int splitRatio = 50;
-        
+
         string colName;
         string colValue;
-        
+
         string filename;
         string path;
-        
+
         string con_cols;
         string targetCol;
-        
+
         string trainCols;
         string trainTargt;
 
@@ -100,7 +100,7 @@ namespace MLDA_Application.Train
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = python_Interpreter_Path;
             start.Arguments = $"\"{python_Script_Path}\"" +
-                                $" \"{csv_path}\""+
+                                $" \"{csv_path}\"" +
                                 $" \"{button}\"";
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
@@ -113,7 +113,7 @@ namespace MLDA_Application.Train
                 // Read the output from the Python script
                 string output = process.StandardOutput.ReadToEnd();
 
-                txtBxCmd.Text=txtBxCmd.Text + output;
+                txtBxCmd.Text = txtBxCmd.Text + output;
                 txtBxCmd.SelectionStart = txtBxCmd.TextLength;
                 txtBxCmd.ScrollToCaret();
             }
@@ -169,7 +169,7 @@ namespace MLDA_Application.Train
 
         private void guna2TrackBar1_Scroll(object sender, ScrollEventArgs e)
         {
-           
+
         }
 
         private void guna2TrackBar1_ValueChanged(object sender, EventArgs e)
@@ -180,15 +180,16 @@ namespace MLDA_Application.Train
         private void btnFitter_Click(object sender, EventArgs e)
         {
             colName = txtSFcolName.Text.ToString();
-            colValue=txtSfvalue.Text.ToString();
-            if(colValue.Length < 0 && colName.Length <0)
+            colValue = txtSfvalue.Text.ToString();
+            if (colValue.Length < 0 && colName.Length < 0)
             {
                 txtBxCmd.Text = txtBxCmd.Text + "Enter values to Filtter";
-            }else
+            }
+            else
             {
                 fiterSmple(2);
             }
-            
+
         }
         private void fiterSmple(int flag1)
         {
@@ -207,12 +208,12 @@ namespace MLDA_Application.Train
             start.FileName = python_Interpreter_Path;
             start.Arguments = $"\"{python_Script_Path}\"" +
                                 $" \"{csv_path}\"" +
-                                $" \"{fBtn}\""+
-                                $" \"{smplvalue}\""+
-                                $" \"{colName}\""+
-                                $" \"{colValue}\""+
+                                $" \"{fBtn}\"" +
+                                $" \"{smplvalue}\"" +
+                                $" \"{colName}\"" +
+                                $" \"{colValue}\"" +
                                 $" \"{path}\"" +
-                                $" \"{filename}\"" ;
+                                $" \"{filename}\"";
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
             start.CreateNoWindow = true;
@@ -249,19 +250,18 @@ namespace MLDA_Application.Train
         {
             //Transfer the data from the pop-up form to the main form
             //txtBxCmd.Text = e.Input1;
-            
+
             //txtBxCmd.Text = e.Input2;
 
-            Console.WriteLine(e.Input2 + e.Input1+e.Type);
+            Console.WriteLine(e.Input2 + e.Input1 + e.Type);
             if (e.Type)
             {
                 filename = e.Input1;
-                path= e.Input2;
+                path = e.Input2;
                 fiterSmple(1);
             }
-            if(!e.Type)
+            if (!e.Type)
             {
-                
                 fiterSmple(5);
             }
         }
@@ -287,10 +287,10 @@ namespace MLDA_Application.Train
             start.FileName = python_Interpreter_Path;
             start.Arguments = $"\"{python_Script_Path}\"" +
                                 $" \"{csv_path}\"" +
-                                $" \"{featureBtn}\""+
+                                $" \"{featureBtn}\"" +
                                 $" \"{con_cols}\"" +
                                 $" \"{targetCol}\"" +
-                                $" \"{noOfCols}\""+
+                                $" \"{noOfCols}\"" +
                                 $" \"{btnSub}\"";
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
@@ -317,14 +317,14 @@ namespace MLDA_Application.Train
         private void BtnCheckFeSe_Click(object sender, EventArgs e)
         {
             if ((string.IsNullOrEmpty(txtBxCon_Cols.Text)) ||
-                (string.IsNullOrEmpty(txtBx_targtCol.Text)) || 
+                (string.IsNullOrEmpty(txtBx_targtCol.Text)) ||
                 (string.IsNullOrEmpty(NuUpD_no_of_cols.Value.ToString())))
             {
                 MessageBox.Show("Text Fields are empty to Proceed", "Missing");
             }
             else
             {
-                con_cols= txtBxCon_Cols.Text;
+                con_cols = txtBxCon_Cols.Text;
                 targetCol = txtBx_targtCol.Text;
                 noOfCols = (int)NuUpD_no_of_cols.Value;
                 featureSelect(2);
@@ -376,7 +376,7 @@ namespace MLDA_Application.Train
         private void guna2TrackBar2_ValueChanged(object sender, EventArgs e)
         {
             splitRatio = guna2TrackBar2.Value;
-            label15.Text = splitRatio.ToString()+"%";
+            label15.Text = splitRatio.ToString() + "%";
         }
 
         public void TrainScript(int flag1)
@@ -395,15 +395,15 @@ namespace MLDA_Application.Train
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = python_Interpreter_Path;
             start.Arguments = $"\"{python_Script_Path}\"" +
-                                $" \"{csv_path}\""+
+                                $" \"{csv_path}\"" +
                                 $" \"{btn}\"" +
-                                $" \"{trainCols}\""+
-                                $" \"{trainTargt}\""+
-                                $" \"{splitRatio}\""+
-                                $" \"{algobtn}\""+
+                                $" \"{trainCols}\"" +
+                                $" \"{trainTargt}\"" +
+                                $" \"{splitRatio}\"" +
+                                $" \"{algobtn}\"" +
                                 $" \"{mdlName}\"" +
-                                $" \"{mdlLoc}\"" ;
-                               
+                                $" \"{mdlLoc}\"";
+
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
             start.CreateNoWindow = true;
@@ -480,7 +480,7 @@ namespace MLDA_Application.Train
 
         private void btnMdlCreate_Click(object sender, EventArgs e)
         {
-            if ((string.IsNullOrEmpty(txtBxModLoc.Text)) || 
+            if ((string.IsNullOrEmpty(txtBxModLoc.Text)) ||
                 (string.IsNullOrEmpty(txtBxModelNme.Text)) ||
                 (string.IsNullOrEmpty(txtTrainCol.Text)) ||
                 (string.IsNullOrEmpty(txtBxTrainTarget.Text)))
@@ -508,6 +508,57 @@ namespace MLDA_Application.Train
                     TrainScript(2);
                     //Console.WriteLine(txtBxLoc.Text);
                 }
+            }
+        }
+
+        private void txtBxCmd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            path = filePath;
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+
+                //string command = textBox1.Text.Trim(); // Get the input from the TextBox and trim any leading/trailing whitespace
+
+                string output = string.Empty; // Variable to store the output of the command
+
+                string[] lines = txtBxCmd.Text.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                string command = lines[lines.Length - 1];
+                if (command == "help")
+                {
+                    string helpList = "head: show the head of the data set." +
+                        "tail: show the tail of the data set." +
+                        "clear: Clear the interface." +
+                        "cols: Show columns of the dataset." +
+                        "col_d: Show the data types of the data set." +
+                        "shape: Length of the columns into rows.";
+
+                    // Append each item in the helpList to the textBoxOutput on a separate line
+                    string[] helpItems = helpList.Split('.'); // Split the items by '.' character
+                    foreach (string helpItem in helpItems)
+                    {
+                        // Append the helpItem followed by a new line to the textBoxOutput
+                        txtBxCmd.AppendText(helpItem.Trim() + Environment.NewLine);
+                    }
+                    command = string.Empty;
+                }
+                if (command == "clear")
+                {
+                    txtBxCmd.Clear();
+                    command = string.Empty;
+                }
+                if (command != string.Empty)
+                {
+                    CliSwitch cs = new CliSwitch();
+                    output = cs.Switch(command, path);
+                }
+
+                // Append the output to the TextBox
+                txtBxCmd.AppendText(output + Environment.NewLine);
+
+                //textBox1.Clear(); // Clear the input TextBox
+
             }
         }
     }
