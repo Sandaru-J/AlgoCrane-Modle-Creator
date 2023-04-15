@@ -14,6 +14,9 @@ column_name=col
 
 if column_name not in df.columns:
     print("\nError: Column name not found in the dataset.")
+elif not pd.api.types.is_numeric_dtype(df[column_name]):
+    print("Error: Column is not numeric.")
+    print("If you want to use this column, Encode and try again.")
 else:
     # Calculate summary statistics
     mean = df[column_name].mean()
