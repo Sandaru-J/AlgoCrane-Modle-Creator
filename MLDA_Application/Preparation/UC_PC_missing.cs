@@ -22,9 +22,12 @@ namespace MLDA_Application.Preparation
 
         int saveCheck =0;
 
+        string TrgtCol;
+
         public UC_PC_missing()
         {
             InitializeComponent();
+            guna2Panel1.Visible = false;
             txtCleanView.Padding = new Padding(15, 5, 5, 5);
             model = new prepareModel();
             //string x = get();
@@ -185,6 +188,8 @@ namespace MLDA_Application.Preparation
         {
             dsetInfo(1);
             btnDropDup.Enabled = false;
+            btnDropOUt.Enabled = false;
+            btnRepOUt.Enabled = false;
             btnModeFill.Enabled = true;
             btnMedianFIll.Enabled = true;
             btnMeanFill.Enabled = true;
@@ -201,6 +206,8 @@ namespace MLDA_Application.Preparation
             btnModeFill.Enabled = false;
             btnDropMissing.Enabled = false;
             btnMCheck.Checked = false;
+            btnRepOUt.Enabled=false;
+            btnDropOUt.Enabled = false;
         }
 
         private void btnDropMissing_Click(object sender, EventArgs e)
@@ -227,6 +234,84 @@ namespace MLDA_Application.Preparation
                 txtCleanView.SelectionStart = txtCleanView.TextLength;
                 txtCleanView.ScrollToCaret();
             }
+        }
+
+        private void btnOutlierCheck_Click(object sender, EventArgs e)
+        {
+            guna2Panel1.Visible = true;
+            btnDropDup.Enabled = false;
+            btnMeanFill.Enabled = false;
+            btnMedianFIll.Enabled = false;
+            btnModeFill.Enabled = false;
+            btnDropMissing.Enabled = false;
+            btnMCheck.Checked = false;
+            btnRepOUt.Enabled = true;
+            btnDropOUt.Enabled = true;
+        }
+
+        private void btnOutlierDne_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBxTargtCol.Text))
+            {
+                MessageBox.Show("Enter Target Column", "Missing");
+            }
+            else
+            {
+                TrgtCol = txtBxTargtCol.Text;
+                outlliers(1);
+                Console.WriteLine(TrgtCol);
+            }
+            guna2Panel1.Visible = false;
+        }
+        public void outlliers(int btn)
+        {
+            if (chckBxClean.Checked)
+            {
+                saveCheck = 1;
+            }
+            bool check = DfChekc();
+            if (!check)
+            {
+                return;
+            }
+            string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
+            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\outliers.py";
+            //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\Trunfo AirPlanes\airplanes.csv";
+            string csv_path = @filePath;
+
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.FileName = python_Interpreter_Path;
+            start.Arguments = $"\"{python_Script_Path}\"" +
+                                $" \"{csv_path}\"" +
+                                $" \"{TrgtCol}\"" +
+                                $" \"{btn}\"" +
+                                $" \"{saveCheck}\"";
+            start.UseShellExecute = false;
+            start.RedirectStandardOutput = true;
+            start.CreateNoWindow = true;
+
+            // Start the process and get the output
+            using (Process process = Process.Start(start))
+            {
+                // Read the output from the Python script
+                string output = process.StandardOutput.ReadToEnd();
+
+                txtCleanView.Text = txtCleanView.Text + output;
+                txtCleanView.SelectionStart = txtCleanView.TextLength;
+                txtCleanView.ScrollToCaret();
+                chckBxClean.Checked = false;
+            }
+            //guna2Panel1.Visible = false;
+        }
+
+        private void btnDropOUt_Click(object sender, EventArgs e)
+        {
+            outlliers(3);
+        }
+
+        private void btnRepOUt_Click(object sender, EventArgs e)
+        {
+            outlliers(2);
         }
     }
 }
