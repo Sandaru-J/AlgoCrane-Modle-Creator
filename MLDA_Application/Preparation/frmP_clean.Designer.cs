@@ -44,7 +44,7 @@
             this.panel1.Controls.Add(this.listBox1);
             this.panel1.Controls.Add(this.btnMissingval);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(247, 98);
+            this.panel1.Location = new System.Drawing.Point(250, 67);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(319, 243);
             this.panel1.TabIndex = 0;
@@ -91,7 +91,7 @@
             this.uC_PC_missing1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uC_PC_missing1.Location = new System.Drawing.Point(0, 0);
             this.uC_PC_missing1.Name = "uC_PC_missing1";
-            this.uC_PC_missing1.Size = new System.Drawing.Size(945, 492);
+            this.uC_PC_missing1.Size = new System.Drawing.Size(951, 430);
             this.uC_PC_missing1.TabIndex = 1;
             // 
             // frmP_clean
@@ -99,7 +99,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(23)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(945, 492);
+            this.ClientSize = new System.Drawing.Size(951, 430);
             this.Controls.Add(this.uC_PC_missing1);
             this.Controls.Add(this.panel1);
             this.Name = "frmP_clean";

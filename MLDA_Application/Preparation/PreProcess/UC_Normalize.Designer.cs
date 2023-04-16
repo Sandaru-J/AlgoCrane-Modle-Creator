@@ -45,6 +45,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnDcmlScl = new Guna.UI2.WinForms.Guna2TileButton();
             this.NupdDcml = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.chckBxSav = new Guna.UI2.WinForms.Guna2CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.NuupdMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NuupdMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NupdDcml)).BeginInit();
@@ -208,7 +209,7 @@
             this.btnNrmlzPrcd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnNrmlzPrcd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnNrmlzPrcd.ForeColor = System.Drawing.Color.White;
-            this.btnNrmlzPrcd.Location = new System.Drawing.Point(32, 290);
+            this.btnNrmlzPrcd.Location = new System.Drawing.Point(32, 316);
             this.btnNrmlzPrcd.Name = "btnNrmlzPrcd";
             this.btnNrmlzPrcd.Size = new System.Drawing.Size(102, 39);
             this.btnNrmlzPrcd.TabIndex = 12;
@@ -224,7 +225,7 @@
             this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(179, 290);
+            this.btnCancel.Location = new System.Drawing.Point(179, 316);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(107, 39);
             this.btnCancel.TabIndex = 13;
@@ -237,7 +238,7 @@
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Stackpath;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(132, 291);
+            this.iconButton1.Location = new System.Drawing.Point(132, 317);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(41, 38);
             this.iconButton1.TabIndex = 15;
@@ -292,11 +293,30 @@
             0,
             0});
             // 
+            // chckBxSav
+            // 
+            this.chckBxSav.AutoSize = true;
+            this.chckBxSav.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.chckBxSav.CheckedState.BorderRadius = 0;
+            this.chckBxSav.CheckedState.BorderThickness = 0;
+            this.chckBxSav.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chckBxSav.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.chckBxSav.Location = new System.Drawing.Point(38, 282);
+            this.chckBxSav.Name = "chckBxSav";
+            this.chckBxSav.Size = new System.Drawing.Size(143, 17);
+            this.chckBxSav.TabIndex = 20;
+            this.chckBxSav.Text = "Update the Excisting File";
+            this.chckBxSav.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chckBxSav.UncheckedState.BorderRadius = 0;
+            this.chckBxSav.UncheckedState.BorderThickness = 0;
+            this.chckBxSav.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
             // UC_Normalize
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
+            this.Controls.Add(this.chckBxSav);
             this.Controls.Add(this.NupdDcml);
             this.Controls.Add(this.btnDcmlScl);
             this.Controls.Add(this.label7);
@@ -343,5 +363,6 @@
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TileButton btnDcmlScl;
         private Guna.UI2.WinForms.Guna2NumericUpDown NupdDcml;
+        private Guna.UI2.WinForms.Guna2CheckBox chckBxSav;
     }
 }

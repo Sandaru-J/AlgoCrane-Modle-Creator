@@ -21,6 +21,8 @@ namespace MLDA_Application.Preparation.PreProcess
         int Std = 1;
         int Method = 1;
 
+        int savChck = 0;
+
         public string filePath;
         public string fileName;
         public UC_Normalize()
@@ -71,6 +73,10 @@ namespace MLDA_Application.Preparation.PreProcess
         
         public void normalize(int flag1)
         {
+            if(chckBxSav.Checked)
+            {
+                savChck = 1;
+            }
             bool check = DfChekc();
             if (!check)
             {
@@ -100,7 +106,8 @@ namespace MLDA_Application.Preparation.PreProcess
                                 $" \"{max}\""+
                                 $" \"{std}\""+
                                 $" \"{dcml}\"" +
-                                $" \"{task}\"";
+                                $" \"{task}\""+
+                                $" \"{savChck}\"";
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
             start.CreateNoWindow = true;
@@ -124,6 +131,8 @@ namespace MLDA_Application.Preparation.PreProcess
                 //frmP_pp pp = (frmP_pp)this.ParentForm;
                 //pp.updatetext(output);
             }
+
+            chckBxSav.Checked = false;
         }
         private void BtnZcore_Click(object sender, EventArgs e)
         {
@@ -159,6 +168,7 @@ namespace MLDA_Application.Preparation.PreProcess
             txtStd.Text = "1";
             BtnZcore.Enabled = true;
             btnMinMax.Enabled = true;
+            chckBxSav.Enabled = false;
         }
         private void iconButton1_Click(object sender, EventArgs e)
         {

@@ -45,6 +45,7 @@
             this.btnSclNo = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnPrcd = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.chckBxSav = new Guna.UI2.WinForms.Guna2CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -282,7 +283,7 @@
             this.btnPrcd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPrcd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnPrcd.ForeColor = System.Drawing.Color.White;
-            this.btnPrcd.Location = new System.Drawing.Point(36, 326);
+            this.btnPrcd.Location = new System.Drawing.Point(36, 339);
             this.btnPrcd.Name = "btnPrcd";
             this.btnPrcd.Size = new System.Drawing.Size(122, 39);
             this.btnPrcd.TabIndex = 33;
@@ -298,18 +299,37 @@
             this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(170, 326);
+            this.btnCancel.Location = new System.Drawing.Point(170, 339);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(116, 39);
             this.btnCancel.TabIndex = 34;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // chckBxSav
+            // 
+            this.chckBxSav.AutoSize = true;
+            this.chckBxSav.CheckedState.BorderColor = System.Drawing.Color.Navy;
+            this.chckBxSav.CheckedState.BorderRadius = 0;
+            this.chckBxSav.CheckedState.BorderThickness = 0;
+            this.chckBxSav.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chckBxSav.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.chckBxSav.Location = new System.Drawing.Point(35, 316);
+            this.chckBxSav.Name = "chckBxSav";
+            this.chckBxSav.Size = new System.Drawing.Size(149, 17);
+            this.chckBxSav.TabIndex = 35;
+            this.chckBxSav.Text = "  Update the Excisting file.";
+            this.chckBxSav.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chckBxSav.UncheckedState.BorderRadius = 0;
+            this.chckBxSav.UncheckedState.BorderThickness = 0;
+            this.chckBxSav.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
             // UC_Encoding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
+            this.Controls.Add(this.chckBxSav);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPrcd);
             this.Controls.Add(this.btnSclNo);
@@ -353,5 +373,6 @@
         private Guna.UI2.WinForms.Guna2TileButton btnSclNo;
         private Guna.UI2.WinForms.Guna2TileButton btnPrcd;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
+        private Guna.UI2.WinForms.Guna2CheckBox chckBxSav;
     }
 }

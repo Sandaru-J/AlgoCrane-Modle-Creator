@@ -21,6 +21,8 @@ namespace MLDA_Application.Preparation.PreProcess
         int unData = 1;
         int scale = 1;
 
+        int savChck= 0;
+
         private bool btnTechnique=false;
         public string filePath;
         public string fileName;
@@ -59,6 +61,10 @@ namespace MLDA_Application.Preparation.PreProcess
         }
         private void encode()
         {
+            if(chckBxSav.Checked)
+            {
+                savChck = 1;
+            }
             bool check = DfChekc();
             if (!check)
             {
@@ -82,7 +88,8 @@ namespace MLDA_Application.Preparation.PreProcess
                                 $" \"{technique}\"" +
                                 $" \"{outputType}\"" +
                                 $" \"{unData}\"" +
-                                $" \"{scale}\"";
+                                $" \"{scale}\"" +
+                                $" \"{savChck}\"";
                                
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
@@ -108,6 +115,7 @@ namespace MLDA_Application.Preparation.PreProcess
                 //pp.updatetext(output);
             }
             //btnPrcd.Text = "Proceed";
+            chckBxSav.Checked = false;
         }
 
         private void btnLabel_Click(object sender, EventArgs e)
@@ -276,6 +284,8 @@ namespace MLDA_Application.Preparation.PreProcess
             btnscYes.Checked= false;
             btnSpecial.Checked= false;
             btnMstCmn.Checked= false;
+
+            chckBxSav.Checked= false;
 
             btnPrcd.Text = "Proceed";
         }
