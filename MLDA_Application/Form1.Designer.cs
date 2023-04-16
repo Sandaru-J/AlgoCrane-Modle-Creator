@@ -34,9 +34,11 @@
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnUpld = new Guna.UI2.WinForms.Guna2Button();
             this.btnLoadDf = new Guna.UI2.WinForms.Guna2Button();
             this.pnlChildHolder = new System.Windows.Forms.Panel();
-            this.btnUpld = new Guna.UI2.WinForms.Guna2Button();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             this.pnlTop.SuspendLayout();
@@ -45,6 +47,8 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.pnlMenu.Controls.Add(this.iconButton2);
+            this.pnlMenu.Controls.Add(this.iconButton1);
             this.pnlMenu.Controls.Add(this.MBtn_Train);
             this.pnlMenu.Controls.Add(this.MpBtn_Prepare);
             this.pnlMenu.Controls.Add(this.pnlLogo);
@@ -135,6 +139,25 @@
             this.pnlTop.TabIndex = 1;
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
             // 
+            // btnUpld
+            // 
+            this.btnUpld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpld.BorderRadius = 1;
+            this.btnUpld.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpld.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpld.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpld.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpld.FillColor = System.Drawing.Color.Orange;
+            this.btnUpld.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUpld.ForeColor = System.Drawing.Color.White;
+            this.btnUpld.Location = new System.Drawing.Point(664, 27);
+            this.btnUpld.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
+            this.btnUpld.Name = "btnUpld";
+            this.btnUpld.Size = new System.Drawing.Size(96, 30);
+            this.btnUpld.TabIndex = 1;
+            this.btnUpld.Text = "Upload";
+            this.btnUpld.Click += new System.EventHandler(this.btnUpld_Click);
+            // 
             // btnLoadDf
             // 
             this.btnLoadDf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -164,24 +187,45 @@
             this.pnlChildHolder.Size = new System.Drawing.Size(784, 477);
             this.pnlChildHolder.TabIndex = 2;
             // 
-            // btnUpld
+            // iconButton1
             // 
-            this.btnUpld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpld.BorderRadius = 1;
-            this.btnUpld.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpld.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpld.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUpld.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpld.FillColor = System.Drawing.Color.Orange;
-            this.btnUpld.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnUpld.ForeColor = System.Drawing.Color.White;
-            this.btnUpld.Location = new System.Drawing.Point(664, 27);
-            this.btnUpld.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
-            this.btnUpld.Name = "btnUpld";
-            this.btnUpld.Size = new System.Drawing.Size(96, 30);
-            this.btnUpld.TabIndex = 1;
-            this.btnUpld.Text = "Upload";
-            this.btnUpld.Click += new System.EventHandler(this.btnUpld_Click);
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Beer;
+            this.iconButton1.IconColor = System.Drawing.Color.SandyBrown;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 209);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(137, 55);
+            this.iconButton1.TabIndex = 3;
+            this.iconButton1.Tag = "Train";
+            this.iconButton1.Text = "Train";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Beer;
+            this.iconButton2.IconColor = System.Drawing.Color.SandyBrown;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.Location = new System.Drawing.Point(0, 264);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(137, 55);
+            this.iconButton2.TabIndex = 4;
+            this.iconButton2.Tag = "Train";
+            this.iconButton2.Text = "Train";
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton2.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
@@ -214,6 +258,8 @@
         private FontAwesome.Sharp.IconButton MBtn_Train;
         private Guna.UI2.WinForms.Guna2Button btnLoadDf;
         private Guna.UI2.WinForms.Guna2Button btnUpld;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
 
