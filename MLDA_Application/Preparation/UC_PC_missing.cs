@@ -24,6 +24,7 @@ namespace MLDA_Application.Preparation
 
         string TrgtCol;
 
+        string path;
         public UC_PC_missing()
         {
             InitializeComponent();
