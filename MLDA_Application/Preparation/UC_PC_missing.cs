@@ -19,7 +19,7 @@ namespace MLDA_Application.Preparation
 
         public string filePath;
         public string fileName;
-
+        
         int saveCheck =0;
 
         string TrgtCol;
@@ -121,7 +121,6 @@ namespace MLDA_Application.Preparation
                 return output;
             }
         }
-
         private string dupplicate(int flag1)
         {
             if (chckBxClean.Checked)
@@ -312,6 +311,56 @@ namespace MLDA_Application.Preparation
         private void btnRepOUt_Click(object sender, EventArgs e)
         {
             outlliers(2);
+        }
+
+        private void txtCleanView_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            path = filePath;
+           
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true; 
+
+                //string command = textBox1.Text.Trim(); // Get the input from the TextBox and trim any leading/trailing whitespace
+
+                string output = string.Empty; // Variable to store the output of the command
+
+                string[] lines = txtCleanView.Text.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                string command = lines[lines.Length - 1];
+                if (command == "help")
+                {
+                    string helpList = "head: show the head of the data set." +
+                        "tail: show the tail of the data set." +
+                        "clear: Clear the interface." +
+                        "cols: Show columns of the dataset." +
+                        "col_d: Show the data types of the data set." +
+                        "shape: Length of the columns into rows.";
+
+                    // Append each item in the helpList to the textBoxOutput on a separate line
+                    string[] helpItems = helpList.Split('.'); // Split the items by '.' character
+                    foreach (string helpItem in helpItems)
+                    {
+                        // Append the helpItem followed by a new line to the textBoxOutput
+                        txtCleanView.AppendText(helpItem.Trim() + Environment.NewLine);
+                    }
+                    command = string.Empty;
+                }
+                if (command == "clear")
+                {
+                    txtCleanView.Clear();
+                    command = string.Empty;
+                }
+                if (command != string.Empty)
+                {
+                    CliSwitch cs = new CliSwitch();
+                    output = cs.Switch(command, path);
+                }
+
+                // Append the output to the TextBox
+                txtCleanView.AppendText(output + Environment.NewLine);
+
+                //textBox1.Clear(); // Clear the input TextBox
+            }
         }
     }
 }

@@ -244,6 +244,7 @@
             this.txtbxPP.SelectedText = "";
             this.txtbxPP.Size = new System.Drawing.Size(550, 351);
             this.txtbxPP.TabIndex = 5;
+            this.txtbxPP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPP_KeyPress);
             // 
             // frmP_pp
             // 
