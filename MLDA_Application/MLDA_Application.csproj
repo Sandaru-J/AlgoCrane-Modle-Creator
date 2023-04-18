@@ -240,6 +240,12 @@
     <Compile Include="Shared\MongoCon.cs" />
     <Compile Include="Shared\PathModel.cs" />
     <Compile Include="Shared\UploadModel.cs" />
+    <Compile Include="Store\store.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Store\store.Designer.cs">
+      <DependentUpon>store.cs</DependentUpon>
+    </Compile>
     <Compile Include="Train\frmT_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Shared\frmDfLoad.resx">
       <DependentUpon>frmDfLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Store\store.resx">
+      <DependentUpon>store.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Train\frmT_Main.resx">
       <DependentUpon>frmT_Main.cs</DependentUpon>
