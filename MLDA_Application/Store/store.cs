@@ -85,6 +85,7 @@ namespace MLDA_Application.Store
             {
                 mongoCon.UploadCsv(txtBxPrjctNme.Text, txtBxDfname.Text, txtBxPath.Text, txtBxLink.Text);
                 cleartxts(1);
+                refreshDgv();
             }
         }
 
