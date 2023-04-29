@@ -69,7 +69,11 @@
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTemplateName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTmpCncl = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPrcd = new Guna.UI2.WinForms.Guna2Button();
             this.pnlTemplate = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtOutptPnl = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
@@ -77,10 +81,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtOutptPnl = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnPrcd = new Guna.UI2.WinForms.Guna2Button();
-            this.btnTmpCncl = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -329,7 +329,7 @@
             this.btnTempName.Name = "btnTempName";
             this.btnTempName.Size = new System.Drawing.Size(203, 32);
             this.btnTempName.TabIndex = 5;
-            this.btnTempName.Text = "Give Name";
+            this.btnTempName.Text = "Name the Template";
             this.btnTempName.Click += new System.EventHandler(this.btnTempName_Click);
             // 
             // txtBxTempName
@@ -454,7 +454,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(137, 0);
+            this.label1.Location = new System.Drawing.Point(172, 1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 20);
             this.label1.TabIndex = 1;
@@ -509,6 +509,7 @@
             this.btnMdlCncl.Size = new System.Drawing.Size(203, 31);
             this.btnMdlCncl.TabIndex = 10;
             this.btnMdlCncl.Text = "Cancel";
+            this.btnMdlCncl.Click += new System.EventHandler(this.btnMdlCncl_Click);
             // 
             // btnChkMdl
             // 
@@ -528,6 +529,7 @@
             this.btnChkMdl.Size = new System.Drawing.Size(203, 31);
             this.btnChkMdl.TabIndex = 9;
             this.btnChkMdl.Text = "Check Inputs";
+            this.btnChkMdl.Click += new System.EventHandler(this.btnChkMdl_Click);
             // 
             // btnImprtMdl
             // 
@@ -821,6 +823,41 @@
             this.panel1.Size = new System.Drawing.Size(354, 72);
             this.panel1.TabIndex = 1;
             // 
+            // btnTmpCncl
+            // 
+            this.btnTmpCncl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnTmpCncl.BorderThickness = 1;
+            this.btnTmpCncl.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTmpCncl.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTmpCncl.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTmpCncl.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTmpCncl.FillColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnTmpCncl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnTmpCncl.ForeColor = System.Drawing.Color.White;
+            this.btnTmpCncl.Location = new System.Drawing.Point(195, 22);
+            this.btnTmpCncl.Name = "btnTmpCncl";
+            this.btnTmpCncl.Size = new System.Drawing.Size(109, 26);
+            this.btnTmpCncl.TabIndex = 1;
+            this.btnTmpCncl.Text = "Cancel";
+            // 
+            // btnPrcd
+            // 
+            this.btnPrcd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPrcd.BorderThickness = 1;
+            this.btnPrcd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrcd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrcd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPrcd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPrcd.FillColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnPrcd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrcd.ForeColor = System.Drawing.Color.White;
+            this.btnPrcd.Location = new System.Drawing.Point(45, 21);
+            this.btnPrcd.Name = "btnPrcd";
+            this.btnPrcd.Size = new System.Drawing.Size(109, 26);
+            this.btnPrcd.TabIndex = 0;
+            this.btnPrcd.Text = "Check";
+            this.btnPrcd.Click += new System.EventHandler(this.btnPrcd_Click);
+            // 
             // pnlTemplate
             // 
             this.pnlTemplate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(29)))), ((int)(((byte)(38)))));
@@ -829,6 +866,36 @@
             this.pnlTemplate.Name = "pnlTemplate";
             this.pnlTemplate.Size = new System.Drawing.Size(354, 204);
             this.pnlTemplate.TabIndex = 2;
+            // 
+            // guna2Panel14
+            // 
+            this.guna2Panel14.Controls.Add(this.txtOutptPnl);
+            this.guna2Panel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel14.Location = new System.Drawing.Point(3, 37);
+            this.guna2Panel14.Name = "guna2Panel14";
+            this.guna2Panel14.Size = new System.Drawing.Size(354, 51);
+            this.guna2Panel14.TabIndex = 3;
+            // 
+            // txtOutptPnl
+            // 
+            this.txtOutptPnl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtOutptPnl.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtOutptPnl.DefaultText = "";
+            this.txtOutptPnl.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtOutptPnl.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtOutptPnl.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtOutptPnl.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtOutptPnl.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtOutptPnl.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtOutptPnl.ForeColor = System.Drawing.Color.Black;
+            this.txtOutptPnl.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtOutptPnl.Location = new System.Drawing.Point(32, 3);
+            this.txtOutptPnl.Name = "txtOutptPnl";
+            this.txtOutptPnl.PasswordChar = '\0';
+            this.txtOutptPnl.PlaceholderText = "";
+            this.txtOutptPnl.SelectedText = "";
+            this.txtOutptPnl.Size = new System.Drawing.Size(293, 50);
+            this.txtOutptPnl.TabIndex = 0;
             // 
             // guna2Panel11
             // 
@@ -875,69 +942,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // guna2Panel14
-            // 
-            this.guna2Panel14.Controls.Add(this.txtOutptPnl);
-            this.guna2Panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel14.Location = new System.Drawing.Point(3, 37);
-            this.guna2Panel14.Name = "guna2Panel14";
-            this.guna2Panel14.Size = new System.Drawing.Size(354, 51);
-            this.guna2Panel14.TabIndex = 3;
-            // 
-            // txtOutptPnl
-            // 
-            this.txtOutptPnl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtOutptPnl.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtOutptPnl.DefaultText = "";
-            this.txtOutptPnl.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtOutptPnl.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtOutptPnl.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtOutptPnl.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtOutptPnl.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOutptPnl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOutptPnl.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOutptPnl.Location = new System.Drawing.Point(32, 3);
-            this.txtOutptPnl.Name = "txtOutptPnl";
-            this.txtOutptPnl.PasswordChar = '\0';
-            this.txtOutptPnl.PlaceholderText = "";
-            this.txtOutptPnl.SelectedText = "";
-            this.txtOutptPnl.Size = new System.Drawing.Size(293, 50);
-            this.txtOutptPnl.TabIndex = 0;
-            // 
-            // btnPrcd
-            // 
-            this.btnPrcd.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPrcd.BorderThickness = 1;
-            this.btnPrcd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrcd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrcd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPrcd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPrcd.FillColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnPrcd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrcd.ForeColor = System.Drawing.Color.White;
-            this.btnPrcd.Location = new System.Drawing.Point(45, 21);
-            this.btnPrcd.Name = "btnPrcd";
-            this.btnPrcd.Size = new System.Drawing.Size(109, 26);
-            this.btnPrcd.TabIndex = 0;
-            this.btnPrcd.Text = "Check";
-            // 
-            // btnTmpCncl
-            // 
-            this.btnTmpCncl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnTmpCncl.BorderThickness = 1;
-            this.btnTmpCncl.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTmpCncl.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTmpCncl.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTmpCncl.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTmpCncl.FillColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnTmpCncl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnTmpCncl.ForeColor = System.Drawing.Color.White;
-            this.btnTmpCncl.Location = new System.Drawing.Point(195, 22);
-            this.btnTmpCncl.Name = "btnTmpCncl";
-            this.btnTmpCncl.Size = new System.Drawing.Size(109, 26);
-            this.btnTmpCncl.TabIndex = 1;
-            this.btnTmpCncl.Text = "Cancel";
             // 
             // FrmTemp_Main
             // 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -118,28 +119,32 @@ namespace MLDA_Application.Template
 
         private void btnAddLayout_Click(object sender, EventArgs e)
         {
-            if(NuUpDLayout.Value == 0)
+            if (NuUpDLayout.Value == 0)
             {
                 MessageBox.Show("Select Layout Count accordint to the no of inputs", "Invaliid attempt");
-            }else
+            }
+            else
             {
-                if(addLayout())
+                if (addLayout())
                 {
                     btnAddLbl.Enabled = true;
                     btnAddTxtBx.Enabled = true;
                 }
             }
+            btnAddLayout.Enabled = false;
         }
 
         private void btnAddLbl_Click(object sender, EventArgs e)
         {
-            if((string.IsNullOrEmpty(txtBxLblName.Text)))
+            if ((string.IsNullOrEmpty(txtBxLblName.Text)))
             {
                 MessageBox.Show("Enter a Name for Label", "Missing Field");
-            }else if(lblCnt == NuUpDLblRow.Value)
+            }
+            else if (lblCnt == NuUpDLblRow.Value)
             {
                 MessageBox.Show("Change the Row count. Already, label in selected Row", "Invaliid attempt");
-            }else
+            }
+            else
             {
                 addLbl();
                 lblCnt++;
@@ -187,7 +192,7 @@ namespace MLDA_Application.Template
                             {
                                 string textBoxText = textBox.Text;
                                 //..............................................................class1
-                                Console.WriteLine("class 1: "+textBoxText);
+                                Console.WriteLine("class 1: " + textBoxText);
 
                                 //index = index++; 
 
@@ -266,7 +271,7 @@ namespace MLDA_Application.Template
             {
                 txtBxMdlChose.Text = openFileDialog1.FileName;
                 //modelfile = openFileDialog1.FileName;
-                modelPath = openFileDialog1.FileName;
+                //modelPath = openFileDialog1.FileName;
             }
         }
 
@@ -307,7 +312,7 @@ namespace MLDA_Application.Template
                 fileName = " ";
                 return false;
             }
-          
+
 
             // Combine the file name and path into a single string
             string fullFilePath = Path.Combine(fileLoc, fileName);
@@ -330,26 +335,29 @@ namespace MLDA_Application.Template
 
         private void btnSavTmp_Click(object sender, EventArgs e)
         {
-            if((string.IsNullOrEmpty(txtBxTempName.Text)))
+            if ((string.IsNullOrEmpty(txtBxTempName.Text)))
             {
                 MessageBox.Show("You have not Given a Name for Template", "No Name");
             }
-            else if(txtCnt == 0 || lblCnt == 0)
+            else if (txtCnt == 0 || lblCnt == 0)
             {
                 MessageBox.Show("No componets Added to Template", "Missing Fields");
             }
-            else if((string.IsNullOrEmpty(txtBxTmpSavName.Text)) || 
+            else if ((string.IsNullOrEmpty(txtBxTmpSavName.Text)) ||
                 (string.IsNullOrEmpty(txtBxTmpLoc.Text)))
             {
                 MessageBox.Show("Fill the Required fields to Save", "Missing Fields");
-            }else if((string.IsNullOrEmpty(modelPath)))
+            }
+            else if ((string.IsNullOrEmpty(modelPath)))
             {
                 MessageBox.Show("No Model File Selected. If selected Please click the import Button", "Model missing");
-            }else
+            }
+            else
             {
-                if(savTmp())
+                if (savTmp())
                 {
-                    MessageBox.Show("Template File Saved Sucessfully","Sucess");
+                    MessageBox.Show("Template File Saved Sucessfully", "Sucess");
+                    clearInputs();
                 }
                 else
                 {
@@ -365,12 +373,12 @@ namespace MLDA_Application.Template
             }
         }
 
-        private void BtnReset_Click(object sender, EventArgs e)
+        private void clearInputs()
         {
-            pnlTemplate.Controls.Clear();
             MethodList.Clear();
             modelPath = null;
-            txtBxArray=null;
+            txtBxArray = null;
+            txtOutptPnl.Text = " ";
 
             foreach (Control c in tableLayoutPanel3.Controls)
             {
@@ -400,6 +408,121 @@ namespace MLDA_Application.Template
 
             lblCnt = 0;
             txtCnt = 0;
+        }
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            pnlTemplate.Controls.Clear();
+            clearInputs();
+            btnAddLayout.Enabled = true;
+            lblTemplateName.Text = "Template";
+
+        }
+
+        public void runModel()
+        {
+            //txtExtract();
+            string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
+            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Testing\pyScripts\modelScrpt.py";
+            string modelpath = modelPath;
+            //double[] inputArray= { 10, 15 };
+            double[] inputArray = txtBxArray;
+            string inputSet = string.Join(",", inputArray.Select(v => v.ToString()));
+
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.FileName = python_Interpreter_Path;
+            start.Arguments = $"\"{python_Script_Path}\"" +
+                                $" \"{modelpath}\" " +
+                                $"\"{inputSet}\"";
+
+            start.UseShellExecute = false;
+            start.RedirectStandardOutput = true;
+            start.CreateNoWindow = true;
+
+            // Start the process and get the output
+            using (Process process = Process.Start(start))
+            {
+                // Read the output from the Python script
+                string output = process.StandardOutput.ReadToEnd();
+
+                Console.WriteLine(output);
+                txtOutptPnl.Text = "Predicted value: " + output;
+                double doubleOut = double.Parse(output);
+
+                Array.Resize(ref listArray, listArray.Length + 1);
+                listArray[listArray.Length - 1] = doubleOut;
+                list.Add(listArray.ToList());
+            }
+        }
+
+        private void btnPrcd_Click(object sender, EventArgs e)
+        {
+            if (txtExtract() || modelPath != null)
+            {
+                if (modelPath != null)
+                {
+                    runModel();
+                }
+                else
+                {
+                    MessageBox.Show("Model not imported correctly", "Error");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Text Fields are empty to Proceed", "Missing");
+            }
+        }
+
+        private void mdlChck()
+        {
+            string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
+            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Testing\pyScripts\chekModel.py";
+            string modelpath = modelPath;
+
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.FileName = python_Interpreter_Path;
+            start.Arguments = $"\"{python_Script_Path}\"" +
+                                $" \"{modelpath}\" ";
+            start.UseShellExecute = false;
+            start.RedirectStandardOutput = true;
+            start.CreateNoWindow = true;
+
+            // Start the process and get the output
+            using (Process process = Process.Start(start))
+            {
+                // Read the output from the Python script
+                string output = process.StandardOutput.ReadToEnd();
+
+                Console.WriteLine(output);
+                txtOutptPnl.Text = output;
+            }
+        }
+
+        private void btnChkMdl_Click(object sender, EventArgs e)
+        {
+            if ((string.IsNullOrEmpty(txtBxMdlChose.Text)))
+            {
+                MessageBox.Show("No Model Seltected to Check", "No Model");
+            }
+            else if ((string.IsNullOrEmpty(modelPath)))
+            {
+                MessageBox.Show("If choosed a Model Please Click the Import Model Button", "Not Assigned");
+            }else
+            {
+                mdlChck();
+            }
+
+            foreach (string s in MethodList)
+            {
+                Console.WriteLine(s);
+            }
+        }
+        private void btnMdlCncl_Click(object sender, EventArgs e)
+        {
+            string remove = "Model";
+            MethodList.RemoveAll(method => method.Contains(remove));
+            txtBxMdlChose.Text = " ";
         }
     }
 }
