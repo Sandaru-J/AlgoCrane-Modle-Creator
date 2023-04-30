@@ -81,6 +81,10 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnOpnPrdctr = new Guna.UI2.WinForms.Guna2Button();
+            this.TxtBxChooseTemp = new Guna.UI2.WinForms.Guna2TextBox();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -104,6 +108,8 @@
             this.guna2Panel13.SuspendLayout();
             this.panel1.SuspendLayout();
             this.guna2Panel14.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.guna2Panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -839,6 +845,7 @@
             this.btnTmpCncl.Size = new System.Drawing.Size(109, 26);
             this.btnTmpCncl.TabIndex = 1;
             this.btnTmpCncl.Text = "Cancel";
+            this.btnTmpCncl.Click += new System.EventHandler(this.btnTmpCncl_Click);
             // 
             // btnPrcd
             // 
@@ -932,6 +939,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(28)))), ((int)(((byte)(66)))));
+            this.tabPage2.Controls.Add(this.guna2Panel15);
             this.tabPage2.Location = new System.Drawing.Point(4, 44);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -942,6 +950,65 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // guna2Panel15
+            // 
+            this.guna2Panel15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2Panel15.BackColor = System.Drawing.Color.Teal;
+            this.guna2Panel15.Controls.Add(this.TxtBxChooseTemp);
+            this.guna2Panel15.Controls.Add(this.btnOpnPrdctr);
+            this.guna2Panel15.Location = new System.Drawing.Point(241, 128);
+            this.guna2Panel15.Name = "guna2Panel15";
+            this.guna2Panel15.Size = new System.Drawing.Size(354, 131);
+            this.guna2Panel15.TabIndex = 0;
+            // 
+            // btnOpnPrdctr
+            // 
+            this.btnOpnPrdctr.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOpnPrdctr.BorderRadius = 2;
+            this.btnOpnPrdctr.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnOpnPrdctr.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnOpnPrdctr.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnOpnPrdctr.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnOpnPrdctr.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnOpnPrdctr.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnOpnPrdctr.ForeColor = System.Drawing.Color.White;
+            this.btnOpnPrdctr.Location = new System.Drawing.Point(89, 69);
+            this.btnOpnPrdctr.Name = "btnOpnPrdctr";
+            this.btnOpnPrdctr.Size = new System.Drawing.Size(182, 32);
+            this.btnOpnPrdctr.TabIndex = 0;
+            this.btnOpnPrdctr.Text = "Open Predictor";
+            this.btnOpnPrdctr.Click += new System.EventHandler(this.btnOpnPrdctr_Click);
+            // 
+            // TxtBxChooseTemp
+            // 
+            this.TxtBxChooseTemp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TxtBxChooseTemp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(104)))), ((int)(((byte)(112)))));
+            this.TxtBxChooseTemp.BorderRadius = 2;
+            this.TxtBxChooseTemp.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtBxChooseTemp.DefaultText = "";
+            this.TxtBxChooseTemp.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TxtBxChooseTemp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TxtBxChooseTemp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtBxChooseTemp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtBxChooseTemp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(59)))), ((int)(((byte)(73)))));
+            this.TxtBxChooseTemp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtBxChooseTemp.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxtBxChooseTemp.ForeColor = System.Drawing.Color.White;
+            this.TxtBxChooseTemp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtBxChooseTemp.Location = new System.Drawing.Point(30, 27);
+            this.TxtBxChooseTemp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBxChooseTemp.Name = "TxtBxChooseTemp";
+            this.TxtBxChooseTemp.PasswordChar = '\0';
+            this.TxtBxChooseTemp.PlaceholderText = "Click to Choose a Template";
+            this.TxtBxChooseTemp.SelectedText = "";
+            this.TxtBxChooseTemp.Size = new System.Drawing.Size(297, 35);
+            this.TxtBxChooseTemp.TabIndex = 5;
+            this.TxtBxChooseTemp.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtBxChooseTemp_MouseClick);
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog2";
             // 
             // FrmTemp_Main
             // 
@@ -979,6 +1046,8 @@
             this.guna2Panel13.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.guna2Panel14.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.guna2Panel15.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1037,5 +1106,9 @@
         private Guna.UI2.WinForms.Guna2TextBox txtOutptPnl;
         private Guna.UI2.WinForms.Guna2Button btnPrcd;
         private Guna.UI2.WinForms.Guna2Button btnTmpCncl;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
+        private Guna.UI2.WinForms.Guna2Button btnOpnPrdctr;
+        private Guna.UI2.WinForms.Guna2TextBox TxtBxChooseTemp;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
     }
 }

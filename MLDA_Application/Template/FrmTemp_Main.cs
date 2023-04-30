@@ -78,6 +78,8 @@ namespace MLDA_Application.Template
             TableLayoutPanel tableLayoutPanel1 = pnlTemplate.Controls.OfType<TableLayoutPanel>().FirstOrDefault();
             tableLayoutPanel1.Controls.Add(label2, X, Y);
 
+            txtBxLblName.Text = " ";
+
             string command = "Label" + "," + Y + "," + z;
             MethodList.Add(command);
 
@@ -113,7 +115,7 @@ namespace MLDA_Application.Template
         private void btnTempName_Click(object sender, EventArgs e)
         {
             lblTemplateName.Text = txtBxTempName.Text;
-            string command = "Template" + "," + label1.Text;
+            string command = "Template" + "," + txtBxTempName.Text;
             MethodList.Add(command);
         }
 
@@ -280,6 +282,8 @@ namespace MLDA_Application.Template
             modelPath = openFileDialog1.FileName;
             string command = "Model" + "," + modelPath;
             MethodList.Add(command);
+
+            btnImprtMdl.Enabled = false;
         }
 
         private void txtBxTmpLoc_MouseClick(object sender, MouseEventArgs e)
@@ -422,7 +426,7 @@ namespace MLDA_Application.Template
         {
             //txtExtract();
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
-            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Testing\pyScripts\modelScrpt.py";
+            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\runModel.py";
             string modelpath = modelPath;
             //double[] inputArray= { 10, 15 };
             double[] inputArray = txtBxArray;
@@ -466,7 +470,6 @@ namespace MLDA_Application.Template
                 {
                     MessageBox.Show("Model not imported correctly", "Error");
                 }
-
             }
             else
             {
@@ -477,8 +480,8 @@ namespace MLDA_Application.Template
         private void mdlChck()
         {
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
-            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Testing\pyScripts\chekModel.py";
-            string modelpath = modelPath;
+            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\chckInputs.py";
+            string modelpath = txtBxMdlChose.Text;
 
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = python_Interpreter_Path;
@@ -505,10 +508,11 @@ namespace MLDA_Application.Template
             {
                 MessageBox.Show("No Model Seltected to Check", "No Model");
             }
-            else if ((string.IsNullOrEmpty(modelPath)))
-            {
-                MessageBox.Show("If choosed a Model Please Click the Import Model Button", "Not Assigned");
-            }else
+            //else if ((string.IsNullOrEmpty(modelPath)))
+            //{
+              //  MessageBox.Show("If choosed a Model Please Click the Import Model Button", "Not Assigned");
+            //}
+            else
             {
                 mdlChck();
             }
@@ -523,6 +527,56 @@ namespace MLDA_Application.Template
             string remove = "Model";
             MethodList.RemoveAll(method => method.Contains(remove));
             txtBxMdlChose.Text = " ";
+
+            btnImprtMdl.Enabled = true;
+        }
+
+        private void btnOpnPrdctr_Click(object sender, EventArgs e)
+        {
+            if((string.IsNullOrEmpty(TxtBxChooseTemp.Text)))
+            {
+                MessageBox.Show("No Template Choosed. Click text box to choose", "No Template");
+            }else
+            {
+                Frm_Predictor frmObj = new Frm_Predictor(TxtBxChooseTemp.Text);
+                frmObj.Show();
+                TxtBxChooseTemp.Text = " ";
+            }
+            
+        }
+
+        private void TxtBxChooseTemp_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (openFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                TxtBxChooseTemp.Text = openFileDialog2.FileName;
+                //modelfile = openFileDialog1.FileName;
+                //modelPath = openFileDialog1.FileName;
+            }
+        }
+
+        private void btnTmpCncl_Click(object sender, EventArgs e)
+        {
+            foreach (Control cntrl in pnlTemplate.Controls)
+            {
+                if (cntrl is TableLayoutPanel tbl)
+                {
+                    for (int row = 0; row < tbl.RowCount; row++)
+                    {
+                        // Loop through each column in the row
+                        for (int col = 0; col < tbl.ColumnCount; col++)
+                        {
+                            Control innerControl = tbl.GetControlFromPosition(col, row);
+
+                            if (innerControl is TextBox textBox)
+                            {
+                                textBox.Text = " ";
+                            }
+                        }
+                    }
+                }
+            }
+            txtOutptPnl.Clear();
         }
     }
 }

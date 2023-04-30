@@ -246,6 +246,12 @@
     <Compile Include="Template\FrmTemp_Main.Designer.cs">
       <DependentUpon>FrmTemp_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Template\Frm_Predictor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Template\Frm_Predictor.Designer.cs">
+      <DependentUpon>Frm_Predictor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Train\frmT_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Template\FrmTemp_Main.resx">
       <DependentUpon>FrmTemp_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\Frm_Predictor.resx">
+      <DependentUpon>Frm_Predictor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Train\frmT_Main.resx">
       <DependentUpon>frmT_Main.cs</DependentUpon>
