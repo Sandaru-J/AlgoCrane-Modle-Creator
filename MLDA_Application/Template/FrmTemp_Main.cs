@@ -17,6 +17,7 @@ namespace MLDA_Application.Template
     {
         int lblCnt = 0;
         int txtCnt = 0;
+        int inputCnt;
 
         string modelPath;
 
@@ -108,7 +109,7 @@ namespace MLDA_Application.Template
 
             string command = "Input" + "," + Y;
             MethodList.Add(command);
-
+            inputCnt++;
             return true;
         }
 
@@ -301,7 +302,6 @@ namespace MLDA_Application.Template
             string fileName = txtBxTmpSavName.Text;
             string fileLoc = txtBxTmpLoc.Text;
 
-
             var invalidChars = new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars());
             var regex = new System.Text.RegularExpressions.Regex($"[{Regex.Escape(invalidChars)}]");
             if (regex.IsMatch(fileName))
@@ -332,8 +332,6 @@ namespace MLDA_Application.Template
 
             // Set the 'ReadOnly' attribute of the file to true
             File.SetAttributes(fullFilePath, FileAttributes.ReadOnly);
-
-            Console.WriteLine($"Strings saved to file: {fullFilePath}");
             return true;
         }
 
@@ -345,7 +343,7 @@ namespace MLDA_Application.Template
             }
             else if (txtCnt == 0 || lblCnt == 0)
             {
-                MessageBox.Show("No componets Added to Template", "Missing Fields");
+                MessageBox.Show("No components Added to Template", "No Template");
             }
             else if ((string.IsNullOrEmpty(txtBxTmpSavName.Text)) ||
                 (string.IsNullOrEmpty(txtBxTmpLoc.Text)))
@@ -356,6 +354,11 @@ namespace MLDA_Application.Template
             {
                 MessageBox.Show("No Model File Selected. If selected Please click the import Button", "Model missing");
             }
+            else if(!testTemplate())
+            {
+                MessageBox.Show("Input field count and required filed counts are different", "Failed");
+                clearInputs();
+            }
             else
             {
                 if (savTmp())
@@ -365,7 +368,7 @@ namespace MLDA_Application.Template
                 }
                 else
                 {
-                    MessageBox.Show("Templae Saving failed", "Failed");
+                    MessageBox.Show("Template Saving failed", "Failed");
                     foreach (Control c in tableLayoutPanel7.Controls)
                     {
                         if (c is Guna.UI2.WinForms.Guna2TextBox)
@@ -412,6 +415,7 @@ namespace MLDA_Application.Template
 
             lblCnt = 0;
             txtCnt = 0;
+            inputCnt = 0;
         }
         private void BtnReset_Click(object sender, EventArgs e)
         {
@@ -419,7 +423,6 @@ namespace MLDA_Application.Template
             clearInputs();
             btnAddLayout.Enabled = true;
             lblTemplateName.Text = "Template";
-
         }
 
         public void runModel()
@@ -448,7 +451,7 @@ namespace MLDA_Application.Template
                 // Read the output from the Python script
                 string output = process.StandardOutput.ReadToEnd();
 
-                Console.WriteLine(output);
+                //Console.WriteLine(output);
                 txtOutptPnl.Text = "Predicted value: " + output;
                 double doubleOut = double.Parse(output);
 
@@ -476,8 +479,7 @@ namespace MLDA_Application.Template
                 MessageBox.Show("Text Fields are empty to Proceed", "Missing");
             }
         }
-
-        private void mdlChck()
+        private string mdlChck()
         {
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
             string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\chckInputs.py";
@@ -497,8 +499,9 @@ namespace MLDA_Application.Template
                 // Read the output from the Python script
                 string output = process.StandardOutput.ReadToEnd();
 
-                Console.WriteLine(output);
-                txtOutptPnl.Text = output;
+                //Console.WriteLine(output);
+                //txtOutptPnl.Text = output;
+                return output;
             }
         }
 
@@ -514,12 +517,42 @@ namespace MLDA_Application.Template
             //}
             else
             {
-                mdlChck();
+                txtOutptPnl.Text = "The model requires "+ mdlChck() +" input(s).";
             }
+        }
 
-            foreach (string s in MethodList)
+        private bool testTemplate()
+        {
+                //Console.WriteLine(mdlChck() + " " + inputCnt);
+                string tempMdlCnt = mdlChck();
+                int mdlCnt = Int32.Parse(tempMdlCnt);
+                if(mdlCnt != inputCnt)
+                {
+                    return false;
+                    //MessageBox.Show("Input field count and required filed counts are different", "Failed");
+                }
+                else
+                {
+                    return true;
+                }
+        }
+
+        private void btnTestTemplate_Click(object sender, EventArgs e)
+        {
+
+            if (txtCnt == 0 || lblCnt == 0)
             {
-                Console.WriteLine(s);
+                MessageBox.Show("No components Added to Template", "No template");
+            }
+            else if ((string.IsNullOrEmpty(txtBxMdlChose.Text)))
+            {
+                MessageBox.Show("No Model Imported to Check", "No Model");
+            }else if (testTemplate())
+            {
+                MessageBox.Show("Input field count and required field counts are equal. Test passed.", "Sucess");
+            }else
+            {
+                MessageBox.Show("Input field count and required field counts are different. Test Failed.", "Failed");
             }
         }
         private void btnMdlCncl_Click(object sender, EventArgs e)
@@ -547,6 +580,8 @@ namespace MLDA_Application.Template
 
         private void TxtBxChooseTemp_MouseClick(object sender, MouseEventArgs e)
         {
+            //openFileDialog2.Filter = "Text files (*.txt)|*.txt";
+            openFileDialog2.ReadOnlyChecked = true;
             if (openFileDialog2.ShowDialog() == DialogResult.OK)
             {
                 TxtBxChooseTemp.Text = openFileDialog2.FileName;
@@ -578,5 +613,7 @@ namespace MLDA_Application.Template
             }
             txtOutptPnl.Clear();
         }
+
+        
     }
 }

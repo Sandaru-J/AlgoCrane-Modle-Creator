@@ -79,12 +79,13 @@
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
+            this.TxtBxChooseTemp = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnOpnPrdctr = new Guna.UI2.WinForms.Guna2Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnOpnPrdctr = new Guna.UI2.WinForms.Guna2Button();
-            this.TxtBxChooseTemp = new Guna.UI2.WinForms.Guna2TextBox();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.btnTestTemplate = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -119,9 +120,10 @@
             this.guna2TabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
             this.guna2TabControl1.Location = new System.Drawing.Point(0, 0);
+            this.guna2TabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(882, 471);
+            this.guna2TabControl1.Size = new System.Drawing.Size(1176, 580);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -147,9 +149,10 @@
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(28)))), ((int)(((byte)(66)))));
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 44);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(874, 423);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1168, 532);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Create Template";
             // 
@@ -161,11 +164,12 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel7, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(868, 417);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1160, 524);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -177,13 +181,14 @@
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel3, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel4, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(471, 411);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(630, 516);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // guna2Panel1
@@ -192,9 +197,10 @@
             this.guna2Panel1.Controls.Add(this.tableLayoutPanel3);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
+            this.guna2Panel1.Location = new System.Drawing.Point(4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(465, 199);
+            this.guna2Panel1.Size = new System.Drawing.Size(622, 250);
             this.guna2Panel1.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -213,14 +219,15 @@
             this.tableLayoutPanel3.Controls.Add(this.NuUpDLayout, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 26);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 32);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(465, 173);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(622, 218);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // btnAddTxtBx
@@ -236,9 +243,10 @@
             this.btnAddTxtBx.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
             this.btnAddTxtBx.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddTxtBx.ForeColor = System.Drawing.Color.White;
-            this.btnAddTxtBx.Location = new System.Drawing.Point(235, 136);
+            this.btnAddTxtBx.Location = new System.Drawing.Point(314, 172);
+            this.btnAddTxtBx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddTxtBx.Name = "btnAddTxtBx";
-            this.btnAddTxtBx.Size = new System.Drawing.Size(203, 29);
+            this.btnAddTxtBx.Size = new System.Drawing.Size(271, 36);
             this.btnAddTxtBx.TabIndex = 20;
             this.btnAddTxtBx.Text = "Add TextBox";
             this.toolTip1.SetToolTip(this.btnAddTxtBx, "Add a Label for inputs");
@@ -254,15 +262,15 @@
             this.NuUpDtxtRow.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(59)))), ((int)(((byte)(73)))));
             this.NuUpDtxtRow.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NuUpDtxtRow.ForeColor = System.Drawing.Color.Transparent;
-            this.NuUpDtxtRow.Location = new System.Drawing.Point(132, 134);
-            this.NuUpDtxtRow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NuUpDtxtRow.Location = new System.Drawing.Point(177, 169);
+            this.NuUpDtxtRow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NuUpDtxtRow.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.NuUpDtxtRow.Name = "NuUpDtxtRow";
-            this.NuUpDtxtRow.Size = new System.Drawing.Size(97, 34);
+            this.NuUpDtxtRow.Size = new System.Drawing.Size(129, 42);
             this.NuUpDtxtRow.TabIndex = 19;
             this.toolTip1.SetToolTip(this.NuUpDtxtRow, "Select rows according to the no of Inputs");
             this.NuUpDtxtRow.UpDownButtonFillColor = System.Drawing.Color.LightSlateGray;
@@ -285,9 +293,10 @@
             this.btnAddLayout.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
             this.btnAddLayout.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddLayout.ForeColor = System.Drawing.Color.White;
-            this.btnAddLayout.Location = new System.Drawing.Point(235, 46);
+            this.btnAddLayout.Location = new System.Drawing.Point(314, 58);
+            this.btnAddLayout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddLayout.Name = "btnAddLayout";
-            this.btnAddLayout.Size = new System.Drawing.Size(203, 37);
+            this.btnAddLayout.Size = new System.Drawing.Size(271, 46);
             this.btnAddLayout.TabIndex = 17;
             this.btnAddLayout.Text = "Add layout";
             this.toolTip1.SetToolTip(this.btnAddLayout, "Add a Label for inputs");
@@ -309,13 +318,13 @@
             this.txtBxLblName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBxLblName.ForeColor = System.Drawing.Color.White;
             this.txtBxLblName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBxLblName.Location = new System.Drawing.Point(26, 90);
-            this.txtBxLblName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBxLblName.Location = new System.Drawing.Point(35, 113);
+            this.txtBxLblName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBxLblName.Name = "txtBxLblName";
             this.txtBxLblName.PasswordChar = '\0';
             this.txtBxLblName.PlaceholderText = "Enter label Names for inputs";
             this.txtBxLblName.SelectedText = "";
-            this.txtBxLblName.Size = new System.Drawing.Size(203, 35);
+            this.txtBxLblName.Size = new System.Drawing.Size(271, 43);
             this.txtBxLblName.TabIndex = 12;
             // 
             // btnTempName
@@ -331,9 +340,10 @@
             this.btnTempName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
             this.btnTempName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTempName.ForeColor = System.Drawing.Color.White;
-            this.btnTempName.Location = new System.Drawing.Point(235, 5);
+            this.btnTempName.Location = new System.Drawing.Point(314, 7);
+            this.btnTempName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTempName.Name = "btnTempName";
-            this.btnTempName.Size = new System.Drawing.Size(203, 32);
+            this.btnTempName.Size = new System.Drawing.Size(271, 39);
             this.btnTempName.TabIndex = 5;
             this.btnTempName.Text = "Name the Template";
             this.btnTempName.Click += new System.EventHandler(this.btnTempName_Click);
@@ -354,13 +364,13 @@
             this.txtBxTempName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBxTempName.ForeColor = System.Drawing.Color.White;
             this.txtBxTempName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBxTempName.Location = new System.Drawing.Point(26, 4);
-            this.txtBxTempName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBxTempName.Location = new System.Drawing.Point(35, 5);
+            this.txtBxTempName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBxTempName.Name = "txtBxTempName";
             this.txtBxTempName.PasswordChar = '\0';
             this.txtBxTempName.PlaceholderText = "Enter Name for Template";
             this.txtBxTempName.SelectedText = "";
-            this.txtBxTempName.Size = new System.Drawing.Size(203, 35);
+            this.txtBxTempName.Size = new System.Drawing.Size(271, 43);
             this.txtBxTempName.TabIndex = 4;
             // 
             // NuUpDLayout
@@ -373,10 +383,10 @@
             this.NuUpDLayout.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(59)))), ((int)(((byte)(73)))));
             this.NuUpDLayout.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NuUpDLayout.ForeColor = System.Drawing.Color.Transparent;
-            this.NuUpDLayout.Location = new System.Drawing.Point(132, 47);
-            this.NuUpDLayout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NuUpDLayout.Location = new System.Drawing.Point(177, 60);
+            this.NuUpDLayout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NuUpDLayout.Name = "NuUpDLayout";
-            this.NuUpDLayout.Size = new System.Drawing.Size(97, 34);
+            this.NuUpDLayout.Size = new System.Drawing.Size(129, 42);
             this.NuUpDLayout.TabIndex = 16;
             this.toolTip1.SetToolTip(this.NuUpDLayout, "Select rows according to the no of Inputs");
             this.NuUpDLayout.UpDownButtonFillColor = System.Drawing.Color.LightSlateGray;
@@ -389,11 +399,12 @@
             this.tableLayoutPanel4.Controls.Add(this.btnAddLbl, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.NuUpDLblRow, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(235, 89);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(314, 112);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(203, 37);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(271, 46);
             this.tableLayoutPanel4.TabIndex = 18;
             // 
             // btnAddLbl
@@ -409,9 +420,10 @@
             this.btnAddLbl.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
             this.btnAddLbl.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddLbl.ForeColor = System.Drawing.Color.White;
-            this.btnAddLbl.Location = new System.Drawing.Point(74, 4);
+            this.btnAddLbl.Location = new System.Drawing.Point(98, 5);
+            this.btnAddLbl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddLbl.Name = "btnAddLbl";
-            this.btnAddLbl.Size = new System.Drawing.Size(126, 29);
+            this.btnAddLbl.Size = new System.Drawing.Size(169, 36);
             this.btnAddLbl.TabIndex = 18;
             this.btnAddLbl.Text = "Add Labels";
             this.toolTip1.SetToolTip(this.btnAddLbl, "Add a layout for more Responsive Template");
@@ -427,15 +439,15 @@
             this.NuUpDLblRow.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(59)))), ((int)(((byte)(73)))));
             this.NuUpDLblRow.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NuUpDLblRow.ForeColor = System.Drawing.Color.Transparent;
-            this.NuUpDLblRow.Location = new System.Drawing.Point(3, 4);
-            this.NuUpDLblRow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NuUpDLblRow.Location = new System.Drawing.Point(4, 5);
+            this.NuUpDLblRow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NuUpDLblRow.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.NuUpDLblRow.Name = "NuUpDLblRow";
-            this.NuUpDLblRow.Size = new System.Drawing.Size(65, 29);
+            this.NuUpDLblRow.Size = new System.Drawing.Size(86, 36);
             this.NuUpDLblRow.TabIndex = 17;
             this.toolTip1.SetToolTip(this.NuUpDLblRow, "Select a row to label");
             this.NuUpDLblRow.UpDownButtonFillColor = System.Drawing.Color.LightSlateGray;
@@ -450,8 +462,9 @@
             this.guna2Panel2.Controls.Add(this.label1);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(465, 26);
+            this.guna2Panel2.Size = new System.Drawing.Size(622, 32);
             this.guna2Panel2.TabIndex = 0;
             // 
             // label1
@@ -460,9 +473,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(172, 1);
+            this.label1.Location = new System.Drawing.Point(229, 1);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 20);
+            this.label1.Size = new System.Drawing.Size(154, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Design Template";
             // 
@@ -472,9 +486,10 @@
             this.guna2Panel3.Controls.Add(this.tableLayoutPanel6);
             this.guna2Panel3.Controls.Add(this.guna2Panel5);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel3.Location = new System.Drawing.Point(3, 208);
+            this.guna2Panel3.Location = new System.Drawing.Point(4, 262);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(465, 96);
+            this.guna2Panel3.Size = new System.Drawing.Size(622, 121);
             this.guna2Panel3.TabIndex = 1;
             // 
             // tableLayoutPanel6
@@ -489,12 +504,13 @@
             this.tableLayoutPanel6.Controls.Add(this.btnImprtMdl, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.txtBxMdlChose, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 22);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 27);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(465, 74);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(622, 94);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // btnMdlCncl
@@ -510,9 +526,10 @@
             this.btnMdlCncl.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
             this.btnMdlCncl.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnMdlCncl.ForeColor = System.Drawing.Color.White;
-            this.btnMdlCncl.Location = new System.Drawing.Point(235, 40);
+            this.btnMdlCncl.Location = new System.Drawing.Point(314, 51);
+            this.btnMdlCncl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMdlCncl.Name = "btnMdlCncl";
-            this.btnMdlCncl.Size = new System.Drawing.Size(203, 31);
+            this.btnMdlCncl.Size = new System.Drawing.Size(271, 38);
             this.btnMdlCncl.TabIndex = 10;
             this.btnMdlCncl.Text = "Cancel";
             this.btnMdlCncl.Click += new System.EventHandler(this.btnMdlCncl_Click);
@@ -530,9 +547,10 @@
             this.btnChkMdl.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
             this.btnChkMdl.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnChkMdl.ForeColor = System.Drawing.Color.White;
-            this.btnChkMdl.Location = new System.Drawing.Point(26, 40);
+            this.btnChkMdl.Location = new System.Drawing.Point(35, 51);
+            this.btnChkMdl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChkMdl.Name = "btnChkMdl";
-            this.btnChkMdl.Size = new System.Drawing.Size(203, 31);
+            this.btnChkMdl.Size = new System.Drawing.Size(271, 38);
             this.btnChkMdl.TabIndex = 9;
             this.btnChkMdl.Text = "Check Inputs";
             this.btnChkMdl.Click += new System.EventHandler(this.btnChkMdl_Click);
@@ -550,9 +568,10 @@
             this.btnImprtMdl.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
             this.btnImprtMdl.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnImprtMdl.ForeColor = System.Drawing.Color.White;
-            this.btnImprtMdl.Location = new System.Drawing.Point(235, 3);
+            this.btnImprtMdl.Location = new System.Drawing.Point(314, 4);
+            this.btnImprtMdl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnImprtMdl.Name = "btnImprtMdl";
-            this.btnImprtMdl.Size = new System.Drawing.Size(203, 31);
+            this.btnImprtMdl.Size = new System.Drawing.Size(271, 38);
             this.btnImprtMdl.TabIndex = 6;
             this.btnImprtMdl.Text = "Import Model";
             this.btnImprtMdl.Click += new System.EventHandler(this.btnImprtMdl_Click);
@@ -573,13 +592,13 @@
             this.txtBxMdlChose.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBxMdlChose.ForeColor = System.Drawing.Color.White;
             this.txtBxMdlChose.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBxMdlChose.Location = new System.Drawing.Point(26, 4);
-            this.txtBxMdlChose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBxMdlChose.Location = new System.Drawing.Point(35, 5);
+            this.txtBxMdlChose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBxMdlChose.Name = "txtBxMdlChose";
             this.txtBxMdlChose.PasswordChar = '\0';
             this.txtBxMdlChose.PlaceholderText = "Click to choose a Model";
             this.txtBxMdlChose.SelectedText = "";
-            this.txtBxMdlChose.Size = new System.Drawing.Size(203, 29);
+            this.txtBxMdlChose.Size = new System.Drawing.Size(271, 36);
             this.txtBxMdlChose.TabIndex = 5;
             this.txtBxMdlChose.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtBxMdlChose_MouseClick);
             // 
@@ -588,8 +607,9 @@
             this.guna2Panel5.Controls.Add(this.label2);
             this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel5.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(465, 22);
+            this.guna2Panel5.Size = new System.Drawing.Size(622, 27);
             this.guna2Panel5.TabIndex = 0;
             // 
             // label2
@@ -598,9 +618,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(175, -1);
+            this.label2.Location = new System.Drawing.Point(234, -1);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 20);
+            this.label2.Size = new System.Drawing.Size(135, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Choose Model";
             // 
@@ -610,9 +631,10 @@
             this.guna2Panel4.Controls.Add(this.tableLayoutPanel7);
             this.guna2Panel4.Controls.Add(this.guna2Panel6);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel4.Location = new System.Drawing.Point(3, 310);
+            this.guna2Panel4.Location = new System.Drawing.Point(4, 391);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(465, 98);
+            this.guna2Panel4.Size = new System.Drawing.Size(622, 121);
             this.guna2Panel4.TabIndex = 2;
             // 
             // tableLayoutPanel7
@@ -627,13 +649,14 @@
             this.tableLayoutPanel7.Controls.Add(this.txtBxTmpLoc, 2, 0);
             this.tableLayoutPanel7.Controls.Add(this.txtBxTmpSavName, 1, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 30);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(465, 74);
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(622, 91);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // BtnReset
@@ -649,9 +672,10 @@
             this.BtnReset.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
             this.BtnReset.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReset.ForeColor = System.Drawing.Color.White;
-            this.BtnReset.Location = new System.Drawing.Point(235, 41);
+            this.BtnReset.Location = new System.Drawing.Point(314, 50);
+            this.BtnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnReset.Name = "BtnReset";
-            this.BtnReset.Size = new System.Drawing.Size(203, 29);
+            this.BtnReset.Size = new System.Drawing.Size(271, 36);
             this.BtnReset.TabIndex = 22;
             this.BtnReset.Text = "Reset All";
             this.toolTip1.SetToolTip(this.BtnReset, "Add a Label for inputs");
@@ -670,9 +694,10 @@
             this.btnSavTmp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(151)))), ((int)(((byte)(0)))));
             this.btnSavTmp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSavTmp.ForeColor = System.Drawing.Color.White;
-            this.btnSavTmp.Location = new System.Drawing.Point(26, 41);
+            this.btnSavTmp.Location = new System.Drawing.Point(35, 50);
+            this.btnSavTmp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSavTmp.Name = "btnSavTmp";
-            this.btnSavTmp.Size = new System.Drawing.Size(203, 29);
+            this.btnSavTmp.Size = new System.Drawing.Size(271, 36);
             this.btnSavTmp.TabIndex = 21;
             this.btnSavTmp.Text = "Save Template";
             this.toolTip1.SetToolTip(this.btnSavTmp, "Add a Label for inputs");
@@ -694,13 +719,13 @@
             this.txtBxTmpLoc.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBxTmpLoc.ForeColor = System.Drawing.Color.White;
             this.txtBxTmpLoc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBxTmpLoc.Location = new System.Drawing.Point(235, 4);
-            this.txtBxTmpLoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBxTmpLoc.Location = new System.Drawing.Point(314, 5);
+            this.txtBxTmpLoc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBxTmpLoc.Name = "txtBxTmpLoc";
             this.txtBxTmpLoc.PasswordChar = '\0';
             this.txtBxTmpLoc.PlaceholderText = "Click to choose a location";
             this.txtBxTmpLoc.SelectedText = "";
-            this.txtBxTmpLoc.Size = new System.Drawing.Size(203, 29);
+            this.txtBxTmpLoc.Size = new System.Drawing.Size(271, 35);
             this.txtBxTmpLoc.TabIndex = 8;
             this.txtBxTmpLoc.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtBxTmpLoc_MouseClick);
             // 
@@ -720,13 +745,13 @@
             this.txtBxTmpSavName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBxTmpSavName.ForeColor = System.Drawing.Color.White;
             this.txtBxTmpSavName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBxTmpSavName.Location = new System.Drawing.Point(26, 4);
-            this.txtBxTmpSavName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBxTmpSavName.Location = new System.Drawing.Point(35, 5);
+            this.txtBxTmpSavName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBxTmpSavName.Name = "txtBxTmpSavName";
             this.txtBxTmpSavName.PasswordChar = '\0';
             this.txtBxTmpSavName.PlaceholderText = "Enter a Name to template";
             this.txtBxTmpSavName.SelectedText = "";
-            this.txtBxTmpSavName.Size = new System.Drawing.Size(203, 29);
+            this.txtBxTmpSavName.Size = new System.Drawing.Size(271, 35);
             this.txtBxTmpSavName.TabIndex = 7;
             // 
             // guna2Panel6
@@ -734,8 +759,9 @@
             this.guna2Panel6.Controls.Add(this.label3);
             this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel6.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(465, 24);
+            this.guna2Panel6.Size = new System.Drawing.Size(622, 30);
             this.guna2Panel6.TabIndex = 0;
             // 
             // label3
@@ -744,9 +770,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(178, 0);
+            this.label3.Location = new System.Drawing.Point(238, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 20);
+            this.label3.Size = new System.Drawing.Size(135, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Save Template";
             // 
@@ -761,9 +788,10 @@
             this.guna2Panel7.Controls.Add(this.guna2Panel10);
             this.guna2Panel7.Controls.Add(this.guna2Panel9);
             this.guna2Panel7.Controls.Add(this.guna2Panel8);
-            this.guna2Panel7.Location = new System.Drawing.Point(480, 3);
+            this.guna2Panel7.Location = new System.Drawing.Point(642, 4);
+            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(385, 411);
+            this.guna2Panel7.Size = new System.Drawing.Size(514, 516);
             this.guna2Panel7.TabIndex = 1;
             // 
             // guna2Panel12
@@ -771,9 +799,10 @@
             this.guna2Panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.guna2Panel12.Controls.Add(this.tableLayoutPanel5);
             this.guna2Panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel12.Location = new System.Drawing.Point(12, 15);
+            this.guna2Panel12.Location = new System.Drawing.Point(16, 18);
+            this.guna2Panel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel12.Name = "guna2Panel12";
-            this.guna2Panel12.Size = new System.Drawing.Size(360, 379);
+            this.guna2Panel12.Size = new System.Drawing.Size(481, 477);
             this.guna2Panel12.TabIndex = 4;
             // 
             // tableLayoutPanel5
@@ -786,13 +815,14 @@
             this.tableLayoutPanel5.Controls.Add(this.guna2Panel14, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 4;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.174312F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.13761F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.50459F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.18349F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(360, 379);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(481, 477);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // guna2Panel13
@@ -800,9 +830,10 @@
             this.guna2Panel13.BackColor = System.Drawing.Color.Gray;
             this.guna2Panel13.Controls.Add(this.lblTemplateName);
             this.guna2Panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel13.Location = new System.Drawing.Point(3, 3);
+            this.guna2Panel13.Location = new System.Drawing.Point(4, 4);
+            this.guna2Panel13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel13.Name = "guna2Panel13";
-            this.guna2Panel13.Size = new System.Drawing.Size(354, 28);
+            this.guna2Panel13.Size = new System.Drawing.Size(473, 35);
             this.guna2Panel13.TabIndex = 0;
             // 
             // lblTemplateName
@@ -811,22 +842,25 @@
             this.lblTemplateName.AutoSize = true;
             this.lblTemplateName.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTemplateName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTemplateName.Location = new System.Drawing.Point(138, 4);
+            this.lblTemplateName.Location = new System.Drawing.Point(184, 5);
+            this.lblTemplateName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTemplateName.Name = "lblTemplateName";
-            this.lblTemplateName.Size = new System.Drawing.Size(71, 20);
+            this.lblTemplateName.Size = new System.Drawing.Size(90, 25);
             this.lblTemplateName.TabIndex = 2;
             this.lblTemplateName.Text = "Template";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.btnTestTemplate);
             this.panel1.Controls.Add(this.btnTmpCncl);
             this.panel1.Controls.Add(this.btnPrcd);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(3, 304);
+            this.panel1.Location = new System.Drawing.Point(4, 383);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(354, 72);
+            this.panel1.Size = new System.Drawing.Size(473, 90);
             this.panel1.TabIndex = 1;
             // 
             // btnTmpCncl
@@ -840,9 +874,10 @@
             this.btnTmpCncl.FillColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnTmpCncl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnTmpCncl.ForeColor = System.Drawing.Color.White;
-            this.btnTmpCncl.Location = new System.Drawing.Point(195, 22);
+            this.btnTmpCncl.Location = new System.Drawing.Point(312, 28);
+            this.btnTmpCncl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTmpCncl.Name = "btnTmpCncl";
-            this.btnTmpCncl.Size = new System.Drawing.Size(109, 26);
+            this.btnTmpCncl.Size = new System.Drawing.Size(145, 32);
             this.btnTmpCncl.TabIndex = 1;
             this.btnTmpCncl.Text = "Cancel";
             this.btnTmpCncl.Click += new System.EventHandler(this.btnTmpCncl_Click);
@@ -858,9 +893,10 @@
             this.btnPrcd.FillColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrcd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrcd.ForeColor = System.Drawing.Color.White;
-            this.btnPrcd.Location = new System.Drawing.Point(45, 21);
+            this.btnPrcd.Location = new System.Drawing.Point(16, 28);
+            this.btnPrcd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrcd.Name = "btnPrcd";
-            this.btnPrcd.Size = new System.Drawing.Size(109, 26);
+            this.btnPrcd.Size = new System.Drawing.Size(145, 32);
             this.btnPrcd.TabIndex = 0;
             this.btnPrcd.Text = "Check";
             this.btnPrcd.Click += new System.EventHandler(this.btnPrcd_Click);
@@ -869,18 +905,20 @@
             // 
             this.pnlTemplate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(29)))), ((int)(((byte)(38)))));
             this.pnlTemplate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTemplate.Location = new System.Drawing.Point(3, 94);
+            this.pnlTemplate.Location = new System.Drawing.Point(4, 119);
+            this.pnlTemplate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTemplate.Name = "pnlTemplate";
-            this.pnlTemplate.Size = new System.Drawing.Size(354, 204);
+            this.pnlTemplate.Size = new System.Drawing.Size(473, 256);
             this.pnlTemplate.TabIndex = 2;
             // 
             // guna2Panel14
             // 
             this.guna2Panel14.Controls.Add(this.txtOutptPnl);
             this.guna2Panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel14.Location = new System.Drawing.Point(3, 37);
+            this.guna2Panel14.Location = new System.Drawing.Point(4, 47);
+            this.guna2Panel14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel14.Name = "guna2Panel14";
-            this.guna2Panel14.Size = new System.Drawing.Size(354, 51);
+            this.guna2Panel14.Size = new System.Drawing.Size(473, 64);
             this.guna2Panel14.TabIndex = 3;
             // 
             // txtOutptPnl
@@ -896,44 +934,49 @@
             this.txtOutptPnl.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtOutptPnl.ForeColor = System.Drawing.Color.Black;
             this.txtOutptPnl.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOutptPnl.Location = new System.Drawing.Point(32, 3);
+            this.txtOutptPnl.Location = new System.Drawing.Point(43, 5);
+            this.txtOutptPnl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtOutptPnl.Name = "txtOutptPnl";
             this.txtOutptPnl.PasswordChar = '\0';
             this.txtOutptPnl.PlaceholderText = "";
             this.txtOutptPnl.SelectedText = "";
-            this.txtOutptPnl.Size = new System.Drawing.Size(293, 50);
+            this.txtOutptPnl.Size = new System.Drawing.Size(391, 62);
             this.txtOutptPnl.TabIndex = 0;
             // 
             // guna2Panel11
             // 
             this.guna2Panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel11.Location = new System.Drawing.Point(12, 394);
+            this.guna2Panel11.Location = new System.Drawing.Point(16, 495);
+            this.guna2Panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel11.Name = "guna2Panel11";
-            this.guna2Panel11.Size = new System.Drawing.Size(360, 17);
+            this.guna2Panel11.Size = new System.Drawing.Size(481, 21);
             this.guna2Panel11.TabIndex = 3;
             // 
             // guna2Panel10
             // 
             this.guna2Panel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel10.Location = new System.Drawing.Point(372, 15);
+            this.guna2Panel10.Location = new System.Drawing.Point(497, 18);
+            this.guna2Panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel10.Name = "guna2Panel10";
-            this.guna2Panel10.Size = new System.Drawing.Size(13, 396);
+            this.guna2Panel10.Size = new System.Drawing.Size(17, 498);
             this.guna2Panel10.TabIndex = 2;
             // 
             // guna2Panel9
             // 
             this.guna2Panel9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Panel9.Location = new System.Drawing.Point(0, 15);
+            this.guna2Panel9.Location = new System.Drawing.Point(0, 18);
+            this.guna2Panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(12, 396);
+            this.guna2Panel9.Size = new System.Drawing.Size(16, 498);
             this.guna2Panel9.TabIndex = 1;
             // 
             // guna2Panel8
             // 
             this.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel8.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(385, 15);
+            this.guna2Panel8.Size = new System.Drawing.Size(514, 18);
             this.guna2Panel8.TabIndex = 0;
             // 
             // tabPage2
@@ -941,15 +984,12 @@
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(28)))), ((int)(((byte)(66)))));
             this.tabPage2.Controls.Add(this.guna2Panel15);
             this.tabPage2.Location = new System.Drawing.Point(4, 44);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(874, 423);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1168, 532);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Deploy";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // guna2Panel15
             // 
@@ -957,28 +997,11 @@
             this.guna2Panel15.BackColor = System.Drawing.Color.Teal;
             this.guna2Panel15.Controls.Add(this.TxtBxChooseTemp);
             this.guna2Panel15.Controls.Add(this.btnOpnPrdctr);
-            this.guna2Panel15.Location = new System.Drawing.Point(241, 128);
+            this.guna2Panel15.Location = new System.Drawing.Point(321, 158);
+            this.guna2Panel15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel15.Name = "guna2Panel15";
-            this.guna2Panel15.Size = new System.Drawing.Size(354, 131);
+            this.guna2Panel15.Size = new System.Drawing.Size(472, 161);
             this.guna2Panel15.TabIndex = 0;
-            // 
-            // btnOpnPrdctr
-            // 
-            this.btnOpnPrdctr.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOpnPrdctr.BorderRadius = 2;
-            this.btnOpnPrdctr.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnOpnPrdctr.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnOpnPrdctr.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnOpnPrdctr.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnOpnPrdctr.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnOpnPrdctr.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnOpnPrdctr.ForeColor = System.Drawing.Color.White;
-            this.btnOpnPrdctr.Location = new System.Drawing.Point(89, 69);
-            this.btnOpnPrdctr.Name = "btnOpnPrdctr";
-            this.btnOpnPrdctr.Size = new System.Drawing.Size(182, 32);
-            this.btnOpnPrdctr.TabIndex = 0;
-            this.btnOpnPrdctr.Text = "Open Predictor";
-            this.btnOpnPrdctr.Click += new System.EventHandler(this.btnOpnPrdctr_Click);
             // 
             // TxtBxChooseTemp
             // 
@@ -996,27 +1019,70 @@
             this.TxtBxChooseTemp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TxtBxChooseTemp.ForeColor = System.Drawing.Color.White;
             this.TxtBxChooseTemp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtBxChooseTemp.Location = new System.Drawing.Point(30, 27);
-            this.TxtBxChooseTemp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtBxChooseTemp.Location = new System.Drawing.Point(40, 33);
+            this.TxtBxChooseTemp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtBxChooseTemp.Name = "TxtBxChooseTemp";
             this.TxtBxChooseTemp.PasswordChar = '\0';
             this.TxtBxChooseTemp.PlaceholderText = "Click to Choose a Template";
             this.TxtBxChooseTemp.SelectedText = "";
-            this.TxtBxChooseTemp.Size = new System.Drawing.Size(297, 35);
+            this.TxtBxChooseTemp.Size = new System.Drawing.Size(396, 43);
             this.TxtBxChooseTemp.TabIndex = 5;
             this.TxtBxChooseTemp.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtBxChooseTemp_MouseClick);
+            // 
+            // btnOpnPrdctr
+            // 
+            this.btnOpnPrdctr.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOpnPrdctr.BorderRadius = 2;
+            this.btnOpnPrdctr.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnOpnPrdctr.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnOpnPrdctr.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnOpnPrdctr.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnOpnPrdctr.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnOpnPrdctr.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnOpnPrdctr.ForeColor = System.Drawing.Color.White;
+            this.btnOpnPrdctr.Location = new System.Drawing.Point(119, 85);
+            this.btnOpnPrdctr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpnPrdctr.Name = "btnOpnPrdctr";
+            this.btnOpnPrdctr.Size = new System.Drawing.Size(243, 39);
+            this.btnOpnPrdctr.TabIndex = 0;
+            this.btnOpnPrdctr.Text = "Open Predictor";
+            this.btnOpnPrdctr.Click += new System.EventHandler(this.btnOpnPrdctr_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // openFileDialog2
             // 
             this.openFileDialog2.FileName = "openFileDialog2";
             // 
+            // btnTestTemplate
+            // 
+            this.btnTestTemplate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnTestTemplate.BorderThickness = 1;
+            this.btnTestTemplate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTestTemplate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTestTemplate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTestTemplate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTestTemplate.FillColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnTestTemplate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTestTemplate.ForeColor = System.Drawing.Color.White;
+            this.btnTestTemplate.Location = new System.Drawing.Point(164, 28);
+            this.btnTestTemplate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTestTemplate.Name = "btnTestTemplate";
+            this.btnTestTemplate.Size = new System.Drawing.Size(145, 32);
+            this.btnTestTemplate.TabIndex = 2;
+            this.btnTestTemplate.Text = "Test Template";
+            this.btnTestTemplate.Click += new System.EventHandler(this.btnTestTemplate_Click);
+            // 
             // FrmTemp_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(28)))), ((int)(((byte)(66)))));
-            this.ClientSize = new System.Drawing.Size(882, 471);
+            this.ClientSize = new System.Drawing.Size(1176, 580);
             this.Controls.Add(this.guna2TabControl1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmTemp_Main";
             this.Text = "FrmTemp_Main";
             this.guna2TabControl1.ResumeLayout(false);
@@ -1110,5 +1176,6 @@
         private Guna.UI2.WinForms.Guna2Button btnOpnPrdctr;
         private Guna.UI2.WinForms.Guna2TextBox TxtBxChooseTemp;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private Guna.UI2.WinForms.Guna2Button btnTestTemplate;
     }
 }

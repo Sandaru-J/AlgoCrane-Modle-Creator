@@ -78,7 +78,7 @@ namespace MLDA_Application.Template
                             }
                             else
                             {
-                                Console.WriteLine("Invalid file or Template");
+                                MessageBox.Show("Invalid file or Template", "Invalid Type");
                                 return false;
                             }
                             txtOutptPnl.Text = output;
@@ -244,12 +244,13 @@ namespace MLDA_Application.Template
                 }
                 else
                 {
+                    MessageBox.Show("No Texts.", "Type Error");
                     return false;
                 }
             }
             catch
             {
-                MessageBox.Show("Invalid Data Type.Check data type required to fill.", "Type Error");
+                MessageBox.Show("Invalid Data Type or Empty Fields. Check data type required to fill.", "Type Error");
                 return false;
             }
         }
@@ -257,7 +258,7 @@ namespace MLDA_Application.Template
         {
             //txtExtract();
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
-            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Testing\pyScripts\modelScrpt.py";
+            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\runModel.py";
             string modelPath = modelFile;
             ;
             //double[] inputArray= { 10, 15 };
@@ -280,8 +281,23 @@ namespace MLDA_Application.Template
                 // Read the output from the Python script
                 string output = process.StandardOutput.ReadToEnd();
 
-                Console.WriteLine(output);
-                txtOutptPnl.Text = "Predicted value: " + output;
+                if(output.Contains("size Error"))
+                {
+                    MessageBox.Show("Template not matched with the model", "Mismatched Error");
+                }
+                else
+                {
+                    txtOutptPnl.Text = "Predicted value: " + output;
+
+                    foreach (Control c in tableLayoutPanel1.Controls)
+                    {
+                        if (c is Guna.UI2.WinForms.Guna2TextBox)
+                        {
+                            ((Guna.UI2.WinForms.Guna2TextBox)c).Text = "";
+                        }
+                    }
+                }
+                
                 //double doubleOut = double.Parse(output);
 
                 //Array.Resize(ref listArray, listArray.Length + 1);
@@ -292,13 +308,41 @@ namespace MLDA_Application.Template
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
+
+            if (extractVals())
+            {
+                if (txtBxArray == null)
+                {
+                    MessageBox.Show("Text Fields are empty to proceed", "No inputs");
+                }
+                else if (modelFile == null)
+                {
+                    MessageBox.Show("No model add to templae", "No Model");
+                }
+                //else if (extractVals())
+                //{
+                    //runModel();
+                //}
+                else
+                {
+                    runModel();
+                    //MessageBox.Show("Invalid Attempt", "Error");
+                }
+            }
+            else
+            {
+                //MessageBox.Show("Invalid Attempt", "Error");
+                return;
+            }
+
+            /*
             if(txtBxArray != null || modelFile !=null)
             {
                 if(extractVals())
                 {
                     runModel();
                 }
-                else
+                else if( txtBxArray == null )
                 {
                     MessageBox.Show("Text Fields are empty to proceed", "No inputs");
                 }
@@ -307,6 +351,7 @@ namespace MLDA_Application.Template
             {
                 MessageBox.Show("Invalid Attempt","Error");
             }
+            */
         }
 
         private void btnCncl_Click(object sender, EventArgs e)

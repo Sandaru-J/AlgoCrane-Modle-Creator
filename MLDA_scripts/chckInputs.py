@@ -12,4 +12,4 @@ regressor = joblib.load(model_filename)
 n_inputs = regressor.coef_.shape[0]
 
 # Print the number of inputs required
-print(f'The model requires {n_inputs} input(s).')
+print(n_inputs)
