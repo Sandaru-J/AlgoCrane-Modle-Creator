@@ -423,6 +423,7 @@ namespace MLDA_Application.Template
             clearInputs();
             btnAddLayout.Enabled = true;
             lblTemplateName.Text = "Template";
+            btnSavTmp.Enabled = true;
         }
 
         public void runModel()
