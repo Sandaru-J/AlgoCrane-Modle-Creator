@@ -165,5 +165,10 @@ namespace MLDA_Application
           DfUpload dfObj = new DfUpload();
             dfObj.ShowDialog();
         }
+
+        private void Mpbtn_template_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Template.FrmTemp_Main());
+        }
     }
 }
