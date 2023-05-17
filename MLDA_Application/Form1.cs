@@ -170,6 +170,7 @@ namespace MLDA_Application
         private void MpbtnStore_Click(object sender, EventArgs e)
         {
             OpenChildForm(new store());
+
         }
     }
 }
