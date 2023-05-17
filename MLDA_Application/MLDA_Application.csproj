@@ -313,6 +313,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Store\store.resx">
       <DependentUpon>store.cs</DependentUpon>
+     </EmbeddedResource>
     <EmbeddedResource Include="Template\FrmTemp_Main.resx">
       <DependentUpon>FrmTemp_Main.cs</DependentUpon>
     </EmbeddedResource>
