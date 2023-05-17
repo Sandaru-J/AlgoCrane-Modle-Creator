@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.Mpbtn_template = new FontAwesome.Sharp.IconButton();
+            this.MpbtnStore = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.MBtn_Train = new FontAwesome.Sharp.IconButton();
             this.MpBtn_Prepare = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
@@ -47,8 +47,8 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.pnlMenu.Controls.Add(this.iconButton2);
-            this.pnlMenu.Controls.Add(this.Mpbtn_template);
+            this.pnlMenu.Controls.Add(this.MpbtnStore);
+            this.pnlMenu.Controls.Add(this.iconButton1);
             this.pnlMenu.Controls.Add(this.MBtn_Train);
             this.pnlMenu.Controls.Add(this.MpBtn_Prepare);
             this.pnlMenu.Controls.Add(this.pnlLogo);
@@ -59,46 +59,46 @@
             this.pnlMenu.TabIndex = 0;
             this.pnlMenu.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
             // 
-            // iconButton2
+            // MpbtnStore
             // 
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Beer;
-            this.iconButton2.IconColor = System.Drawing.Color.SandyBrown;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 264);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(137, 55);
-            this.iconButton2.TabIndex = 4;
-            this.iconButton2.Tag = "Train";
-            this.iconButton2.Text = "Train";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.MpbtnStore.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MpbtnStore.FlatAppearance.BorderSize = 0;
+            this.MpbtnStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MpbtnStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MpbtnStore.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.MpbtnStore.IconChar = FontAwesome.Sharp.IconChar.Beer;
+            this.MpbtnStore.IconColor = System.Drawing.Color.SandyBrown;
+            this.MpbtnStore.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MpbtnStore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MpbtnStore.Location = new System.Drawing.Point(0, 264);
+            this.MpbtnStore.Name = "MpbtnStore";
+            this.MpbtnStore.Size = new System.Drawing.Size(137, 55);
+            this.MpbtnStore.TabIndex = 4;
+            this.MpbtnStore.Tag = "Train";
+            this.MpbtnStore.Text = "Store";
+            this.MpbtnStore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.MpbtnStore.UseVisualStyleBackColor = true;
+            this.MpbtnStore.Click += new System.EventHandler(this.MpbtnStore_Click);
             // 
-            // Mpbtn_template
+            // iconButton1
             // 
-            this.Mpbtn_template.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Mpbtn_template.FlatAppearance.BorderSize = 0;
-            this.Mpbtn_template.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Mpbtn_template.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mpbtn_template.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Mpbtn_template.IconChar = FontAwesome.Sharp.IconChar.Beer;
-            this.Mpbtn_template.IconColor = System.Drawing.Color.SandyBrown;
-            this.Mpbtn_template.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Mpbtn_template.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Mpbtn_template.Location = new System.Drawing.Point(0, 209);
-            this.Mpbtn_template.Name = "Mpbtn_template";
-            this.Mpbtn_template.Size = new System.Drawing.Size(137, 55);
-            this.Mpbtn_template.TabIndex = 3;
-            this.Mpbtn_template.Tag = "";
-            this.Mpbtn_template.Text = "Template";
-            this.Mpbtn_template.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Mpbtn_template.UseVisualStyleBackColor = true;
-            this.Mpbtn_template.Click += new System.EventHandler(this.Mpbtn_template_Click);
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Beer;
+            this.iconButton1.IconColor = System.Drawing.Color.SandyBrown;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 209);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(137, 55);
+            this.iconButton1.TabIndex = 3;
+            this.iconButton1.Tag = "Train";
+            this.iconButton1.Text = "Train";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
             // 
             // MBtn_Train
             // 
@@ -259,8 +259,9 @@
         private FontAwesome.Sharp.IconButton MBtn_Train;
         private Guna.UI2.WinForms.Guna2Button btnLoadDf;
         private Guna.UI2.WinForms.Guna2Button btnUpld;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton Mpbtn_template;
+        private FontAwesome.Sharp.IconButton MpbtnStore;
+        private FontAwesome.Sharp.IconButton iconButton1;
+
     }
 }
 

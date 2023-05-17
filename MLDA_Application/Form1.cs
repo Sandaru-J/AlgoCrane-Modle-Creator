@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MLDA_Application.Train;
 using MLDA_Application.Shared;
+using MLDA_Application.Store;
 using MLDA_Application.Preparation.Shared;
 
 namespace MLDA_Application
@@ -166,9 +167,10 @@ namespace MLDA_Application
             dfObj.ShowDialog();
         }
 
-        private void Mpbtn_template_Click(object sender, EventArgs e)
+        private void MpbtnStore_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Template.FrmTemp_Main());
+            OpenChildForm(new store());
+
         }
     }
 }
