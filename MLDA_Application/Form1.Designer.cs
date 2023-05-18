@@ -261,7 +261,6 @@
         private Guna.UI2.WinForms.Guna2Button btnUpld;
         private FontAwesome.Sharp.IconButton MpbtnStore;
         private FontAwesome.Sharp.IconButton iconButton1;
-
     }
 }
 
