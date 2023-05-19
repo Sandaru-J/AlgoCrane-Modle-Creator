@@ -103,6 +103,7 @@ namespace MLDA_Application
             if(this.pnlMenu.Width > 100)
             {
                 pnlMenu.Width = 65;
+                label1.Visible = false;
                 foreach(Button btn in pnlMenu.Controls.OfType<Button>())
                 {
                     btn.Text = "";
@@ -112,7 +113,8 @@ namespace MLDA_Application
             }else
             {
                 pnlMenu.Width = 137;
-                foreach(Button btn in pnlMenu.Controls.OfType<Button>())
+                label1.Visible = true;
+                foreach (Button btn in pnlMenu.Controls.OfType<Button>())
                 {
                     btn.Text=" "+btn.Tag.ToString();
                     btn.ImageAlign=ContentAlignment.MiddleLeft;
@@ -131,6 +133,7 @@ namespace MLDA_Application
                     btn.Text = " " + btn.Tag.ToString();
                     btn.ImageAlign = ContentAlignment.MiddleLeft;
                     btn.Padding = new Padding(5, 0, 0, 0);
+                    label1.Visible = true;
                 }
             }
           
@@ -169,6 +172,30 @@ namespace MLDA_Application
         private void Mpbtn_template_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Template.FrmTemp_Main());
+        }
+
+        private void icBtnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void icBtnfrmSize_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                // Maximize the form
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                // Restore down the form
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void icBtnMinmz_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
