@@ -299,6 +299,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Shared\DfUpload.resx">
       <DependentUpon>DfUpload.cs</DependentUpon>
@@ -342,6 +343,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\fullLogo-removebg-preview.png" />
+    <None Include="Resources\fullLogo.png" />
+    <None Include="Resources\AlgoCraneLogo.png" />
+    <None Include="Resources\lgog.png" />
+    <None Include="Resources\tap-water.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

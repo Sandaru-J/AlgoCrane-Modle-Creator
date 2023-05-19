@@ -235,14 +235,15 @@
             // iconButton1
             // 
             this.iconButton1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Stackpath;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.Location = new System.Drawing.Point(132, 317);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(41, 38);
             this.iconButton1.TabIndex = 15;
-            this.iconButton1.Text = "iconButton1";
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
