@@ -57,7 +57,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(767, 47);
+            this.panel1.Size = new System.Drawing.Size(958, 47);
             this.panel1.TabIndex = 0;
             // 
             // btnPreProcess
@@ -67,7 +67,7 @@
             this.btnPreProcess.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPreProcess.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPreProcess.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPreProcess.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPreProcess.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPreProcess.ForeColor = System.Drawing.Color.White;
             this.btnPreProcess.Location = new System.Drawing.Point(268, 0);
             this.btnPreProcess.Name = "btnPreProcess";
@@ -83,7 +83,7 @@
             this.btnCleaning.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCleaning.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCleaning.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCleaning.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCleaning.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCleaning.ForeColor = System.Drawing.Color.White;
             this.btnCleaning.Location = new System.Drawing.Point(129, 0);
             this.btnCleaning.Name = "btnCleaning";
@@ -95,6 +95,11 @@
             // 
             // btnCatImport
             // 
+            this.btnCatImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnCatImport.FlatAppearance.BorderSize = 0;
+            this.btnCatImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCatImport.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCatImport.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCatImport.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnCatImport.IconColor = System.Drawing.Color.Black;
             this.btnCatImport.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -104,7 +109,7 @@
             this.btnCatImport.Size = new System.Drawing.Size(130, 48);
             this.btnCatImport.TabIndex = 0;
             this.btnCatImport.Text = "Import";
-            this.btnCatImport.UseVisualStyleBackColor = true;
+            this.btnCatImport.UseVisualStyleBackColor = false;
             this.btnCatImport.Click += new System.EventHandler(this.btnCatImport_Click);
             // 
             // pnlPfrmHolder
@@ -115,7 +120,7 @@
             this.pnlPfrmHolder.Location = new System.Drawing.Point(0, 47);
             this.pnlPfrmHolder.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPfrmHolder.Name = "pnlPfrmHolder";
-            this.pnlPfrmHolder.Size = new System.Drawing.Size(767, 400);
+            this.pnlPfrmHolder.Size = new System.Drawing.Size(958, 511);
             this.pnlPfrmHolder.TabIndex = 1;
             // 
             // panel2
@@ -125,7 +130,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(767, 400);
+            this.panel2.Size = new System.Drawing.Size(958, 511);
             this.panel2.TabIndex = 0;
             // 
             // guna2PictureBox1
@@ -133,7 +138,7 @@
             this.guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(141, -31);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(237, 24);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(454, 447);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -168,7 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 447);
+            this.ClientSize = new System.Drawing.Size(958, 558);
             this.Controls.Add(this.pnlPfrmHolder);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);

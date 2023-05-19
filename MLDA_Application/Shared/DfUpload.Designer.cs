@@ -95,7 +95,7 @@
             // 
             this.iconButton1.BackColor = System.Drawing.Color.Transparent;
             this.iconButton1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.SearchLocation;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileImport;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 22;
