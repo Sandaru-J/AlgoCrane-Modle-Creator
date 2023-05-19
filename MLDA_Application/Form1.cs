@@ -166,10 +166,5 @@ namespace MLDA_Application
           DfUpload dfObj = new DfUpload();
             dfObj.ShowDialog();
         }
-
-        private void MpbtnStore_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new store());
-        }
     }
 }
