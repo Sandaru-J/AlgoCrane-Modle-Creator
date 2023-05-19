@@ -57,8 +57,6 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.pnlMenu.Controls.Add(this.iconButton2);
-            this.pnlMenu.Controls.Add(this.Mpbtn_template);
             this.pnlMenu.Controls.Add(this.MBtn_Train);
             this.pnlMenu.Controls.Add(this.MpBtn_Prepare);
             this.pnlMenu.Controls.Add(this.pnlLogo);
@@ -381,6 +379,7 @@
         private FontAwesome.Sharp.IconButton icBtnfrmSize;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+
     }
 }
 

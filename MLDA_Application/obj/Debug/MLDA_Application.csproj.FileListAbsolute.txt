@@ -62,9 +62,3 @@ C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debu
 C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Preparation.Shared.uplPopUp.resources
 C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Preparation.PreProcess.UC_Normalize.resources
 C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Preparation.PreProcess.UC_Encoding.resources
-C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Shared.DfUpload.resources
-C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Shared.frmDfLoad.resources
-C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Template.FrmTemp_Main.resources
-C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Template.Frm_Predictor.resources
-C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Train.frmT_Main.resources
-C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_Application\obj\Debug\MLDA_Application.Train.UpSvPopUp.resources
