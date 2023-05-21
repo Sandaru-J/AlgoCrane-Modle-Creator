@@ -30,22 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.pnlLogo = new System.Windows.Forms.Panel();
-            this.pnlTop = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnUpld = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLoadDf = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlChildHolder = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.icBtnMinmz = new FontAwesome.Sharp.IconButton();
-            this.icBtnfrmSize = new FontAwesome.Sharp.IconButton();
-            this.icBtnClose = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.Mpbtn_template = new FontAwesome.Sharp.IconButton();
             this.MBtn_Train = new FontAwesome.Sharp.IconButton();
             this.MpBtn_Prepare = new FontAwesome.Sharp.IconButton();
+            this.pnlLogo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.icBtnMinmz = new FontAwesome.Sharp.IconButton();
+            this.icBtnfrmSize = new FontAwesome.Sharp.IconButton();
+            this.icBtnClose = new FontAwesome.Sharp.IconButton();
+            this.btnUpld = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLoadDf = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlChildHolder = new System.Windows.Forms.Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             this.pnlTop.SuspendLayout();
@@ -69,168 +69,6 @@
             this.pnlMenu.TabIndex = 0;
             this.pnlMenu.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
             // 
-            // pnlLogo
-            // 
-            this.pnlLogo.Controls.Add(this.label1);
-            this.pnlLogo.Controls.Add(this.btnMenu);
-            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(137, 98);
-            this.pnlLogo.TabIndex = 0;
-            this.pnlLogo.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
-            // 
-            // pnlTop
-            // 
-            this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.pnlTop.Controls.Add(this.panel1);
-            this.pnlTop.Controls.Add(this.btnUpld);
-            this.pnlTop.Controls.Add(this.btnLoadDf);
-            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Location = new System.Drawing.Point(137, 0);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(784, 75);
-            this.pnlTop.TabIndex = 1;
-            this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.panel1.Controls.Add(this.icBtnMinmz);
-            this.panel1.Controls.Add(this.icBtnfrmSize);
-            this.panel1.Controls.Add(this.icBtnClose);
-            this.panel1.Location = new System.Drawing.Point(659, -4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(124, 34);
-            this.panel1.TabIndex = 2;
-            // 
-            // btnUpld
-            // 
-            this.btnUpld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpld.BorderRadius = 1;
-            this.btnUpld.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpld.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpld.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUpld.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpld.FillColor = System.Drawing.Color.Orange;
-            this.btnUpld.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnUpld.ForeColor = System.Drawing.Color.White;
-            this.btnUpld.Location = new System.Drawing.Point(659, 36);
-            this.btnUpld.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
-            this.btnUpld.Name = "btnUpld";
-            this.btnUpld.Size = new System.Drawing.Size(96, 30);
-            this.btnUpld.TabIndex = 1;
-            this.btnUpld.Text = "Upload";
-            this.btnUpld.Click += new System.EventHandler(this.btnUpld_Click);
-            // 
-            // btnLoadDf
-            // 
-            this.btnLoadDf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLoadDf.BorderRadius = 1;
-            this.btnLoadDf.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoadDf.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoadDf.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLoadDf.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLoadDf.FillColor = System.Drawing.Color.Orange;
-            this.btnLoadDf.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLoadDf.ForeColor = System.Drawing.Color.White;
-            this.btnLoadDf.Location = new System.Drawing.Point(556, 36);
-            this.btnLoadDf.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
-            this.btnLoadDf.Name = "btnLoadDf";
-            this.btnLoadDf.Size = new System.Drawing.Size(96, 30);
-            this.btnLoadDf.TabIndex = 0;
-            this.btnLoadDf.Text = "Load DF";
-            this.btnLoadDf.Click += new System.EventHandler(this.btnLoadDf_Click);
-            // 
-            // pnlChildHolder
-            // 
-            this.pnlChildHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.pnlChildHolder.Controls.Add(this.guna2PictureBox1);
-            this.pnlChildHolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlChildHolder.Location = new System.Drawing.Point(137, 75);
-            this.pnlChildHolder.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlChildHolder.Name = "pnlChildHolder";
-            this.pnlChildHolder.Size = new System.Drawing.Size(784, 477);
-            this.pnlChildHolder.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(10, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "AlgoCrane";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2PictureBox1.Image = global::MLDA_Application.Properties.Resources.fullLogo_removebg_preview;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(115, 67);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(475, 298);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // icBtnMinmz
-            // 
-            this.icBtnMinmz.BackColor = System.Drawing.Color.Transparent;
-            this.icBtnMinmz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.icBtnMinmz.FlatAppearance.BorderSize = 0;
-            this.icBtnMinmz.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.icBtnMinmz.ForeColor = System.Drawing.Color.DarkOrange;
-            this.icBtnMinmz.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.icBtnMinmz.IconColor = System.Drawing.Color.White;
-            this.icBtnMinmz.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.icBtnMinmz.IconSize = 30;
-            this.icBtnMinmz.Location = new System.Drawing.Point(17, 6);
-            this.icBtnMinmz.Name = "icBtnMinmz";
-            this.icBtnMinmz.Size = new System.Drawing.Size(34, 28);
-            this.icBtnMinmz.TabIndex = 2;
-            this.icBtnMinmz.UseVisualStyleBackColor = false;
-            this.icBtnMinmz.Click += new System.EventHandler(this.icBtnMinmz_Click);
-            // 
-            // icBtnfrmSize
-            // 
-            this.icBtnfrmSize.BackColor = System.Drawing.Color.Transparent;
-            this.icBtnfrmSize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.icBtnfrmSize.FlatAppearance.BorderSize = 0;
-            this.icBtnfrmSize.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.icBtnfrmSize.ForeColor = System.Drawing.Color.DarkOrange;
-            this.icBtnfrmSize.IconChar = FontAwesome.Sharp.IconChar.Maximize;
-            this.icBtnfrmSize.IconColor = System.Drawing.Color.Gray;
-            this.icBtnfrmSize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.icBtnfrmSize.IconSize = 28;
-            this.icBtnfrmSize.Location = new System.Drawing.Point(53, 6);
-            this.icBtnfrmSize.Name = "icBtnfrmSize";
-            this.icBtnfrmSize.Size = new System.Drawing.Size(34, 28);
-            this.icBtnfrmSize.TabIndex = 1;
-            this.icBtnfrmSize.UseVisualStyleBackColor = false;
-            this.icBtnfrmSize.Click += new System.EventHandler(this.icBtnfrmSize_Click);
-            // 
-            // icBtnClose
-            // 
-            this.icBtnClose.BackColor = System.Drawing.Color.Transparent;
-            this.icBtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.icBtnClose.FlatAppearance.BorderSize = 0;
-            this.icBtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.icBtnClose.ForeColor = System.Drawing.Color.DarkOrange;
-            this.icBtnClose.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.icBtnClose.IconColor = System.Drawing.Color.Red;
-            this.icBtnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.icBtnClose.IconSize = 30;
-            this.icBtnClose.Location = new System.Drawing.Point(90, 6);
-            this.icBtnClose.Name = "icBtnClose";
-            this.icBtnClose.Size = new System.Drawing.Size(34, 28);
-            this.icBtnClose.TabIndex = 0;
-            this.icBtnClose.UseVisualStyleBackColor = false;
-            this.icBtnClose.Click += new System.EventHandler(this.icBtnClose_Click);
-            // 
             // iconButton2
             // 
             this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -238,18 +76,19 @@
             this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Beer;
-            this.iconButton2.IconColor = System.Drawing.Color.SandyBrown;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Store;
+            this.iconButton2.IconColor = System.Drawing.Color.DodgerBlue;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton2.Location = new System.Drawing.Point(0, 263);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(137, 55);
             this.iconButton2.TabIndex = 4;
-            this.iconButton2.Tag = "Train";
-            this.iconButton2.Text = "Train";
+            this.iconButton2.Tag = "Store";
+            this.iconButton2.Text = "Store";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // Mpbtn_template
             // 
@@ -318,6 +157,28 @@
             this.MpBtn_Prepare.Click += new System.EventHandler(this.MpBtn_Prepare_Click);
             this.MpBtn_Prepare.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
             // 
+            // pnlLogo
+            // 
+            this.pnlLogo.Controls.Add(this.label1);
+            this.pnlLogo.Controls.Add(this.btnMenu);
+            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(137, 98);
+            this.pnlLogo.TabIndex = 0;
+            this.pnlLogo.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(10, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 26);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "AlgoCrane";
+            // 
             // btnMenu
             // 
             this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -336,6 +197,146 @@
             this.btnMenu.TabIndex = 0;
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // pnlTop
+            // 
+            this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.pnlTop.Controls.Add(this.panel1);
+            this.pnlTop.Controls.Add(this.btnUpld);
+            this.pnlTop.Controls.Add(this.btnLoadDf);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(137, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(784, 75);
+            this.pnlTop.TabIndex = 1;
+            this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.panel1.Controls.Add(this.icBtnMinmz);
+            this.panel1.Controls.Add(this.icBtnfrmSize);
+            this.panel1.Controls.Add(this.icBtnClose);
+            this.panel1.Location = new System.Drawing.Point(659, -4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(124, 34);
+            this.panel1.TabIndex = 2;
+            // 
+            // icBtnMinmz
+            // 
+            this.icBtnMinmz.BackColor = System.Drawing.Color.Transparent;
+            this.icBtnMinmz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.icBtnMinmz.FlatAppearance.BorderSize = 0;
+            this.icBtnMinmz.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.icBtnMinmz.ForeColor = System.Drawing.Color.DarkOrange;
+            this.icBtnMinmz.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.icBtnMinmz.IconColor = System.Drawing.Color.White;
+            this.icBtnMinmz.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icBtnMinmz.IconSize = 30;
+            this.icBtnMinmz.Location = new System.Drawing.Point(17, 6);
+            this.icBtnMinmz.Name = "icBtnMinmz";
+            this.icBtnMinmz.Size = new System.Drawing.Size(34, 28);
+            this.icBtnMinmz.TabIndex = 2;
+            this.icBtnMinmz.UseVisualStyleBackColor = false;
+            this.icBtnMinmz.Click += new System.EventHandler(this.icBtnMinmz_Click);
+            // 
+            // icBtnfrmSize
+            // 
+            this.icBtnfrmSize.BackColor = System.Drawing.Color.Transparent;
+            this.icBtnfrmSize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.icBtnfrmSize.FlatAppearance.BorderSize = 0;
+            this.icBtnfrmSize.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.icBtnfrmSize.ForeColor = System.Drawing.Color.DarkOrange;
+            this.icBtnfrmSize.IconChar = FontAwesome.Sharp.IconChar.Maximize;
+            this.icBtnfrmSize.IconColor = System.Drawing.Color.Gray;
+            this.icBtnfrmSize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icBtnfrmSize.IconSize = 28;
+            this.icBtnfrmSize.Location = new System.Drawing.Point(53, 6);
+            this.icBtnfrmSize.Name = "icBtnfrmSize";
+            this.icBtnfrmSize.Size = new System.Drawing.Size(34, 28);
+            this.icBtnfrmSize.TabIndex = 1;
+            this.icBtnfrmSize.UseVisualStyleBackColor = false;
+            this.icBtnfrmSize.Click += new System.EventHandler(this.icBtnfrmSize_Click);
+            // 
+            // icBtnClose
+            // 
+            this.icBtnClose.BackColor = System.Drawing.Color.Transparent;
+            this.icBtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.icBtnClose.FlatAppearance.BorderSize = 0;
+            this.icBtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.icBtnClose.ForeColor = System.Drawing.Color.DarkOrange;
+            this.icBtnClose.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.icBtnClose.IconColor = System.Drawing.Color.Red;
+            this.icBtnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icBtnClose.IconSize = 30;
+            this.icBtnClose.Location = new System.Drawing.Point(90, 6);
+            this.icBtnClose.Name = "icBtnClose";
+            this.icBtnClose.Size = new System.Drawing.Size(34, 28);
+            this.icBtnClose.TabIndex = 0;
+            this.icBtnClose.UseVisualStyleBackColor = false;
+            this.icBtnClose.Click += new System.EventHandler(this.icBtnClose_Click);
+            // 
+            // btnUpld
+            // 
+            this.btnUpld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpld.BorderRadius = 1;
+            this.btnUpld.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpld.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpld.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpld.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpld.FillColor = System.Drawing.Color.Orange;
+            this.btnUpld.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUpld.ForeColor = System.Drawing.Color.White;
+            this.btnUpld.Location = new System.Drawing.Point(659, 36);
+            this.btnUpld.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
+            this.btnUpld.Name = "btnUpld";
+            this.btnUpld.Size = new System.Drawing.Size(96, 30);
+            this.btnUpld.TabIndex = 1;
+            this.btnUpld.Text = "Upload";
+            this.btnUpld.Click += new System.EventHandler(this.btnUpld_Click);
+            // 
+            // btnLoadDf
+            // 
+            this.btnLoadDf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLoadDf.BorderRadius = 1;
+            this.btnLoadDf.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadDf.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadDf.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoadDf.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoadDf.FillColor = System.Drawing.Color.Orange;
+            this.btnLoadDf.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLoadDf.ForeColor = System.Drawing.Color.White;
+            this.btnLoadDf.Location = new System.Drawing.Point(556, 36);
+            this.btnLoadDf.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
+            this.btnLoadDf.Name = "btnLoadDf";
+            this.btnLoadDf.Size = new System.Drawing.Size(96, 30);
+            this.btnLoadDf.TabIndex = 0;
+            this.btnLoadDf.Text = "Load DF";
+            this.btnLoadDf.Click += new System.EventHandler(this.btnLoadDf_Click);
+            // 
+            // pnlChildHolder
+            // 
+            this.pnlChildHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.pnlChildHolder.Controls.Add(this.guna2PictureBox1);
+            this.pnlChildHolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlChildHolder.Location = new System.Drawing.Point(137, 75);
+            this.pnlChildHolder.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlChildHolder.Name = "pnlChildHolder";
+            this.pnlChildHolder.Size = new System.Drawing.Size(784, 477);
+            this.pnlChildHolder.TabIndex = 2;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2PictureBox1.Image = global::MLDA_Application.Properties.Resources.fullLogo_removebg_preview;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(115, 67);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(475, 298);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // FormMain
             // 
