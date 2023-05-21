@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using MLDA_Application.Train;
 using MLDA_Application.Shared;
 using MLDA_Application.Preparation.Shared;
+using MLDA_Application.Store;
+using System.Net.NetworkInformation;
 
 namespace MLDA_Application
 {
@@ -150,10 +152,17 @@ namespace MLDA_Application
 
         private void btnLoadDf_Click(object sender, EventArgs e)
         {
-            var popupLoad = new frmDfLoad();
-            popupLoad.DataSent += PopUpForm_DataSent;
-            //popupLoad.Owner = this;
-            popupLoad.ShowDialog();
+            if(IsInternetAvailable())
+            {
+                var popupLoad = new frmDfLoad();
+                popupLoad.DataSent += PopUpForm_DataSent;
+                //popupLoad.Owner = this;
+                popupLoad.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Network Connection not established. Check your Connection", "Network Error");
+            }
         }
         private void PopUpForm_DataSent(object sender, Shared.DataSentEventArgs e)
         {
@@ -165,8 +174,16 @@ namespace MLDA_Application
 
         private void btnUpld_Click(object sender, EventArgs e)
         {
-          DfUpload dfObj = new DfUpload();
-            dfObj.ShowDialog();
+            if(IsInternetAvailable())
+            {
+                DfUpload dfObj = new DfUpload();
+                dfObj.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Network Connection not established. Check your Connection", "Network Error");
+            }
+
         }
 
         private void Mpbtn_template_Click(object sender, EventArgs e)
@@ -197,5 +214,37 @@ namespace MLDA_Application
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        public static bool IsInternetAvailable()
+        {
+            try
+            {
+                using (var ping = new Ping())
+                {
+                    const string pingAddress = "8.8.8.8"; // Google's DNS server IP address
+                    const int timeout = 3000; // Timeout value in milliseconds
+
+                    PingReply reply = ping.Send(pingAddress, timeout);
+
+                    return (reply != null && reply.Status == IPStatus.Success);
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            if(IsInternetAvailable())
+            {
+                OpenChildForm(new Store.frmStore());
+            }else
+            {
+                MessageBox.Show("Network Connection not established. Check your Connection", "Network Error");
+            }
+
+        }
+
     }
 }
