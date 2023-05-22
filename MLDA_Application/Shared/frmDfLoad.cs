@@ -44,10 +44,6 @@ namespace MLDA_Application.Shared
 
                 dfName = dataFile.Name;
                 dfPath = dataFile.Path;
-
-                // Print the data for the clicked row
-                //Console.WriteLine("Name: " + dataFile.Name);
-                //Console.WriteLine("Path: " + dataFile.Path);
             }
         }
         UC_PC_missing ucObj = new UC_PC_missing();
@@ -55,13 +51,18 @@ namespace MLDA_Application.Shared
         {
             //DataSent?.Invoke(this, new DataSentEventArgs(dfName,dfPath));
             //(this.Owner as FormMain).ReceiveDataFromPopup(dfName, dfPath);
+            dfLoad();
+            UC_PC_missing ucOBj=new UC_PC_missing();
+            ucOBj.rerfreshDF();
+        }
+       
+        public void dfLoad()
+        {
             PathModel.Path = dfPath;
             PathModel.Name = dfName;
             //ucObj.kick();
-            Console.WriteLine("Load Clicked");
             this.Close();
         }
-       
         public event EventHandler<DataSentEventArgs> DataSent;
     }
     public class DataSentEventArgs : EventArgs
