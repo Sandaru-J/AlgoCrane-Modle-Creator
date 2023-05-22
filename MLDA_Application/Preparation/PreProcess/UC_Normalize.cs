@@ -73,7 +73,9 @@ namespace MLDA_Application.Preparation.PreProcess
         
         public void normalize(int flag1)
         {
-            if(chckBxSav.Checked)
+            filePath = PathModel.Path;
+            Console.WriteLine("DF chek" + filePath);
+            if (chckBxSav.Checked)
             {
                 savChck = 1;
             }

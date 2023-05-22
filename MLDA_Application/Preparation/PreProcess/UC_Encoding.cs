@@ -35,6 +35,7 @@ namespace MLDA_Application.Preparation.PreProcess
 
         public bool DfChekc()
         {
+            
             if (filePath == null)
             {
                 DialogResult result = MessageBox.Show("You Have not selected any DataSets." +
@@ -61,7 +62,9 @@ namespace MLDA_Application.Preparation.PreProcess
         }
         private void encode()
         {
-            if(chckBxSav.Checked)
+            filePath = PathModel.Path;
+            Console.WriteLine("DF chek" + filePath);
+            if (chckBxSav.Checked)
             {
                 savChck = 1;
             }

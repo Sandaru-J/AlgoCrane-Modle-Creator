@@ -34,7 +34,15 @@ namespace MLDA_Application.Preparation
             //string x = get();
             filePath = PathModel.Path;
             fileName = PathModel.Name;
-
+        }
+        public void rerfreshDF()
+        {
+            filePath = PathModel.Path;
+            fileName = PathModel.Name;
+            string dfText = fileName + "New Dataset Loaded.";
+            txtCleanView.Text = txtCleanView.Text + dfText;
+            txtCleanView.SelectionStart = txtCleanView.TextLength;
+            txtCleanView.ScrollToCaret();
         }
         public bool DfChekc()
         {
@@ -78,6 +86,8 @@ namespace MLDA_Application.Preparation
         }
         public string dsetInfo(int flag1)
         {
+            filePath=PathModel.Path;
+            //Console.WriteLine("call from script " + filePath);
             if (chckBxClean.Checked)
             {
                 saveCheck = 1;
@@ -124,6 +134,7 @@ namespace MLDA_Application.Preparation
         }
         private string dupplicate(int flag1)
         {
+            filePath = PathModel.Path;
             if (chckBxClean.Checked)
             {
                 saveCheck = 1;
@@ -265,6 +276,7 @@ namespace MLDA_Application.Preparation
         }
         public void outlliers(int btn)
         {
+            filePath = PathModel.Path;
             if (chckBxClean.Checked)
             {
                 saveCheck = 1;
@@ -316,8 +328,8 @@ namespace MLDA_Application.Preparation
 
         private void txtCleanView_KeyPress(object sender, KeyPressEventArgs e)
         {
+            filePath = PathModel.Path;
             path = filePath;
-           
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true; 

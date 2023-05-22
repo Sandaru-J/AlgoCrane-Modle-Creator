@@ -85,6 +85,7 @@ namespace MLDA_Application.Train
 
         public void preTrainScript(int flag1)
         {
+            filePath = PathModel.Path;
             bool check = DfChekc();
             if (!check)
             {
@@ -193,6 +194,7 @@ namespace MLDA_Application.Train
         }
         private void fiterSmple(int flag1)
         {
+            filePath = PathModel.Path;
             bool check = DfChekc();
             if (!check)
             {
@@ -272,6 +274,7 @@ namespace MLDA_Application.Train
         }
         public void featureSelect(int button)
         {
+            filePath = PathModel.Path;
             bool check = DfChekc();
             if (!check)
             {
@@ -381,6 +384,7 @@ namespace MLDA_Application.Train
 
         public void TrainScript(int flag1)
         {
+            filePath = PathModel.Path;
             bool check = DfChekc();
             if (!check)
             {
@@ -513,6 +517,7 @@ namespace MLDA_Application.Train
 
         private void txtBxCmd_KeyPress(object sender, KeyPressEventArgs e)
         {
+            filePath = PathModel.Path;
             path = filePath;
 
             if (e.KeyChar == (char)Keys.Enter)
