@@ -79,9 +79,19 @@ if "1" in btn:
         mse = mean_squared_error(y_test, y_pred)
         mape = mean_absolute_percentage_error(y_test, y_pred)
         # test_accuracy = 100 - mse/y_test.mean() * 100
+        accuracy = 100 - mape
         print(f"The mean squared error on the testing set is {mse:.2f}")
-        print(f"The testing accuracy is {mape:.2f}%")
+        print(f"The testing accuracy is {accuracy:.2f}%")
 
+        # Define a tolerance or acceptable error range
+        tolerance = 0.1  # Adjust this value based on your specific problem
+
+        # Calculate the percentage of predictions within the tolerance range
+        correct_count = sum(abs(y_pred - y_test) <= tolerance)
+        total_count = len(y_test)
+        accuracy = (correct_count / total_count) * 100
+
+        # print(f"The percentage of correct values in the test data is {accuracy:.2f}%")
         print("Model Trained Successfully")
 
 

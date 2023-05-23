@@ -180,16 +180,24 @@ namespace MLDA_Application.Train
         }
         private void btnFitter_Click(object sender, EventArgs e)
         {
-            colName = txtSFcolName.Text.ToString();
-            colValue = txtSfvalue.Text.ToString();
-            if (colValue.Length < 0 && colName.Length < 0)
+            try
             {
-                txtBxCmd.Text = txtBxCmd.Text + "Enter values to Filtter";
+                colName = txtSFcolName.Text.ToString();
+                colValue = txtSfvalue.Text.ToString();
+                if (colValue.Length < 0 && colName.Length < 0)
+                {
+                    txtBxCmd.Text = txtBxCmd.Text + "Enter values to Filtter";
+                }
+                else
+                {
+                    fiterSmple(2);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                fiterSmple(2);
+                MessageBox.Show("Error");
             }
+            
 
         }
         private void fiterSmple(int flag1)
@@ -202,7 +210,7 @@ namespace MLDA_Application.Train
             }
             int fBtn = flag1;
             string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
-            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Testing\pyScripts\sampling.py";
+            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Project\ML_DataAnalyzer\MLDA_scripts\smplFilter.py";
             //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\UnListed\MelBon Housing\melb_data.csv";
             string csv_path = @filePath;
 

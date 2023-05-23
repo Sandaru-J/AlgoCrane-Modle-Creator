@@ -16,29 +16,33 @@ fileLoc=sys.argv[7]
 
 with open(path, 'r') as file:
     data = pd.read_csv(file)
-csv_file_path = r'C:\Users\Sandaru\Desktop\Sophia\Datasets'
+#csv_file_path = r'C:\Users\Sandaru\Desktop\Sophia\Datasets'
 # # read CSV data into a Pandas dataframe
 # data = pd.read_csv(path)
 
 if "2" in btn:
     start_time = time.time()
-    column_name=colName
-    while column_name not in data.columns:
-        if column_name not in data.columns:
-            print(f"Column '{column_name}' not found in dataset.")
+    try:
+        column_name=colName
+        while column_name not in data.columns:
+            if column_name not in data.columns:
+                print(f"Column '{column_name}' not found in dataset.")
 
-    value=valName
-    while value not in data[column_name].unique():
-        if value not in data[column_name].unique():
-            print(f"No rows with '{column_name}' equal to '{value}' found in dataset.")
+        value=valName
+        while value not in data[column_name].unique():
+            if value not in data[column_name].unique():
+                print(f"No rows with '{column_name}' equal to '{value}' found in dataset.")
 
-    if column_name:
-        # filter the data to include only the specified value
-        filtered_data = data[data[column_name] == value]
-    else:
-        filtered_data = data
+        if column_name:
+            # filter the data to include only the specified value
+            filtered_data = data[data[column_name] == value]
+        else:
+            filtered_data = data
 
-    print(filtered_data.head(10))
+        print(filtered_data.head(10))
+    except Exception as e:
+        print("An error occurred:", str(e))
+
 
 if "4" in btn:
     # sample size as a percentage of total rows
@@ -79,8 +83,8 @@ if "1" in btn:
         print("Sample saved as new file:", f"{fileLoc}/{fileName}.csv")
     else:
         # update the original CSV file
-        filtered_data.to_csv(csv_file_path, index=False)
-        print("Sample updated in file:", csv_file_path)
+        filtered_data.to_csv(path, index=False)
+        print("Sample updated in file:", path)
 
     end_time = time.time()
     elapsed_time = end_time - start_time
@@ -111,8 +115,8 @@ if "5" in btn:
         print("Filtered data saved as new file:", f"{fileLoc}/{fileName}.csv")
     else:
         # update the original CSV file
-        filtered_data.to_csv(csv_file_path, index=False)
-        print("Filtered data updated in file:", csv_file_path)
+        filtered_data.to_csv(path, index=False)
+        print("Filtered data updated in file:", path)
 
     end_time = time.time()
     elapsed_time = end_time - start_time

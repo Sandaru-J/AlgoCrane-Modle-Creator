@@ -88,7 +88,7 @@ else:
             print("Outliers successfully replaced")
 
         if "1" in savcheck:
-            # df.to_csv(path, index=False)
+            df.to_csv(path, index=False)
             print("Replaced outlier file saved")
 
 
@@ -106,5 +106,5 @@ else:
             print(df.head(5))
 
         if "1" in savcheck:
-            # df.to_csv(path, index=False)
+            df.to_csv(path, index=False)
             print("File saved dropping outliers.")

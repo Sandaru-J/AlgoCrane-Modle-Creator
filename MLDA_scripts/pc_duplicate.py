@@ -55,7 +55,7 @@ if "2" in flag1:
         if "1" in saveChek:
             print(f"\nDropped {num_duplicate_rows} rows contain missing values.")
             print(f"Current shape: {df.shape}")
-            # csvreader.to_csv(path, index=False)
+            df.to_csv(path, index=False)
             print("Files Saved with dropping duplicates.")
 
     else:

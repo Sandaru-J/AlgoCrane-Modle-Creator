@@ -161,10 +161,13 @@ if "9" in btn1:
 
     if(flag1+flag2+flag3==1,num_non_numeric_cols / num_total_cols>0.5):
         print("Data set is Partially Preprocessed")
+        print("Approved to Training")
     elif(flag1+flag2+flag3>1,column_ratio>0.5):
         print("PreProcessing required before Training")
+        print("Warning! Model outputs maybe Incorrect train on your own Risk.")
     else:
         print("Ready to Train")
+        print("Approved to Training")
 
 
 end_time = time.time()

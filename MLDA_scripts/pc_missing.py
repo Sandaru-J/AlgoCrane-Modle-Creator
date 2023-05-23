@@ -84,7 +84,7 @@ if "2" in flag1:
         if "1" in saveChek:
             print(f"\nDropped {dropped} rows contain missing values.")
             print(f"Current shape: {csvreader.shape}")
-            # csvreader.to_csv(path, index=False)
+            csvreader.to_csv(path, index=False)
             print("Dropped Missing values Saved")
     else:
         print("This data set contain no missing values to drop")
@@ -118,7 +118,7 @@ if "3" in flag1:
 
             total_missing_rows = csvreader[csvreader.isnull().any(axis=1)].shape[0]
             print("Total number of rows containing missing values:", total_missing_rows)
-            # csvreader.to_csv(path, index=False)
+            csvreader.to_csv(path, index=False)
             print("Data Set Saved with filled values.")
 
     else:
@@ -230,7 +230,7 @@ if "4" in flag1:
         if run_script < 2:
             print(f"\nNumber of numerical rows filled: {num_numerical_filled}")
             print(f"Number of categorical rows filled: {num_categorical_filled}")
-            # csvreader.to_csv(path,index=False)
+            csvreader.to_csv(path,index=False)
             tot=num_numerical_filled+num_categorical_filled
             print(f"Total of {tot} missing values filed using Mode of data set.")
             print("File updated with filled missing values.")
@@ -339,7 +339,7 @@ if "5" in flag1:
         if run_script < 2:
             print(f"\nNumber of numerical rows filled: {num_numerical_filled}")
             print(f"Number of categorical rows filled: {num_categorical_filled}")
-            # csvreader.to_csv(path,index=False)
+            csvreader.to_csv(path,index=False)
             tot = num_numerical_filled + num_categorical_filled
             print(f"Total of {tot} missing values filed using Median of data set.")
             print("File updated with filled missing values.")
