@@ -99,7 +99,7 @@ if "2" in flag1:
     elif normalize_method ==2:
         scaler = StandardScaler()
     elif normalize_method == 3:
-        print("Decimal Scalling")
+        print("Decimal Scaling")
     else:
         print("Invalid normalization method.")
 

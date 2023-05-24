@@ -32,8 +32,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.uC_Encoding1 = new MLDA_Application.Preparation.PreProcess.UC_Encoding();
-            this.uC_Normalize1 = new MLDA_Application.Preparation.PreProcess.UC_Normalize();
             this.panel10 = new System.Windows.Forms.Panel();
             this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnNormalize = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -44,6 +42,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtbxPP = new Guna.UI2.WinForms.Guna2TextBox();
+            this.uC_Encoding1 = new MLDA_Application.Preparation.PreProcess.UC_Encoding();
+            this.uC_Normalize1 = new MLDA_Application.Preparation.PreProcess.UC_Normalize();
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -91,22 +91,6 @@
             this.panel9.Size = new System.Drawing.Size(323, 328);
             this.panel9.TabIndex = 0;
             // 
-            // uC_Encoding1
-            // 
-            this.uC_Encoding1.BackColor = System.Drawing.Color.DimGray;
-            this.uC_Encoding1.Location = new System.Drawing.Point(4, 70);
-            this.uC_Encoding1.Name = "uC_Encoding1";
-            this.uC_Encoding1.Size = new System.Drawing.Size(315, 400);
-            this.uC_Encoding1.TabIndex = 2;
-            // 
-            // uC_Normalize1
-            // 
-            this.uC_Normalize1.BackColor = System.Drawing.Color.DimGray;
-            this.uC_Normalize1.Location = new System.Drawing.Point(7, 74);
-            this.uC_Normalize1.Name = "uC_Normalize1";
-            this.uC_Normalize1.Size = new System.Drawing.Size(312, 374);
-            this.uC_Normalize1.TabIndex = 1;
-            // 
             // panel10
             // 
             this.panel10.Controls.Add(this.guna2GradientButton3);
@@ -137,6 +121,7 @@
             this.guna2GradientButton3.Size = new System.Drawing.Size(106, 58);
             this.guna2GradientButton3.TabIndex = 2;
             this.guna2GradientButton3.Text = "Feature Selection";
+            this.guna2GradientButton3.Visible = false;
             // 
             // btnNormalize
             // 
@@ -231,7 +216,7 @@
             this.txtbxPP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtbxPP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.txtbxPP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbxPP.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxPP.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxPP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtbxPP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbxPP.Location = new System.Drawing.Point(16, 59);
@@ -245,6 +230,22 @@
             this.txtbxPP.Size = new System.Drawing.Size(550, 351);
             this.txtbxPP.TabIndex = 5;
             this.txtbxPP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxPP_KeyPress);
+            // 
+            // uC_Encoding1
+            // 
+            this.uC_Encoding1.BackColor = System.Drawing.Color.DimGray;
+            this.uC_Encoding1.Location = new System.Drawing.Point(4, 70);
+            this.uC_Encoding1.Name = "uC_Encoding1";
+            this.uC_Encoding1.Size = new System.Drawing.Size(315, 400);
+            this.uC_Encoding1.TabIndex = 2;
+            // 
+            // uC_Normalize1
+            // 
+            this.uC_Normalize1.BackColor = System.Drawing.Color.DimGray;
+            this.uC_Normalize1.Location = new System.Drawing.Point(7, 74);
+            this.uC_Normalize1.Name = "uC_Normalize1";
+            this.uC_Normalize1.Size = new System.Drawing.Size(312, 374);
+            this.uC_Normalize1.TabIndex = 1;
             // 
             // frmP_pp
             // 

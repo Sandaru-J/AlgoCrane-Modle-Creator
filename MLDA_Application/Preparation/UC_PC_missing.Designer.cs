@@ -33,6 +33,12 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnRepOUt = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.btnDropOUt = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnOutlierDne = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.txtBxTargtCol = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.chckBxClean = new Guna.UI2.WinForms.Guna2CheckBox();
             this.btnDropDup = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.btnDropMissing = new Guna.UI2.WinForms.Guna2GradientTileButton();
@@ -50,17 +56,11 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtBxTargtCol = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnOutlierDne = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnDropOUt = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            this.btnRepOUt = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -124,6 +124,102 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(281, 327);
             this.panel6.TabIndex = 0;
+            // 
+            // btnRepOUt
+            // 
+            this.btnRepOUt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRepOUt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRepOUt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRepOUt.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRepOUt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRepOUt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(70)))));
+            this.btnRepOUt.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.btnRepOUt.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRepOUt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRepOUt.ForeColor = System.Drawing.Color.White;
+            this.btnRepOUt.Location = new System.Drawing.Point(144, 215);
+            this.btnRepOUt.Name = "btnRepOUt";
+            this.btnRepOUt.Size = new System.Drawing.Size(118, 40);
+            this.btnRepOUt.TabIndex = 15;
+            this.btnRepOUt.Text = "Replace";
+            this.btnRepOUt.Click += new System.EventHandler(this.btnRepOUt_Click);
+            // 
+            // btnDropOUt
+            // 
+            this.btnDropOUt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDropOUt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDropOUt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDropOUt.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDropOUt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDropOUt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(70)))));
+            this.btnDropOUt.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.btnDropOUt.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDropOUt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDropOUt.ForeColor = System.Drawing.Color.White;
+            this.btnDropOUt.Location = new System.Drawing.Point(20, 215);
+            this.btnDropOUt.Name = "btnDropOUt";
+            this.btnDropOUt.Size = new System.Drawing.Size(118, 40);
+            this.btnDropOUt.TabIndex = 14;
+            this.btnDropOUt.Text = "Drop Outliers";
+            this.btnDropOUt.Click += new System.EventHandler(this.btnDropOUt_Click);
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Gray;
+            this.guna2Panel1.Controls.Add(this.btnOutlierDne);
+            this.guna2Panel1.Controls.Add(this.txtBxTargtCol);
+            this.guna2Panel1.Location = new System.Drawing.Point(32, 50);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(221, 46);
+            this.guna2Panel1.TabIndex = 12;
+            // 
+            // btnOutlierDne
+            // 
+            this.btnOutlierDne.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnOutlierDne.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnOutlierDne.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnOutlierDne.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnOutlierDne.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnOutlierDne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(70)))));
+            this.btnOutlierDne.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.btnOutlierDne.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnOutlierDne.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnOutlierDne.ForeColor = System.Drawing.Color.White;
+            this.btnOutlierDne.Location = new System.Drawing.Point(152, 6);
+            this.btnOutlierDne.Name = "btnOutlierDne";
+            this.btnOutlierDne.Size = new System.Drawing.Size(66, 32);
+            this.btnOutlierDne.TabIndex = 9;
+            this.btnOutlierDne.Text = "Done";
+            this.btnOutlierDne.Click += new System.EventHandler(this.btnOutlierDne_Click);
+            // 
+            // txtBxTargtCol
+            // 
+            this.txtBxTargtCol.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBxTargtCol.DefaultText = "";
+            this.txtBxTargtCol.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBxTargtCol.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBxTargtCol.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBxTargtCol.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBxTargtCol.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBxTargtCol.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBxTargtCol.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBxTargtCol.Location = new System.Drawing.Point(11, 8);
+            this.txtBxTargtCol.Name = "txtBxTargtCol";
+            this.txtBxTargtCol.PasswordChar = '\0';
+            this.txtBxTargtCol.PlaceholderText = "Target Column";
+            this.txtBxTargtCol.SelectedText = "";
+            this.txtBxTargtCol.Size = new System.Drawing.Size(135, 30);
+            this.txtBxTargtCol.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(18, 196);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(134, 16);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Outlier Treatments";
             // 
             // chckBxClean
             // 
@@ -246,7 +342,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(14, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 20);
+            this.label3.Size = new System.Drawing.Size(77, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Check For";
             // 
@@ -323,7 +419,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(17, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 20);
+            this.label1.Size = new System.Drawing.Size(159, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fill Missing Values By";
             // 
@@ -353,7 +449,7 @@
             this.txtCleanView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCleanView.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.txtCleanView.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCleanView.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtCleanView.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtCleanView.ForeColor = System.Drawing.Color.Silver;
             this.txtCleanView.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCleanView.Location = new System.Drawing.Point(16, 58);
@@ -392,102 +488,6 @@
             this.panel4.Size = new System.Drawing.Size(585, 58);
             this.panel4.TabIndex = 0;
             // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Gray;
-            this.guna2Panel1.Controls.Add(this.btnOutlierDne);
-            this.guna2Panel1.Controls.Add(this.txtBxTargtCol);
-            this.guna2Panel1.Location = new System.Drawing.Point(32, 50);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(221, 46);
-            this.guna2Panel1.TabIndex = 12;
-            // 
-            // txtBxTargtCol
-            // 
-            this.txtBxTargtCol.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBxTargtCol.DefaultText = "";
-            this.txtBxTargtCol.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtBxTargtCol.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtBxTargtCol.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBxTargtCol.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBxTargtCol.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBxTargtCol.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtBxTargtCol.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBxTargtCol.Location = new System.Drawing.Point(11, 8);
-            this.txtBxTargtCol.Name = "txtBxTargtCol";
-            this.txtBxTargtCol.PasswordChar = '\0';
-            this.txtBxTargtCol.PlaceholderText = "Target Column";
-            this.txtBxTargtCol.SelectedText = "";
-            this.txtBxTargtCol.Size = new System.Drawing.Size(135, 30);
-            this.txtBxTargtCol.TabIndex = 0;
-            // 
-            // btnOutlierDne
-            // 
-            this.btnOutlierDne.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnOutlierDne.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnOutlierDne.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnOutlierDne.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnOutlierDne.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnOutlierDne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(70)))));
-            this.btnOutlierDne.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.btnOutlierDne.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnOutlierDne.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnOutlierDne.ForeColor = System.Drawing.Color.White;
-            this.btnOutlierDne.Location = new System.Drawing.Point(152, 6);
-            this.btnOutlierDne.Name = "btnOutlierDne";
-            this.btnOutlierDne.Size = new System.Drawing.Size(66, 32);
-            this.btnOutlierDne.TabIndex = 9;
-            this.btnOutlierDne.Text = "Done";
-            this.btnOutlierDne.Click += new System.EventHandler(this.btnOutlierDne_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 196);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 16);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Outlier Treatments";
-            // 
-            // btnDropOUt
-            // 
-            this.btnDropOUt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDropOUt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDropOUt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDropOUt.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDropOUt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDropOUt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(70)))));
-            this.btnDropOUt.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.btnDropOUt.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnDropOUt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDropOUt.ForeColor = System.Drawing.Color.White;
-            this.btnDropOUt.Location = new System.Drawing.Point(20, 215);
-            this.btnDropOUt.Name = "btnDropOUt";
-            this.btnDropOUt.Size = new System.Drawing.Size(118, 40);
-            this.btnDropOUt.TabIndex = 14;
-            this.btnDropOUt.Text = "Drop Outliers";
-            this.btnDropOUt.Click += new System.EventHandler(this.btnDropOUt_Click);
-            // 
-            // btnRepOUt
-            // 
-            this.btnRepOUt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRepOUt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRepOUt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRepOUt.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRepOUt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRepOUt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(70)))));
-            this.btnRepOUt.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.btnRepOUt.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnRepOUt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnRepOUt.ForeColor = System.Drawing.Color.White;
-            this.btnRepOUt.Location = new System.Drawing.Point(144, 215);
-            this.btnRepOUt.Name = "btnRepOUt";
-            this.btnRepOUt.Size = new System.Drawing.Size(118, 40);
-            this.btnRepOUt.TabIndex = 15;
-            this.btnRepOUt.Text = "Replace";
-            this.btnRepOUt.Click += new System.EventHandler(this.btnRepOUt_Click);
-            // 
             // UC_PC_missing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,8 +502,8 @@
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

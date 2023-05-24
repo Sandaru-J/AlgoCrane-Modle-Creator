@@ -114,7 +114,7 @@ namespace MLDA_Application
                 }
             }else
             {
-                pnlMenu.Width = 137;
+                pnlMenu.Width = 140;
                 label1.Visible = true;
                 foreach (Button btn in pnlMenu.Controls.OfType<Button>())
                 {
@@ -129,7 +129,7 @@ namespace MLDA_Application
         {
             if (this.pnlMenu.Width < 100)
             {
-                pnlMenu.Width = 137;
+                pnlMenu.Width = 140;
                 foreach (Button btn in pnlMenu.Controls.OfType<Button>())
                 {
                     btn.Text = " " + btn.Tag.ToString();

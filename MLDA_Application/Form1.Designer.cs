@@ -191,7 +191,7 @@
             this.btnMenu.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnMenu.IconColor = System.Drawing.Color.Transparent;
             this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMenu.Location = new System.Drawing.Point(77, 5);
+            this.btnMenu.Location = new System.Drawing.Point(83, 5);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(58, 54);
             this.btnMenu.TabIndex = 0;

@@ -574,5 +574,45 @@ namespace MLDA_Application.Train
 
             }
         }
+        public void graphScript(int flag)
+        {
+            filePath = PathModel.Path;
+            string python_Interpreter_Path = @"C:\Users\Sandaru\AppData\Local\Programs\Python\Python310\python.exe";
+            string python_Script_Path = @"C:\Users\Sandaru\Desktop\FDAML\Testing\pyScripts\graphScripts.py";
+            //string csv_path = @"C:\Users\Sandaru\Desktop\Sophia\Datasets\Titanic\train.csv";
+            string csv_path = @filePath;
+
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.FileName = python_Interpreter_Path;
+            start.Arguments = $"\"{python_Script_Path}\" \"{csv_path}\" \"{flag}\"";
+            start.UseShellExecute = false;
+            start.RedirectStandardOutput = true;
+            start.CreateNoWindow = true;
+
+            // Start the process and get the output
+            using (Process process = Process.Start(start))
+            {
+                // Read the output from the Python script
+                string output = process.StandardOutput.ReadToEnd();
+
+                txtBxCmd.Text = txtBxCmd.Text + output;
+                txtBxCmd.SelectionStart = txtBxCmd.TextLength;
+                txtBxCmd.ScrollToCaret();
+            }
+        }
+        private void btnGrphSctMat_Click(object sender, EventArgs e)
+        {
+            graphScript(1);
+        }
+
+        private void btnGrphSctDt_Click(object sender, EventArgs e)
+        {
+            graphScript(2);
+        }
+
+        private void btnGrphLine_Click(object sender, EventArgs e)
+        {
+            graphScript(3);
+        }
     }
 }
